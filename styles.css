@@ -1,8 +1,8 @@
 /* variables */
 :root {
-  --primary-color: #1c2321;
-  --secondary-color: #7d98a1;
-  --tertiary-color: #eef1ef;
+  --dark-grey: #495057;
+  --med-grey: #adb5bd;
+  --light-grey: #dee2e6;
 }
 
 /* global styles */
