@@ -5,6 +5,31 @@
   --light-grey: #dee2e6;
 }
 
+/* fonts */
+@font-face {
+  font-family: "PT Sans Regular";
+  src: url(fonts/PTSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: "PT Sans Bold";
+  src: url(fonts/PTSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Playfair Display Regular";
+  src: url(fonts/PlayfairDisplay-Regular.ttf);
+}
+@font-face {
+  font-family: "Playfair Display Semi-bold";
+  src: url(fonts/PlayfairDisplay-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Playfair Display Bold";
+  src: url(fonts/PlayfairDisplay-Bold.ttf);
+}
+
 /* global styles */
 html {
   box-sizing: border-box;
@@ -42,8 +67,8 @@ ul {
 }
 
 /* header */
-.header__link {
-  color: var(--primary-color);
+.header__title {
+  font-family: "PT Sans Bold";
 }
 
 /* nav */
