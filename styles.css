@@ -33,6 +33,7 @@
 /* global styles */
 html {
   box-sizing: border-box;
+  font-family: "Playfair Display Regular";
   font-size: 16px;
 }
 
@@ -43,9 +44,9 @@ html {
 }
 
 body {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  padding: 1.5em 0.5em;
   margin: 0 auto;
-  text-align: center;
 }
 
 a {
@@ -69,12 +70,12 @@ ul {
 /* header */
 .header__title {
   font-family: "PT Sans Bold";
+  font-size: 4rem;
 }
 
 /* nav */
 .social {
-  display: flex;
-  justify-content: center;
+  display: none;
 }
 
 .social__tab {
@@ -83,6 +84,10 @@ ul {
 
 .social__link {
   color: var(--primary-color);
+}
+
+.category {
+  display: none;
 }
 
 /* main */
