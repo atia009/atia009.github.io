@@ -45,7 +45,6 @@ html {
 
 body {
   font-size: 1.1rem;
-  padding: 1.5em 0.5em;
   margin: 0 auto;
 }
 
@@ -67,6 +66,21 @@ ul {
   padding-left: 0em;
 }
 
+/* toggles */
+.font-light {
+  color: var(--light-grey);
+}
+
+.nav-invert {
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+}
+
+.hidden {
+  display: none;
+}
+
 /* header */
 .header__title {
   font-family: "PT Sans Bold";
@@ -78,20 +92,16 @@ ul {
   font-size: 2.25rem;
 }
 
-.social {
-  display: none;
+.social__link {
+  color: #fff;
 }
 
 .social__tab {
   margin: 0em 0.75em;
 }
 
-.social__link {
-  color: var(--primary-color);
-}
-
-.category {
-  display: none;
+.category__btn {
+  color: #fff;
 }
 
 /* main */
