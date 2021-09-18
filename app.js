@@ -77,8 +77,8 @@ function toggleNav()
    navBtn.innerHTML = `<i class="fas fa-times nav__exit"></i>`;
    showNav();
   }
+  activeNav();
  })
- activeNav();
 } // end toggleNav
 
 // function that hides nav in mobile
@@ -130,12 +130,18 @@ function loadActive(category)
 {
  switch (category) {
   case "home":
+   // reset nav__btn
+   navBtn.innerHTML = `<i class="fas fa-bars nav__enter"></i>`;
    loadHome();
    break;
   case "projects":
+   // reset nav__btn
+   navBtn.innerHTML = `<i class="fas fa-bars nav__enter"></i>`; 
    loadProjects();
    break;
   case "art":
+   // reset nav__btn
+   navBtn.innerHTML = `<i class="fas fa-bars nav__enter"></i>`; 
    loadArt();
    break;
  }
