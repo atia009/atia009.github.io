@@ -25,9 +25,25 @@ const projectsArray =
 const artsArray =
 [
  {
-  src: ,
-  desc: ,
- }
+  id: 1,
+  desc:"Oil, Canvas",
+  src: "images/art-01.jpg",
+ },
+ {
+  id: 2,
+  desc:"Pastel, Paper",
+  src: "images/art-02.jpg",
+ },
+ {
+  id: 3,
+  desc:"Graphite, Paper",
+  src: "images/art-03.jpg",
+ },
+ {
+  id: 4,
+  desc:"Graphite, Paper",
+  src: "images/art-04.jpg",
+ },
 ]
 
 // variables
@@ -162,9 +178,9 @@ function loadArt()
 
  // dynamically load projects from projectsArray
  const arts = artsArray.map(function(art){
-  return `<div class="project-container">
-   <a href="${project.link}" class="project-container__link"><img src="${project.src}" alt="thumbnail of ${project.title}" class="project-container__img"></a>
-   <a href="${project.link}" class="project-container__link"><h2 class="project-container__title">${project.title}</h2></a>
+  return `<div class="art-container">
+   <button class="art-container__btn"><img src="${art.src}" alt="thumbnail of artwork ${art.id}" class="project-container__img"></a>
+   <h2 class="art-container__desc">${art.desc}</h2>
   </div>`
  })
  
@@ -174,7 +190,6 @@ function loadArt()
 
 // event listeners
 window.addEventListener("DOMContentLoaded", function() {
- // loadHome();
+ loadHome();
  toggleNav();
- loadProjects();
 })
