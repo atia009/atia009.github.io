@@ -3,6 +3,7 @@
   --dark-grey: #495057;
   --med-grey: #adb5bd;
   --light-grey: #dee2e6;
+  --dark-icon: #1b1a1a;
 }
 
 /* fonts */
@@ -81,16 +82,34 @@ ul {
   color: #fff;
 }
 
+.category,
+.social {
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  margin: 4em 0em 0em 0em;
+}
+
+.category__btn,
 .social__link {
   color: #fff;
+  font-family: "PT Sans Bold";
+  font-size: 2.8rem;
+  letter-spacing: 2px;
 }
 
+.category__btn:hover,
+.social__link:hover {
+  color: var(--med-grey);
+}
+
+.category__btn,
 .social__tab {
-  margin: 0em 0.75em;
+  margin: 0em 0em 12.5px 12.5px;
 }
 
-.category__btn {
-  color: #fff;
+.social__icon {
+  color: var(--dark-icon);
 }
 
 /* main */
@@ -99,6 +118,10 @@ ul {
 }
 
 /* toggles */
+.active {
+  color: var(--dark-grey);
+}
+
 .font-light {
   color: var(--light-grey);
 }
