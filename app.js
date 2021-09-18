@@ -1,42 +1,180 @@
+// arrays
+const projectsArray = 
+[
+ {
+  title: "Project 1",
+  src: "images/project-01.png",
+  link: "https://github.com/atia009",
+ },
+ {
+  title: "Project 2",
+  src: "images/project-01.png",
+  link: "https://github.com/atia009",
+ },
+ {
+  title: "Project 3",
+  src: "images/project-01.png",
+  link: "https://github.com/atia009",
+ },
+ {
+  title: "Project 4",
+  src: "images/project-01.png",
+  link: "https://github.com/atia009",
+ },
+]
+const artsArray =
+[
+ {
+  src: ,
+  desc: ,
+ }
+]
+
 // variables
 const nav = document.querySelector(".nav");
 const navIcon = document.querySelector(".nav-icon");
 const social = document.querySelector(".social");
 const category = document.querySelector(".category");
 const categories = document.querySelectorAll(".category__btn");
+const main = document.querySelector(".main");
+const title = document.querySelector(".header__title");
 
 // functions
-function toggleNav() {
- navIcon.addEventListener("click", function() {
-  if (nav.classList.contains("toggleNav")) {
-   nav.classList.remove("toggleNav");
-   nav.classList.remove("nav-invert");
-   social.classList.add("hidden");
-   category.classList.add("hidden");
+// function that changes title of page
+function changeTitle(newTitle) 
+{
+ title.innerHTML = newTitle;
+}
+
+// function that toggles nav in mobile 
+function toggleNav() 
+{
+ navIcon.addEventListener("click", function() 
+ {
+  if (nav.classList.contains("toggleNav")) 
+  {
+   hideNav();
   }
-  else {
+  else 
+  {
    nav.classList.add("toggleNav");
    nav.classList.add("nav-invert");
    social.classList.remove("hidden");
    category.classList.remove("hidden");
   }
  })
-}
+ activeNav();
+} // end toggleNav
 
-function activeNav() {
- categories.forEach(function(category){
-  category.addEventListener("click", function(){
-   categories.forEach(function(category){
+// function that hides nav in mobile
+function hideNav() 
+{
+ nav.classList.remove("toggleNav");
+ nav.classList.remove("nav-invert");
+ social.classList.add("hidden");
+ category.classList.add("hidden");
+} // end hideNav
+
+// function that shows selected category and calls loader function
+function activeNav() 
+{
+ categories.forEach(function(category) 
+ {
+  category.addEventListener("click", function(e)
+  {
+   // remove active from all categories
+   categories.forEach(function(category)
+   {
     category.classList.remove("active");
    })
+
+   // add active to clicked category
    category.classList.add("active");
+
+   // get name of category
+   var current = e.currentTarget.dataset.class;
+   loadActive(current);
+
+   // hide nav
+   hideNav();
   })
  })
-}
+} // end activeNav
+
+// loader function that dynamically loads content based on active category
+function loadActive(category) 
+{
+ switch (category) {
+  case "home":
+   loadHome();
+   break;
+  case "projects":
+   loadProjects();
+   break;
+  case "art":
+   loadArt();
+   break;
+ }
+} // end loadActive
+
+// home page loader
+function loadHome() 
+{
+ // change title of page
+ changeTitle("Aaron Tia");
+
+ // dynamically load home content
+ const content = 
+ `<section class="section--home">
+   <img src="images/profile.jpg" alt="profile picture" class="content__img">
+   <div class="info">
+    <p class="info__education">University Of California, Santa Barbara B.A in Art</p>
+    <p class="info__education">Glendale Community College A.S. in Computer Science</p>
+    <p class="info__about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, tempora debitis laudantium commodi minus pariatur sint eius libero accusantium tenetur error repellat tempore ipsa atque incidunt provident aspernatur excepturi illo vitae? Accusamus qui vero adipisci iste velit et earum temporibus exercitationem deleniti at ullam error quas dolore ipsum soluta excepturi odio architecto maiores officia debitis laboriosam laborum, provident necessitatibus. Error!</p>
+   </div>
+  </section>`
+ main.innerHTML = content;
+} // end loadHome
+
+// projects page loader
+function loadProjects() 
+{
+  // change title of page
+ changeTitle("Projects");
+
+ // dynamically load projects from projectsArray
+ const projects = projectsArray.map(function(project){
+  return `<div class="project-container">
+   <a href="${project.link}" class="project-container__link"><img src="${project.src}" alt="thumbnail of ${project.title}" class="project-container__img"></a>
+   <a href="${project.link}" class="project-container__link"><h2 class="project-container__title">${project.title}</h2></a>
+  </div>`
+ })
+ 
+ // add projects to page
+ main.innerHTML = projects.join("");
+} // end loadProjects
+
+// art page loader
+function loadArt() 
+{
+ // change title of page
+ changeTitle("Art");
+
+ // dynamically load projects from projectsArray
+ const arts = artsArray.map(function(art){
+  return `<div class="project-container">
+   <a href="${project.link}" class="project-container__link"><img src="${project.src}" alt="thumbnail of ${project.title}" class="project-container__img"></a>
+   <a href="${project.link}" class="project-container__link"><h2 class="project-container__title">${project.title}</h2></a>
+  </div>`
+ })
+ 
+ // add projects to page
+ main.innerHTML = arts.join("");
+} // end loadArt
 
 // event listeners
-
 window.addEventListener("DOMContentLoaded", function() {
+ // loadHome();
  toggleNav();
- activeNav();
+ loadProjects();
 })
