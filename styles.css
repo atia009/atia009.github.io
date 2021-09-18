@@ -73,8 +73,12 @@ ul {
 }
 
 /* nav */
-.nav-icon {
+.nav__btn {
   font-size: 2.25rem;
+}
+
+.nav__exit {
+  color: #fff;
 }
 
 .social__link {
