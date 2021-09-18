@@ -48,7 +48,7 @@ const artsArray =
 
 // variables
 const nav = document.querySelector(".nav");
-const navIcon = document.querySelector(".nav-icon");
+const navBtn = document.querySelector(".nav__btn");
 const social = document.querySelector(".social");
 const category = document.querySelector(".category");
 const categories = document.querySelectorAll(".category__btn");
@@ -65,18 +65,17 @@ function changeTitle(newTitle)
 // function that toggles nav in mobile 
 function toggleNav() 
 {
- navIcon.addEventListener("click", function() 
+ navBtn.addEventListener("click", function() 
  {
   if (nav.classList.contains("toggleNav")) 
   {
+   navBtn.innerHTML = `<i class="fas fa-bars nav__enter"></i>`;
    hideNav();
   }
   else 
   {
-   nav.classList.add("toggleNav");
-   nav.classList.add("nav-invert");
-   social.classList.remove("hidden");
-   category.classList.remove("hidden");
+   navBtn.innerHTML = `<i class="fas fa-times nav__exit"></i>`;
+   showNav();
   }
  })
  activeNav();
@@ -90,6 +89,15 @@ function hideNav()
  social.classList.add("hidden");
  category.classList.add("hidden");
 } // end hideNav
+
+// function that shows nav in mobile
+function showNav()
+{
+  nav.classList.add("toggleNav");
+  nav.classList.add("nav-invert");
+  social.classList.remove("hidden");
+  category.classList.remove("hidden");
+} // end showNav
 
 // function that shows selected category and calls loader function
 function activeNav() 
