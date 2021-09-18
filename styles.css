@@ -66,21 +66,6 @@ ul {
   padding-left: 0em;
 }
 
-/* toggles */
-.font-light {
-  color: var(--light-grey);
-}
-
-.nav-invert {
-  background-color: #000;
-  height: 100vh;
-  width: 100vw;
-}
-
-.hidden {
-  display: none;
-}
-
 /* header */
 .header__title {
   font-family: "PT Sans Bold";
@@ -107,4 +92,19 @@ ul {
 /* main */
 .main {
   margin-top: 2em;
+}
+
+/* toggles */
+.font-light {
+  color: var(--light-grey);
+}
+
+.nav-invert {
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+}
+
+.hidden {
+  display: none;
 }
