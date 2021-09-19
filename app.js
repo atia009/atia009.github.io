@@ -56,12 +56,6 @@ const main = document.querySelector(".main");
 const title = document.querySelector(".header__title");
 
 // functions
-// function that changes title of page
-function changeTitle(newTitle) 
-{
- title.innerHTML = newTitle;
-}
-
 // function that toggles nav in mobile 
 function toggleNav() 
 {
@@ -150,28 +144,23 @@ function loadActive(category)
 // home page loader
 function loadHome() 
 {
- // change title of page
- changeTitle("Aaron Tia");
-
  // dynamically load home content
  const content = 
- `<section class="section--home">
-   <img src="images/profile.jpg" alt="profile picture" class="content__img">
-   <div class="info">
-    <p class="info__education">University Of California, Santa Barbara B.A in Art</p>
-    <p class="info__education">Glendale Community College A.S. in Computer Science</p>
-    <p class="info__about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, tempora debitis laudantium commodi minus pariatur sint eius libero accusantium tenetur error repellat tempore ipsa atque incidunt provident aspernatur excepturi illo vitae? Accusamus qui vero adipisci iste velit et earum temporibus exercitationem deleniti at ullam error quas dolore ipsum soluta excepturi odio architecto maiores officia debitis laboriosam laborum, provident necessitatibus. Error!</p>
-   </div>
-  </section>`
+ `<h1 class="main__title">Aaron Tia</h1>
+  <section class="section--home">
+    <img src="images/profile.jpg" alt="profile picture" class="content__img">
+    <div class="info">
+      <p class="info__education">University Of California, Santa Barbara B.A in Art</p>
+      <p class="info__education">Glendale Community College A.S. in Computer Science</p>
+      <p class="info__about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, tempora debitis laudantium commodi minus pariatur sint eius libero accusantium tenetur error repellat tempore ipsa atque incidunt provident aspernatur excepturi illo vitae? Accusamus qui vero adipisci iste velit et earum temporibus exercitationem deleniti at ullam error quas dolore ipsum soluta excepturi odio architecto maiores officia debitis laboriosam laborum, provident necessitatibus. Error!</p>
+    </div>
+    </section>`
  main.innerHTML = content;
 } // end loadHome
 
 // projects page loader
 function loadProjects() 
 {
-  // change title of page
- changeTitle("Projects");
-
  // dynamically load projects from projectsArray
  const projects = projectsArray.map(function(project){
   return `<div class="project-container">
@@ -180,6 +169,9 @@ function loadProjects()
   </div>`
  })
  
+ // Add title of page to beginning of array
+ projects.unshift(`<h1 class="main__title">Projects</h1>`);
+
  // add projects to page
  main.innerHTML = projects.join("");
 } // end loadProjects
@@ -187,9 +179,6 @@ function loadProjects()
 // art page loader
 function loadArt() 
 {
- // change title of page
- changeTitle("Art");
-
  // dynamically load projects from projectsArray
  const arts = artsArray.map(function(art){
   return `<div class="art-container">
@@ -198,6 +187,9 @@ function loadArt()
   </div>`
  })
  
+ // Add title of page to beginning of array
+ arts.unshift(`<h1 class="main__title">Art</h1>`);
+
  // add projects to page
  main.innerHTML = arts.join("");
 } // end loadArt
