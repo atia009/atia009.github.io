@@ -154,9 +154,9 @@ function loadHome()
       <p class="info__education">Glendale Community College A.S. in Computer Science</p>
       <p class="info__about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, tempora debitis laudantium commodi minus pariatur sint eius libero accusantium tenetur error repellat tempore ipsa atque incidunt provident aspernatur excepturi illo vitae? Accusamus qui vero adipisci iste velit et earum temporibus exercitationem deleniti at ullam error quas dolore ipsum soluta excepturi odio architecto maiores officia debitis laboriosam laborum, provident necessitatibus. Error!</p>
     </div>
-  </section>`
+  </section>`;
  main.innerHTML = content;
-} // end loadHome
+}   
 
 // projects page loader
 function loadProjects() 
@@ -169,12 +169,15 @@ function loadProjects()
   </div>`
  })
  
- // IMPORTANT put projects in a container, then add TITLE OF PAGE AND CONTAINER TO MAIN for styling
- // Add title of page to beginning of array
- projects.unshift(`<h1 class="main__title">Projects</h1>`);
+ // Add title and create projects container in main
+ main.innerHTML = 
+ `<h1 class="main__title">Projects</h1>
+ <section class="projects">Hello</section`;
 
- // add projects to page
- main.innerHTML = projects.join("");
+ // add projects to projectsContainer in main
+ const projectsContainer = document.querySelector(".projects");
+ projectsContainer.innerHTML = projects.join("");
+ 
 } // end loadProjects
 
 // art page loader
