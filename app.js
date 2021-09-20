@@ -147,14 +147,14 @@ function loadHome()
  // dynamically load home content
  const content = 
  `<h1 class="main__title">Aaron Tia</h1>
-  <section class="section--home">
-    <img src="images/profile.jpg" alt="profile picture" class="content__img">
+  <section class="home">
+    <img src="images/profile.jpg" alt="profile picture" class="home__img">
     <div class="info">
       <p class="info__education">University Of California, Santa Barbara B.A in Art</p>
       <p class="info__education">Glendale Community College A.S. in Computer Science</p>
       <p class="info__about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, tempora debitis laudantium commodi minus pariatur sint eius libero accusantium tenetur error repellat tempore ipsa atque incidunt provident aspernatur excepturi illo vitae? Accusamus qui vero adipisci iste velit et earum temporibus exercitationem deleniti at ullam error quas dolore ipsum soluta excepturi odio architecto maiores officia debitis laboriosam laborum, provident necessitatibus. Error!</p>
     </div>
-    </section>`
+  </section>`
  main.innerHTML = content;
 } // end loadHome
 
@@ -163,12 +163,13 @@ function loadProjects()
 {
  // dynamically load projects from projectsArray
  const projects = projectsArray.map(function(project){
-  return `<div class="project-container">
-   <a href="${project.link}" class="project-container__link"><img src="${project.src}" alt="thumbnail of ${project.title}" class="project-container__img"></a>
-   <a href="${project.link}" class="project-container__link"><h2 class="project-container__title">${project.title}</h2></a>
+  return `<div class="project">
+   <a href="${project.link}" class="project__link"><img src="${project.src}" alt="thumbnail of ${project.title}" class="project__img"></a>
+   <a href="${project.link}" class="project__link"><h2 class="project__title">${project.title}</h2></a>
   </div>`
  })
  
+ // IMPORTANT put projects in a container, then add TITLE OF PAGE AND CONTAINER TO MAIN for styling
  // Add title of page to beginning of array
  projects.unshift(`<h1 class="main__title">Projects</h1>`);
 
@@ -181,9 +182,9 @@ function loadArt()
 {
  // dynamically load projects from projectsArray
  const arts = artsArray.map(function(art){
-  return `<div class="art-container">
-   <button class="art-container__btn"><img src="${art.src}" alt="thumbnail of artwork ${art.id}" class="project-container__img"></a>
-   <h2 class="art-container__desc">${art.desc}</h2>
+  return `<div class="art">
+   <button class="art__btn"><img src="${art.src}" alt="thumbnail of artwork ${art.id}" class="art-container__img"></a>
+   <h2 class="art__desc">${art.desc}</h2>
   </div>`
  })
  
