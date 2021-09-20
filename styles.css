@@ -127,12 +127,17 @@ ul {
 /* home */
 .home__img {
   height: 280px;
+  margin-bottom: 25px;
   min-width: 274.2px;
   object-fit: cover;
 }
 
 .info {
-  border-top: 1px solid black;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.info__education {
+  margin-top: 25px;
 }
 
 /* projects */
