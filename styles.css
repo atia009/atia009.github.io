@@ -164,6 +164,35 @@ ul {
 }
 
 /* art */
+.art {
+  position: relative;
+}
+
+.art__desc {
+  display: flex;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -100%);
+  z-index: 2;
+}
+
+.art__btn {
+  cursor: pointer;
+  padding: 0px;
+  width: 100%;
+}
+
+.art__img {
+  height: 280px;
+  min-width: 274.2px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.art__img:hover {
+  opacity: 0.5;
+}
 
 /* footer */
 .footer__content {
