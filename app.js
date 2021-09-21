@@ -44,6 +44,16 @@ const artsArray =
   desc:"Graphite, Paper",
   src: "images/art-04.jpg",
  },
+ {
+  id: 5,
+  desc:"Adobe Illustrator",
+  src: "images/art-05.jpg",
+ },
+ {
+  id: 6,
+  desc:"Graphite, Paper",
+  src: "images/art-06.jpg",
+ },
 ]
 
 // variables
@@ -162,7 +172,8 @@ function loadHome()
 function loadProjects() 
 {
  // dynamically load projects from projectsArray
- const projects = projectsArray.map(function(project){
+ const projects = projectsArray.map(function(project)
+ {
   return `<div class="project">
    <a href="${project.link}" class="project__link"><img src="${project.src}" alt="thumbnail of ${project.title}" class="project__img"></a>
    <a href="${project.link}" class="project__link"><h2 class="project__title">${project.title}</h2></a>
@@ -172,34 +183,56 @@ function loadProjects()
  // Add title and create projects container in main
  main.innerHTML = 
  `<h1 class="main__title">Projects</h1>
- <section class="projects">Hello</section`;
+ <section class="projects"></section`;
 
  // add projects to projectsContainer in main
  const projectsContainer = document.querySelector(".projects");
  projectsContainer.innerHTML = projects.join("");
- 
+
 } // end loadProjects
 
 // art page loader
 function loadArt() 
 {
  // dynamically load projects from projectsArray
- const arts = artsArray.map(function(art){
+ const arts = artsArray.map(function(art)
+ {
   return `<div class="art">
-   <button class="art__btn"><img src="${art.src}" alt="thumbnail of artwork ${art.id}" class="art-container__img"></a>
+   <button class="art__btn"><img src="${art.src}" alt="thumbnail of artwork ${art.id}" class="art__img"></a>
    <h2 class="art__desc">${art.desc}</h2>
   </div>`
  })
  
- // Add title of page to beginning of array
- arts.unshift(`<h1 class="main__title">Art</h1>`);
+ // Add title of page and create arts container in main
+ main.innerHTML = 
+ `<h1 class="main__title">Art</h1>
+ <section class="art"></section`;
 
- // add projects to page
- main.innerHTML = arts.join("");
+ // add projects to projectsContainer in main
+ const artsContainer = document.querySelector(".art");
+ artsContainer.innerHTML = arts.join("");
+
+ // hover functionality
+ doArtHover();
+
 } // end loadArt
 
+// function that displays art description on hover
+function doArtHover() 
+{
+ const arts = document.querySelectorAll(".art__btn");
+ arts.forEach(function(art)
+ {
+  art.addEventListener("mouseover", function()
+  {
+    console.log("Hello");
+  })
+ })
+} // doArtHover
+
 // event listeners
-window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("DOMContentLoaded", function() 
+{
  loadHome();
  toggleNav();
 })
