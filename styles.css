@@ -127,13 +127,14 @@ ul {
 /* home */
 .home__img {
   height: 280px;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   min-width: 274.2px;
   object-fit: cover;
+  width: 100%;
 }
 
 .info {
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .info__education {
@@ -141,8 +142,34 @@ ul {
 }
 
 /* projects */
+.project:not(:last-of-type) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 35px;
+}
+
+.project__title {
+  color: #000;
+  font-family: "PT Sans Regular";
+  font-size: 1.3rem;
+  letter-spacing: 1.5px;
+  margin: 10px 0px 25px 0px;
+  text-transform: uppercase;
+}
+
+.project__img {
+  height: 280px;
+  min-width: 274.2px;
+  object-fit: cover;
+  width: 100%;
+}
 
 /* art */
+
+/* footer */
+.footer__content {
+  font-size: 0.9rem;
+  margin-left: 12.5px;
+}
 
 /* toggles */
 .active {
