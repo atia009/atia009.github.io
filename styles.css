@@ -166,21 +166,22 @@ ul {
 /* art */
 .art {
   position: relative;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  width: 100%;
 }
 
 .art__desc {
-  display: flex;
+  display: none;
+  font-family: "Playfair Display Semi-bold";
   left: 50%;
+  margin: 0px;
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -100%);
-  z-index: 2;
-}
-
-.art__btn {
-  cursor: pointer;
-  padding: 0px;
-  width: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .art__img {
@@ -188,10 +189,6 @@ ul {
   min-width: 274.2px;
   object-fit: cover;
   width: 100%;
-}
-
-.art__img:hover {
-  opacity: 0.5;
 }
 
 /* footer */
@@ -222,4 +219,5 @@ ul {
 .sticky {
   position: sticky;
   top: 0;
+  z-index: 2;
 }
