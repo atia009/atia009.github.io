@@ -25,32 +25,32 @@ const projectsArray =
 const artsArray =
 [
  {
-  id: 1,
+  id: 0,
   desc:"Oil, Canvas",
   src: "images/art-01.jpg",
  },
  {
-  id: 2,
+  id: 1,
   desc:"Pastel, Paper",
   src: "images/art-02.jpg",
  },
  {
-  id: 3,
+  id: 2,
   desc:"Graphite, Paper",
   src: "images/art-03.jpg",
  },
  {
-  id: 4,
+  id: 3,
   desc:"Graphite, Paper",
   src: "images/art-04.jpg",
  },
  {
-  id: 5,
+  id: 4,
   desc:"Adobe Illustrator",
   src: "images/art-05.jpg",
  },
  {
-  id: 6,
+  id: 5,
   desc:"Graphite, Paper",
   src: "images/art-06.jpg",
  },
@@ -197,10 +197,10 @@ function loadArt()
  // dynamically load projects from projectsArray
  const arts = artsArray.map(function(art)
  {
-  return `<div class="art">
-   <button class="art__btn"><img src="${art.src}" alt="thumbnail of artwork ${art.id}" class="art__img"></a>
-   <h2 class="art__desc">${art.desc}</h2>
-  </div>`
+  return `<figure class="art" data-class="${art.id}">
+   <img src="${art.src}" alt="thumbnail of artwork ${art.id}" class="art__img">
+   <figcaption class="art__desc">${art.desc}</figcaption>
+  </figure>`
  })
  
  // Add title of page and create arts container in main
@@ -220,15 +220,27 @@ function loadArt()
 // function that displays art description on hover
 function doArtHover() 
 {
- const arts = document.querySelectorAll(".art__btn");
- arts.forEach(function(art)
+ const arts = document.querySelectorAll(".art");
+ const desc = document.querySelectorAll(".art__desc");
+ const img = document.querySelectorAll(".art__img");
+
+ // add event listener to each artwork for hover in and out
+ for(let i = 0; i < arts.length; i++)
  {
-  art.addEventListener("mouseover", function()
-  {
-    console.log("Hello");
-  })
- })
-} // doArtHover
+   arts[i].addEventListener("mouseenter", function(e)
+   {
+     let current = e.currentTarget.dataset.class;
+     img[current].style.opacity = 0.5;
+     desc[current].style.display = "flex";
+   });
+   arts[i].addEventListener("mouseout", function(e)
+   {
+     let current = e.currentTarget.dataset.class;
+     img[current].style.opacity = 1;
+     desc[current].style.display = "none";
+   });
+ }
+} // end doArtHover
 
 // event listeners
 window.addEventListener("DOMContentLoaded", function() 
