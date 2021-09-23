@@ -81,7 +81,6 @@ function toggleNav()
    navBtn.innerHTML = `<i class="fas fa-times nav__exit"></i>`;
    showNav();
   }
-  activeNav();
  })
 } // end toggleNav
 
@@ -197,10 +196,12 @@ function loadArt()
  // dynamically load projects from projectsArray
  const arts = artsArray.map(function(art)
  {
-  return `<figure class="art" data-class="${art.id}">
-   <img src="${art.src}" alt="thumbnail of artwork ${art.id}" class="art__img">
-   <figcaption class="art__desc">${art.desc}</figcaption>
-  </figure>`
+  return `<div class="art-container">
+    <figure class="art" data-class="${art.id}">
+      <img src="${art.src}" alt="thumbnail of artwork ${art.id}" class="art__img">
+      <figcaption class="art__desc">${art.desc}</figcaption>
+    </figure>
+  </div>`
  })
  
  // Add title of page and create arts container in main
@@ -225,7 +226,7 @@ function doArtHover()
  const img = document.querySelectorAll(".art__img");
 
  // add event listener to each artwork for hover in and out
- for(let i = 0; i < arts.length; i++)
+ for(let i = 1; i < arts.length; i++)
  {
    arts[i].addEventListener("mouseenter", function(e)
    {
@@ -233,7 +234,7 @@ function doArtHover()
      img[current].style.opacity = 0.5;
      desc[current].style.display = "flex";
    });
-   arts[i].addEventListener("mouseout", function(e)
+   arts[i].addEventListener("mouseleave", function(e)
    {
      let current = e.currentTarget.dataset.class;
      img[current].style.opacity = 1;
@@ -247,4 +248,5 @@ window.addEventListener("DOMContentLoaded", function()
 {
  loadHome();
  toggleNav();
+ activeNav();
 })
