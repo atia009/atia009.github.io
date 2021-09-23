@@ -277,4 +277,10 @@ ul {
   .social__icon {
     color: var(--light-grey);
   }
+  .active {
+    color: var(--med-grey);
+  }
+  .main {
+    max-width: 500px;
+  }
 }
