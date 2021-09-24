@@ -114,7 +114,7 @@ ul {
 }
 
 /* main */
-.main {
+main {
   padding: 0px 12.5px;
 }
 
@@ -126,8 +126,9 @@ ul {
 
 /* home */
 .home__img {
-  height: 280px;
   margin-bottom: 35px;
+  max-height: 500px;
+  min-height: 280px;
   min-width: 274.2px;
   object-fit: cover;
   width: 100%;
@@ -251,7 +252,7 @@ ul {
     grid-area: h;
   }
 
-  .main {
+  main {
     grid-area: m;
   }
 
@@ -262,6 +263,7 @@ ul {
   .nav {
     background-color: transparent;
   }
+
   .nav__btn {
     display: none;
   }
@@ -269,18 +271,27 @@ ul {
   .hidden {
     display: flex;
   }
+
   .category__btn,
   .social__link {
     color: #000;
     font-size: 1.25rem;
   }
+
   .social__icon {
     color: var(--light-grey);
   }
+
   .active {
     color: var(--med-grey);
   }
-  .main {
+
+  /* home */
+  .main--home {
     max-width: 500px;
   }
+
+  /* art */
+
+  /* projects */
 }
