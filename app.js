@@ -62,7 +62,7 @@ const navBtn = document.querySelector(".nav__btn");
 const social = document.querySelector(".social");
 const category = document.querySelector(".category");
 const categories = document.querySelectorAll(".category__btn");
-const main = document.querySelector(".main");
+const main = document.querySelector("main");
 const title = document.querySelector(".header__title");
 
 // functions
@@ -131,6 +131,7 @@ function activeNav()
 // loader function that dynamically loads content based on active category
 function loadActive(category) 
 {
+ main.removeAttribute("class");
  switch (category) {
   case "home":
    // reset nav__btn
@@ -165,6 +166,7 @@ function loadHome()
     </div>
   </section>`;
  main.innerHTML = content;
+ main.classList.add("main--home")
 }   
 
 // projects page loader
