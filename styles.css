@@ -4,6 +4,7 @@
   --med-grey: #adb5bd;
   --light-grey: #dee2e6;
   --dark-icon: #1b1a1a;
+  --light-icon: #f0f4f8;
 }
 
 /* fonts */
@@ -201,7 +202,7 @@ main {
 /* footer */
 .footer__content {
   font-size: 0.9rem;
-  margin-left: 15px;
+  margin: 46px 0px 15px 15px;
 }
 
 /* toggles */
@@ -242,7 +243,7 @@ main {
 @media (min-width: 990px) {
   body {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: 150px repeat(7, 1fr);
     grid-template-areas:
       "h m m m m m m m"
       "h m m m m m m m"
@@ -255,7 +256,9 @@ main {
   }
 
   .header {
+    align-self: start;
     grid-area: h;
+    position: sticky;
   }
 
   main {
@@ -268,6 +271,7 @@ main {
 
   .nav {
     background-color: transparent;
+    width: 100%;
   }
 
   .nav__btn {
@@ -280,23 +284,40 @@ main {
 
   .category__btn,
   .social__link {
-    color: #000;
+    color: var(--med-grey);
     font-size: 1.25rem;
   }
 
+  .category__btn,
+  .social__tab {
+    margin-left: 20px;
+  }
+
+  .category__btn:hover,
+  .social__link:hover {
+    color: var(--dark-grey);
+  }
+
   .social__icon {
-    color: var(--light-grey);
+    color: var(--light-icon);
   }
 
   .active {
-    color: var(--med-grey);
+    color: var(--dark-grey);
+  }
+
+  .main__title {
+    margin: 58px 0px;
   }
 
   .footer {
     align-items: flex-end;
     display: flex;
     justify-content: flex-end;
-    padding-right: 15px;
+  }
+
+  .footer__content {
+    margin: 58px 20px 20px 0px;
   }
 
   /* home */
@@ -320,6 +341,5 @@ main {
 
   /* art */
   .main--art {
-    background-color: green;
   }
 }
