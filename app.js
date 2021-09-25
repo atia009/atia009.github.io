@@ -189,7 +189,7 @@ function loadProjects()
  // add projects to projectsContainer in main
  const projectsContainer = document.querySelector(".projects");
  projectsContainer.innerHTML = projects.join("");
-
+ main.classList.add("main--projects")
 } // end loadProjects
 
 // art page loader
@@ -214,6 +214,7 @@ function loadArt()
  // add projects to projectsContainer in main
  const artsContainer = document.querySelector(".art");
  artsContainer.innerHTML = arts.join("");
+ main.classList.add("main--art")
 
  // hover functionality
  doArtHover();
