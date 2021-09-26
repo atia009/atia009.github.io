@@ -27,22 +27,22 @@ const artsArray =
  {
   id: 0,
   desc:"Oil, Canvas",
-  src: "images/art-01.jpg",
+  src: "images/art-01.JPG",
  },
  {
   id: 1,
   desc:"Pastel, Paper",
-  src: "images/art-02.jpg",
+  src: "images/art-02.JPG",
  },
  {
   id: 2,
   desc:"Graphite, Paper",
-  src: "images/art-03.jpg",
+  src: "images/art-03.JPG",
  },
  {
   id: 3,
   desc:"Graphite, Paper",
-  src: "images/art-04.jpg",
+  src: "images/art-04.JPG",
  },
  {
   id: 4,
@@ -207,10 +207,10 @@ function loadArt()
  })
  
  // Add title of page and create arts container in main
- main.innerHTML = 
+  main.innerHTML = 
  `<h1 class="main__title">Art</h1>
- <section class="art"></section`;
-
+ <section class="art"></section>`
+ 
  // add projects to projectsContainer in main
  const artsContainer = document.querySelector(".art");
  artsContainer.innerHTML = arts.join("");
