@@ -112,7 +112,7 @@ ul {
 
 .social__icon {
   color: var(--dark-icon);
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 /* main */
@@ -391,6 +391,11 @@ main {
 
   .hidden {
     display: flex;
+  }
+
+  .category,
+  .social {
+    margin-left: 10px;
   }
 
   .category__btn,
