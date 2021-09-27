@@ -26,22 +26,22 @@ const artsArray =
 [
  {
   id: 0,
-  desc:"Oil, Canvas",
+  desc:"Oil on canvas",
   src: "images/art-01.JPG",
  },
  {
   id: 1,
-  desc:"Pastel, Paper",
+  desc:"Pastel on paper",
   src: "images/art-02.JPG",
  },
  {
   id: 2,
-  desc:"Graphite, Paper",
+  desc:"Graphite on paper",
   src: "images/art-03.JPG",
  },
  {
   id: 3,
-  desc:"Graphite, Paper",
+  desc:"Graphite on paper",
   src: "images/art-04.JPG",
  },
  {
@@ -51,7 +51,7 @@ const artsArray =
  },
  {
   id: 5,
-  desc:"Graphite, Paper",
+  desc:"Graphite on paper",
   src: "images/art-06.jpg",
  },
 ]
@@ -207,9 +207,23 @@ function loadArt()
  })
  
  // Add title of page and create arts container in main
-  main.innerHTML = 
+ main.innerHTML = 
  `<h1 class="main__title">Art</h1>
- <section class="art"></section>`
+ <section class="art"></section>
+ <div class="lt-box__bg hide"></div>
+ <div class="lt-box hide">
+ <div class="details">
+ <p class="details__title"><span class="details__curr"></span> of <span class="details__total"></p>
+ <button class="details__btn"><i class="fas fa-times details__icon"></i></button>
+ </div>
+ <div class="img-box">
+ <button class="img-box__btn img-box__prev"><i class="fas fa-angle-left"></i></button>
+ <button class="img-box__btn img-box__next"><i class="fas fa-angle-right"></i></button>
+ <img class="img-box__img">
+ </div>
+ <p class="lt-box__info"></p>
+ </div>`;
+ 
  
  // add projects to projectsContainer in main
  const artsContainer = document.querySelector(".art");
@@ -218,6 +232,9 @@ function loadArt()
 
  // hover functionality
  doArtHover();
+
+ // lightbox functionality
+ doLightBox();
 
 } // end loadArt
 
@@ -245,6 +262,79 @@ function doArtHover()
    });
  }
 } // end doArtHover
+
+// function that display light box when art image is clicked
+function doLightBox()
+{
+  const arts = document.querySelectorAll(".art");
+  const totalArt = document.querySelector(".details__total");
+  const ltBox = document.querySelector(".lt-box");
+  const ltBoxBg = document.querySelector(".lt-box__bg");
+  const exit = document.querySelector(".details__btn");
+  const img = document.querySelector(".img-box__img");
+  const prev = document.querySelector(".img-box__prev");
+  const next = document.querySelector(".img-box__next");
+
+  // calculate and display total art images
+  totalArt.innerHTML = arts.length-1;
+
+   for(let i = 1; i < arts.length; i++)
+   {
+    arts[i].addEventListener("click", function(e) 
+    {
+      ltBoxBg.classList.remove("hide");
+      ltBox.classList.remove("hide");
+      let current = e.currentTarget.dataset.class;
+      console.log(current);
+      changeLtBoxImg(img, artsArray[current].src, current);
+    })
+   }
+
+   // event listener to exit from light box
+   exit.addEventListener("click", function()
+   {
+     ltBoxBg.classList.add("hide");
+     ltBox.classList.add("hide");
+   })
+
+   // event listener for previous image
+   prev.addEventListener("click", function()
+   {
+      let current = img.getAttribute("data-class");
+      if (current > 0)
+      {
+       current--;
+       changeLtBoxImg(img, artsArray[current].src, current);
+      }
+   })
+
+   // event listener for next image
+   next.addEventListener("click", function()
+   {
+      let current = img.getAttribute("data-class");
+
+      // current starts at 0
+      if (current < (arts.length-2))
+      {
+       current++;
+       changeLtBoxImg(img, artsArray[current].src, current);
+      }
+   })
+} // end doLightBox
+
+// function that changes image displayed in lightbox
+function changeLtBoxImg(img, src, current)
+{
+  // update details of image number
+  const currArt = document.querySelector(".details__curr");
+  const details = document.querySelector(".lt-box__info");
+
+  img.setAttribute("src", artsArray[current].src);
+  img.setAttribute("data-class", current);
+  details.innerHTML = artsArray[current].desc;
+  current++;
+  currArt.innerHTML = current;
+} // end changeLtBoxImg
 
 // event listeners
 window.addEventListener("DOMContentLoaded", function() 
