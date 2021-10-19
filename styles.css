@@ -291,6 +291,7 @@ main {
 }
 
 .img-box__img {
+  max-width: 625px;
   width: 70%;
 }
 
@@ -301,7 +302,6 @@ main {
 }
 
 /* toggles */
-
 .active {
   color: var(--dark-grey);
 }
