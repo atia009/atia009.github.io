@@ -2,9 +2,9 @@
 const projectsArray = 
 [
  {
-  title: "Project 1",
+  title: "Disflex",
   src: "images/project-01.png",
-  link: "https://github.com/atia009",
+  link: "projects/disflex/index.html",
  },
  {
   title: "Project 2",
