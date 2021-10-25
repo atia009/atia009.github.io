@@ -1,0 +1,90 @@
+/* variables */
+:root {
+  --dark-grey: #495057;
+  --med-grey: #adb5bd;
+  --light-grey: #dee2e6;
+  --dark-icon: #282626;
+  --light-icon: #f0f4f8;
+}
+
+/* fonts */
+@font-face {
+  font-family: "PT Sans Regular";
+  src: url(../../fonts/PTSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: "PT Sans Bold";
+  src: url(../../fonts/PTSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Playfair Display Regular";
+  src: url(../../fonts/PlayfairDisplay-Regular.ttf);
+}
+@font-face {
+  font-family: "Playfair Display Semi-bold";
+  src: url(../../fonts/PlayfairDisplay-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Playfair Display Bold";
+  src: url(../../fonts/PlayfairDisplay-Bold.ttf);
+}
+
+/* global styles */
+html {
+  box-sizing: border-box;
+  font-family: "Playfair Display Regular";
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.1rem;
+  margin: 0 auto;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+/* header */
+.header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+}
+
+.header__title {
+  font-family: "PT Sans Bold";
+  font-size: 4rem;
+  margin: 10px 0px;
+  text-transform: uppercase;
+}
+
+.header__description {
+  font-size: 0.85rem;
+}
+
+/* nav */
+.nav {
+  background-color: #fff;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.nav__icon {
+  color: #000;
+  font-size: 2rem;
+  padding: 5px 20px;
+}
+
+.nav__icon:nth-of-type(1) {
+  border-right: 1px solid var(--med-grey);
+}
