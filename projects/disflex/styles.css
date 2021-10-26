@@ -75,7 +75,7 @@ ul {
 /* nav */
 .nav {
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 3 px;
   display: inline-block;
 }
 
@@ -87,4 +87,19 @@ ul {
 
 .nav__icon:nth-of-type(1) {
   border-right: 1px solid var(--med-grey);
+}
+
+/* simulator */
+.simulator {
+  display: flex;
+}
+
+.simulator__div {
+  background-color: var(--med-grey);
+  color: #fff;
+  margin-bottom: 1px;
+  margin-right: 1px;
+  padding-top: 10px;
+  text-align: center;
+  width: 70px;
 }
