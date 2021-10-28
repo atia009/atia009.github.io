@@ -6,6 +6,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="../../font-awesome/css/all.min.css">
  <link rel="stylesheet" href="styles.css">
+ <script defer src="app.js"></script>
  <title>Disflex</title>
 </head>
 <body>
@@ -18,21 +19,24 @@
   </nav>
  </header>
  <main class="main">
-   <div class="simulator"></div>
-   <aside class="css"></aside>
+   <div class="simulator">
+   </div>
+   <aside class="code">
+   </aside>
    <section class="user-interface">
-    <ul class="controls-list">
-     <ul class="c-properties"></ul>
-     <ul class="c-properties"></ul>
-     <ul class="c-properties"></ul>
-     <ul class="c-properties"></ul>
-     <ul class="c-properties"></ul>
-     <ul class="i-options">
-      <li class="i-option">add item</li>
-      <li class="i-option">remove item</li>
-      <li class="i-option">randomize height</li>
-      <li class="i-option">equalize height</li>
-     </ul>
+    <ul class="controls">
+      <ul class="i-options control-list">
+        <li class="i-options__title">items</li>
+        <li class="i-options__value">add item</li>
+        <li class="i-options__value">remove item</li>
+        <li class="i-options__value">randomize height</li>
+        <li class="i-options__value">equalize height</li>
+      </ul>
+     <ul class="c-properties control-list"></ul>
+     <ul class="c-properties control-list"></ul>
+     <ul class="c-properties control-list"></ul>
+     <ul class="c-properties control-list"></ul>
+     <ul class="c-properties control-list"></ul>
     </ul>
    </section>
  </main>
