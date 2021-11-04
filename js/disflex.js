@@ -208,11 +208,15 @@ const container =
 
 // global variables
 const code = document.querySelector(".code");
-const cProperties = document.querySelectorAll(".c-properties");
+const simulator = document.querySelector(".simulator");
+let cProperties = document.querySelectorAll(".c-properties");
+const SIMULATOR__COUNT = 6;
+
 
 // functions
-function loadData()
+function loadData() 
 {
+ loadSimulatorDivs(simulator, SIMULATOR__COUNT);
  loadCodeHTML();
  loadUiHTML();
 }
@@ -233,13 +237,13 @@ function loadCodeHTML()
 
 function loadUiHTML()
 {
- for (let i = 1; i < cProperties.length; i++)
+ for (let i = 1; i <= cProperties.length; i++)
  {
-  generateContent(cProperties[i], i);
+  generateProperties(cProperties[i-1], i);
  }
 }
 
-function generateContent(property, index)
+function generateProperties(property, index)
 {
  let values = container[index].map(function(value)
  {
@@ -248,6 +252,26 @@ function generateContent(property, index)
  property.innerHTML = values.join("");
 }
 
+function getRandNum(maxNumber)
+{ 
+  return Math.ceil(Math.random()*maxNumber);
+}
+
+function loadSimulatorDivs(element, divCount, height = 0)
+{   
+  for (let i = 1; i <= divCount; i++)
+  {
+    let heightPercentage = 10;
+    let randomNumber = getRandNum(4)+1;
+    console.log(randomNumber);
+    if (height != 0)
+    {
+      randomNumber = height;
+    } 
+    let randomHeightPercentage = (randomNumber*heightPercentage);
+    element.innerHTML = `${element.innerHTML}<div class="simulator__div simulator__div--${i}" style="height:${randomHeightPercentage}%;">${i}</div>`;
+  }
+}
 
 // event listeners
 window.addEventListener("DOMContentLoaded", function()
