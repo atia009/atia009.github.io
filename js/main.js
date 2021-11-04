@@ -6,21 +6,6 @@ const projectsArray =
   src: "images/project-01.png",
   link: "../projects/disflex.html",
  },
- {
-  title: "Project 2",
-  src: "images/project-01.png",
-  link: "https://github.com/atia009",
- },
- {
-  title: "Project 3",
-  src: "images/project-01.png",
-  link: "https://github.com/atia009",
- },
- {
-  title: "Project 4",
-  src: "images/project-01.png",
-  link: "https://github.com/atia009",
- },
 ]
 const artsArray =
 [
