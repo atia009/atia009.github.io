@@ -92,6 +92,7 @@ ul {
 /* simulator */
 .simulator {
   display: flex;
+  height: 400px;
 }
 
 .simulator__div {
@@ -107,9 +108,23 @@ ul {
 /* user-interface */
 .controls {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .c-properties__title,
 .i-options__title {
   font-weight: 600;
+}
+
+.control-list {
+  font-family: "PT Sans Regular";
+  font-size: 1rem;
+  list-style: none;
+  padding: 10px 5px;
+  width: 33%;
+}
+
+.c-properties__value,
+.i-options__value {
+  color: var(--med-grey);
 }
