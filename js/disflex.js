@@ -4,20 +4,24 @@ const container =
  // items
  [
   {
-   class: "i-option__title",
-   title: "add item",
+   class: "i-options__title",
+   title: "items",
   },
   {
-   class: "i-option__value",
-   title: "remove item",
+   class: "i-options__value",
+   title: "add",
   },
   {
-   class: "i-option__value",
-   title: "randomize height",
+   class: "i-options__value",
+   title: "remove",
   },
   {
-   class: "i-option__value",
-   title: "equalize height",
+   class: "i-options__value",
+   title: "randomize",
+  },
+  {
+   class: "i-options__value",
+   title: "equalize",
   },
  ],
  // flex-direction array
@@ -209,11 +213,31 @@ const container =
 // global variables
 const code = document.querySelector(".code");
 const simulator = document.querySelector(".simulator");
-let cProperties = document.querySelectorAll(".c-properties");
+const cProperties = document.querySelectorAll(".c-properties");
+const iOptions = document.querySelector(".i-options");
 const SIMULATOR__COUNT = 6;
-
+// const properties = 
+// const values = filterByProperty(container, "class", "c-properties__value");
+// const items = filterByProperty(container, "class", "i-options__value")
 
 // functions
+function filterByProperty(array, property, value)
+{
+  let filteredArray = [];
+  for (let i = 0; i < array.length; i++)
+  {
+    let tempArray = array[i];
+    tempArray.forEach(function(object)
+    {
+     if (object[property] == value)
+     {
+       filteredArray.push(object);
+     }
+    })
+  }
+  return filteredArray;
+}
+
 function loadData() 
 {
  loadSimulatorDivs(simulator, SIMULATOR__COUNT);
@@ -237,19 +261,38 @@ function loadCodeHTML()
 
 function loadUiHTML()
 {
- for (let i = 1; i <= cProperties.length; i++)
+  loadUiProperties();
+  loadUiOptions();
+}
+
+// not working, need to check something with cProperties and values
+function loadUiProperties()
+{
+ for (let titleIndex = 0; titleIndex < cProperties.length; titleIndex++)
  {
-  generateProperties(cProperties[i-1], i);
+  generateUiList(cProperties[titleIndex], titleIndex+1);
+  let properties = cProperties[titleIndex].children;
+  for (let valueIndex = 1; valueIndex < properties.length; valueIndex++)
+  {
+    loadPropertyEventListener(properties[valueIndex], "mouseenter");
+    loadPropertyEventListener(properties[valueIndex], "mouseleave");
+    loadPropertyEventListener(properties[valueIndex], "click");
+  }
  }
 }
 
-function generateProperties(property, index)
+function loadUiOptions()
+{
+  generateUiList(iOptions, 0);
+}
+
+function generateUiList(list, index)
 {
  let values = container[index].map(function(value)
  {
   return `<li class="${value.class}">${value.title}</li>`
  })
- property.innerHTML = values.join("");
+ list.innerHTML = values.join("");
 }
 
 function getRandNum(maxNumber)
@@ -263,7 +306,6 @@ function loadSimulatorDivs(element, divCount, height = 0)
   {
     let heightPercentage = 10;
     let randomNumber = getRandNum(4)+1;
-    console.log(randomNumber);
     if (height != 0)
     {
       randomNumber = height;
@@ -273,6 +315,68 @@ function loadSimulatorDivs(element, divCount, height = 0)
   }
 }
 
+function loadPropertyEventListener(property, event)
+{
+  property.addEventListener(event, function(e)
+  {
+    postCode(e.currentTarget, event);
+  })
+}
+
+function postInitialCode()
+{
+  document.querySelector(".code__element").innerHTML = ".container {";
+  document.querySelector(".code__display").innerHTML = "display: flex;";
+  document.querySelector(".code__close").innerHTML = "}";
+}
+
+
+function postCode(element, eventName)
+{
+  // let properties = cProperties[i].children;
+  let property = document.querySelector(".code")
+  postInitialCode();
+  switch(eventName)
+  {
+    case "mouseenter":
+      getPropertyTitle(element);
+      break;
+    case "mouseleave":
+      console.log("left");
+      break;
+    case "click":
+      console.log("clicked");
+      break;
+  }
+}
+
+// function loadPropertyEnter()
+// {
+
+// }
+
+// get indexes 
+function getPropertyIndex(element)
+{
+  console.log(element.innerHTML);
+}
+
+function getTitleIndex()
+{
+
+}
+
+// function loadPropertyExit()
+// {
+// }
+
+
+// function loadPropertyClick()
+// {
+
+// }
+
+// function loadItemEventListener(item, event, eventTarget)
 // event listeners
 window.addEventListener("DOMContentLoaded", function()
 {
