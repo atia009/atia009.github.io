@@ -216,9 +216,9 @@ const simulator = document.querySelector(".simulator");
 const cProperties = document.querySelectorAll(".c-properties");
 const iOptions = document.querySelector(".i-options");
 const SIMULATOR__COUNT = 6;
-// const properties = 
-// const values = filterByProperty(container, "class", "c-properties__value");
-// const items = filterByProperty(container, "class", "i-options__value")
+const values = filterByProperty(container, "class", "c-properties__value");
+const items = filterByProperty(container, "class", "i-options__value");
+let userClickedValues = ["", "", "", "", ""];
 
 // functions
 function filterByProperty(array, property, value)
@@ -274,9 +274,9 @@ function loadUiProperties()
   let properties = cProperties[titleIndex].children;
   for (let valueIndex = 1; valueIndex < properties.length; valueIndex++)
   {
-    loadPropertyEventListener(properties[valueIndex], "mouseenter");
-    loadPropertyEventListener(properties[valueIndex], "mouseleave");
-    loadPropertyEventListener(properties[valueIndex], "click");
+    loadPropertyEventListener(properties[valueIndex], "mouseenter", titleIndex);
+    loadPropertyEventListener(properties[valueIndex], "mouseleave", titleIndex);
+    loadPropertyEventListener(properties[valueIndex], "click", titleIndex);
   }
  }
 }
@@ -290,7 +290,7 @@ function generateUiList(list, index)
 {
  let values = container[index].map(function(value)
  {
-  return `<li class="${value.class}">${value.title}</li>`
+  return `<li class="${value.class}" data-class="${value.style}"">${value.title}</li>`
  })
  list.innerHTML = values.join("");
 }
@@ -315,11 +315,11 @@ function loadSimulatorDivs(element, divCount, height = 0)
   }
 }
 
-function loadPropertyEventListener(property, event)
+function loadPropertyEventListener(property, event, propertyIndex)
 {
   property.addEventListener(event, function(e)
   {
-    postCode(e.currentTarget, event);
+    postCode(e.currentTarget, event, propertyIndex);
   })
 }
 
@@ -331,21 +331,65 @@ function postInitialCode()
 }
 
 
-function postCode(element, eventName)
+function postCode(element, eventName, propertyIndex)
 {
   // let properties = cProperties[i].children;
-  let property = document.querySelector(".code")
+  // let statement = document.querySelector(`.code__statement--${propertyIndex}`);
+  let property = document.querySelector(`.code__property--${propertyIndex}`);
+  let value = document.querySelector(`.code__value--${propertyIndex}`);
   postInitialCode();
   switch(eventName)
   {
     case "mouseenter":
-      getPropertyTitle(element);
+      property.innerHTML = container[propertyIndex+1][0].code;
+      value.innerHTML = values[getValuesIndex(element)].code;
+      if (userClickedValues[propertyIndex] != values[getValuesIndex(element)].title)
+      {
+        element.classList.add("hover");
+      }
       break;
     case "mouseleave":
-      console.log("left");
+      // statement.innerHTML = `<span class="code__property--${i}"></span><span class="code__value--${i}"></span>`;
+      if (userClickedValues[propertyIndex] === "")
+      {
+        property.innerHTML = "";
+        value.innerHTML = "";
+        element.classList.remove("hover");
+      }
+      else
+      {
+        property.innerHTML = container[propertyIndex+1][0].code;
+        value.innerHTML = `${userClickedValues[propertyIndex]};`;
+        if (userClickedValues[propertyIndex] != values[getValuesIndex(element)].title)
+        {
+          element.classList.remove("hover");
+        }
+      }
       break;
     case "click":
-      console.log("clicked");
+      if (userClickedValues[propertyIndex] != values[getValuesIndex(element)].title)
+      {
+        property.innerHTML = container[propertyIndex+1][0].code;
+        value.innerHTML = values[getValuesIndex(element)].code;
+        userClickedValues[propertyIndex] =  values[getValuesIndex(element)].title;
+        element.classList.remove("hover");
+        let activeElements = document.querySelectorAll(".active");
+        activeElements.forEach(function(active)
+        {
+          if (active.dataset.class === element.dataset.class)
+          {
+            active.classList.remove("active");
+          }
+        })
+        element.classList.add("active");
+      }
+      else 
+      {
+        property.innerHTML = "";
+        value.innerHTML = "";
+        userClickedValues[propertyIndex] = "";
+        element.classList.remove("active");
+      }
       break;
   }
 }
@@ -356,15 +400,27 @@ function postCode(element, eventName)
 // }
 
 // get indexes 
-function getPropertyIndex(element)
+function getValuesIndex(element)
 {
-  console.log(element.innerHTML);
+ for (let propertyIndex = 0; propertyIndex < values.length; propertyIndex++)
+ {
+  if ((element.dataset.class === values[propertyIndex].style) && (element.innerHTML === values[propertyIndex].title))
+  {
+    return(propertyIndex);
+  }
+ }
 }
 
-function getTitleIndex()
-{
-
-}
+// function getItemsIndex(element)
+// {
+//   for (let itemIndex = 0; itemIndex < items.length; itemsIndex++)
+//   {
+//     if (element.innerHTML === items[itemIndex].title)
+//     {
+//       return itemIndex;
+//     }
+//   }
+// }
 
 // function loadPropertyExit()
 // {
