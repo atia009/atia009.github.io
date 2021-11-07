@@ -265,7 +265,6 @@ function loadUiHTML()
   loadUiOptions();
 }
 
-// not working, need to check something with cProperties and values
 function loadUiProperties()
 {
  for (let titleIndex = 0; titleIndex < cProperties.length; titleIndex++)
@@ -333,8 +332,6 @@ function postInitialCode()
 
 function postCode(element, eventName, propertyIndex)
 {
-  // let properties = cProperties[i].children;
-  // let statement = document.querySelector(`.code__statement--${propertyIndex}`);
   let property = document.querySelector(`.code__property--${propertyIndex}`);
   let value = document.querySelector(`.code__value--${propertyIndex}`);
   postInitialCode();
@@ -343,23 +340,25 @@ function postCode(element, eventName, propertyIndex)
     case "mouseenter":
       property.innerHTML = container[propertyIndex+1][0].code;
       value.innerHTML = values[getValuesIndex(element)].code;
+      updateElementStyle(simulator, container[propertyIndex+1][0].style, values[getValuesIndex(element)].title);
       if (userClickedValues[propertyIndex] != values[getValuesIndex(element)].title)
       {
         element.classList.add("hover");
       }
       break;
     case "mouseleave":
-      // statement.innerHTML = `<span class="code__property--${i}"></span><span class="code__value--${i}"></span>`;
       if (userClickedValues[propertyIndex] === "")
       {
         property.innerHTML = "";
         value.innerHTML = "";
+        updateElementStyle(simulator, container[propertyIndex+1][0].style, "initial");
         element.classList.remove("hover");
       }
       else
       {
         property.innerHTML = container[propertyIndex+1][0].code;
         value.innerHTML = `${userClickedValues[propertyIndex]};`;
+        updateElementStyle(simulator, container[propertyIndex+1][0].style, userClickedValues[getValuesIndex(element)]);
         if (userClickedValues[propertyIndex] != values[getValuesIndex(element)].title)
         {
           element.classList.remove("hover");
@@ -372,6 +371,7 @@ function postCode(element, eventName, propertyIndex)
         property.innerHTML = container[propertyIndex+1][0].code;
         value.innerHTML = values[getValuesIndex(element)].code;
         userClickedValues[propertyIndex] =  values[getValuesIndex(element)].title;
+        updateElementStyle(simulator, container[propertyIndex+1][0].style, userClickedValues[getValuesIndex(element)]);
         element.classList.remove("hover");
         let activeElements = document.querySelectorAll(".active");
         activeElements.forEach(function(active)
@@ -388,6 +388,7 @@ function postCode(element, eventName, propertyIndex)
         property.innerHTML = "";
         value.innerHTML = "";
         userClickedValues[propertyIndex] = "";
+        updateElementStyle(simulator, container[propertyIndex+1][0].style, "initial");
         element.classList.remove("active");
       }
       break;
@@ -409,6 +410,11 @@ function getValuesIndex(element)
     return(propertyIndex);
   }
  }
+}
+
+function updateElementStyle(element, property, value)
+{
+  element.style[property] = value;
 }
 
 // function getItemsIndex(element)
