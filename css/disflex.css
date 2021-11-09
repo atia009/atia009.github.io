@@ -93,7 +93,7 @@ ul {
 .simulator {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
-  height: 400px;
+  height: 250px;
 }
 
 .simulator__div {
@@ -108,13 +108,27 @@ ul {
 
 /* code */
 .code {
-  height: 200px;
+  padding: 7.5px 0px 7.5px 10px;
+}
+
+.code__display,
+.code__element,
+.code__statement,
+.code__close {
+  font-family: "PT Sans Regular";
+  font-size: 0.85rem;
+  margin: 2.5px 0px;
+}
+
+.code__container {
+  margin-left: 20px;
 }
 
 /* user-interface */
 .controls {
   display: flex;
   flex-wrap: wrap;
+  margin: 0px;
 }
 
 .c-properties__title,
@@ -124,7 +138,7 @@ ul {
 
 .control-list {
   font-family: "PT Sans Regular";
-  font-size: 1rem;
+  font-size: 0.85rem;
   list-style: none;
   padding: 10px 5px;
   width: 33%;
