@@ -215,7 +215,8 @@ const code = document.querySelector(".code");
 const simulator = document.querySelector(".simulator");
 const cProperties = document.querySelectorAll(".c-properties");
 const iOptions = document.querySelector(".i-options");
-const SIMULATOR__COUNT = 6;
+const SIMULATOR__COUNT = 5;
+const SIMULATOR__HEIGHT = 2;
 const values = filterByProperty(container, "class", "c-properties__value");
 const items = filterByProperty(container, "class", "i-options__value");
 let userClickedValues = ["", "", "", "", ""];
@@ -250,11 +251,11 @@ function loadCodeHTML()
  code.innerHTML = `<p class="code__element"></p>
     <div class="code__container">
       <p class="code__display"></p>
-      <p class="code__statement--0"><span class="code__property--0"></span><span class="code__value--0"></span></p>
-      <p class="code__statement--1"><span class="code__property--1"></span><span class="code__value--1"></span></p>
-      <p class="code__statement--2"><span class="code__property--2"></span><span class="code__value--2"></span></p>
-      <p class="code__statement--3"><span class="code__property--3"></span><span class="code__value--3"></span></p>
-      <p class="code__statement--4"><span class="code__property--4"></span><span class="code__value--4"></span></p>
+      <p class="code__statement--0 code__statement"><span class="code__property--0"></span><span class="code__value--0"></span></p>
+      <p class="code__statement--1 code__statement"><span class="code__property--1"></span><span class="code__value--1"></span></p>
+      <p class="code__statement--2 code__statement"><span class="code__property--2"></span><span class="code__value--2"></span></p>
+      <p class="code__statement--3 code__statement"><span class="code__property--3"></span><span class="code__value--3"></span></p>
+      <p class="code__statement--4 code__statement"><span class="code__property--4"></span><span class="code__value--4"></span></p>
     </div>
     <p class="code__close"></p>`
 } 
@@ -283,6 +284,13 @@ function loadUiProperties()
 function loadUiOptions()
 {
   generateUiList(iOptions, 0);
+  let options = iOptions.children;
+  for (let optionIndex = 1; optionIndex < options.length; optionIndex++)
+  {
+    loadItemEventListener(options[optionIndex], "mouseenter", optionIndex);
+    loadItemEventListener(options[optionIndex], "mouseleave", optionIndex);
+    loadItemEventListener(options[optionIndex], "click", optionIndex);
+  }
 }
 
 function generateUiList(list, index)
@@ -322,11 +330,36 @@ function loadPropertyEventListener(property, event, propertyIndex)
   })
 }
 
+function loadItemEventListener(option, event, optionIndex)
+{
+  option.addEventListener(event, function(e)
+  {
+    loadItemEventController(e.currentTarget, event, optionIndex);
+  })
+}
+
+function loadItemEventController(option, eventName, optionIndex)
+{
+  switch(eventName)
+  {
+    case "mouseenter":
+      addClass(option, "hover");
+      break;
+    case "mouseleave":
+      removeClass(option, "hover");
+      break;
+    case "click":
+      updateItem(option.innerHTML);
+      break;
+  }
+}
+
 function postInitialCode()
 {
   document.querySelector(".code__element").innerHTML = ".container {";
   document.querySelector(".code__display").innerHTML = "display: flex;";
   document.querySelector(".code__close").innerHTML = "}";
+  code.style.borderBottom = "1px solid rgba(0, 0, 0, 0.1)";
 }
 
 
@@ -400,7 +433,6 @@ function postCode(element, eventName, propertyIndex)
 
 // }
 
-// get indexes 
 function getValuesIndex(element)
 {
  for (let propertyIndex = 0; propertyIndex < values.length; propertyIndex++)
@@ -412,9 +444,45 @@ function getValuesIndex(element)
  }
 }
 
+function updateItem(option)
+{
+  let divs = document.querySelectorAll(`.simulator__div`);
+  let numberOfDivs = divs.length;
+  let heightPercentage = 10;
+  let randomHeightPercentage = ((getRandNum(4)+1)*heightPercentage);
+  let divToDelete = document.querySelector(`.simulator__div--${numberOfDivs}`);
+  switch(option)
+  {
+    case "add":
+      simulator.insertAdjacentHTML(`beforeend`, `<div class="simulator__div simulator__div--${numberOfDivs+1}" style="height:${randomHeightPercentage}%;">${numberOfDivs+1}</div>`);
+      break;
+    case "remove":
+      divToDelete.remove();
+      break;
+    case "randomize":
+      simulator.innerHTML = "";
+      loadSimulatorDivs(simulator, SIMULATOR__COUNT);
+      break;
+    case "equalize":
+      simulator.innerHTML = "";
+      loadSimulatorDivs(simulator, SIMULATOR__COUNT, SIMULATOR__HEIGHT);
+      break;
+  }
+}
+
 function updateElementStyle(element, property, value)
 {
   element.style[property] = value;
+}
+
+function addClass(element, className)
+{
+  element.classList.add(className);
+}
+
+function removeClass(element, className)
+{
+  element.classList.remove(className);
 }
 
 // function getItemsIndex(element)
@@ -437,8 +505,6 @@ function updateElementStyle(element, property, value)
 // {
 
 // }
-
-// function loadItemEventListener(item, event, eventTarget)
 // event listeners
 window.addEventListener("DOMContentLoaded", function()
 {
