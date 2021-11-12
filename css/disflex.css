@@ -158,3 +158,28 @@ ul {
 .hover {
   background-color: var(--light-grey);
 }
+
+/* media queries */
+@media (min-width: 800px) {
+  .main {
+    display: grid;
+    grid-template-areas:
+      "sim sim sim code"
+      "sim sim sim code"
+      "sim sim sim code"
+      "ui  ui  ui  ui"
+      "ui  ui  ui  ui";
+  }
+
+  .simulator {
+    grid-area: sim;
+  }
+
+  .code {
+    grid-area: code;
+  }
+
+  .user-interface {
+    grid-area: ui;
+  }
+}
