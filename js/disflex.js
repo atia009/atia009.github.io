@@ -248,16 +248,16 @@ function loadData()
 
 function loadCodeHTML()
 {
- code.innerHTML = `<p class="code__element"></p>
+ code.innerHTML = `<p class="code__element">.container {</p>
     <div class="code__container">
-      <p class="code__display"></p>
+      <p class="code__display">display: flex;</p>
       <p class="code__statement--0 code__statement"><span class="code__property--0"></span><span class="code__value--0"></span></p>
       <p class="code__statement--1 code__statement"><span class="code__property--1"></span><span class="code__value--1"></span></p>
       <p class="code__statement--2 code__statement"><span class="code__property--2"></span><span class="code__value--2"></span></p>
       <p class="code__statement--3 code__statement"><span class="code__property--3"></span><span class="code__value--3"></span></p>
       <p class="code__statement--4 code__statement"><span class="code__property--4"></span><span class="code__value--4"></span></p>
     </div>
-    <p class="code__close"></p>`
+    <p class="code__close">}</p>`
 } 
 
 function loadUiHTML()
@@ -354,20 +354,27 @@ function loadItemEventController(option, eventName, optionIndex)
   }
 }
 
-function postInitialCode()
-{
-  document.querySelector(".code__element").innerHTML = ".container {";
-  document.querySelector(".code__display").innerHTML = "display: flex;";
-  document.querySelector(".code__close").innerHTML = "}";
-  code.style.borderBottom = "1px solid rgba(0, 0, 0, 0.1)";
-}
+// function postInitialCode()
+// {
+//   document.querySelector(".code__element").innerHTML = ".container {";
+//   document.querySelector(".code__display").innerHTML = "display: flex;";
+//   document.querySelector(".code__close").innerHTML = "}";
+//   if (window.screen.availWidth >= 800)
+//   { 
+//    code.style.borderLeft = "1px solid rgba(0, 0, 0, 0.1)"; 
+//   }
+//   else 
+//   {
+//    code.style.borderBottom = "1px solid rgba(0, 0, 0, 0.1)";
+//   }
+// }
 
 
 function postCode(element, eventName, propertyIndex)
 {
   let property = document.querySelector(`.code__property--${propertyIndex}`);
   let value = document.querySelector(`.code__value--${propertyIndex}`);
-  postInitialCode();
+  // postInitialCode();
   switch(eventName)
   {
     case "mouseenter":
