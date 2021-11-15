@@ -48,23 +48,29 @@ html {
 body {
   font-size: 1.1rem;
   margin: 0 auto;
+  min-width: 270px;
 }
 
 ul {
   padding-left: 0px;
 }
 
+.main {
+  /* max-width: 960px; */
+  max-width: 1226px;
+}
+
 /* header */
 .header {
   background-color: #000;
   color: #fff;
-  padding: 10px;
+  padding: 20px 10px 40px 10px;
 }
 
 .header__title {
   font-family: "PT Sans Bold";
   font-size: 4rem;
-  margin: 10px 0px;
+  margin: 0px;
   text-transform: uppercase;
 }
 
@@ -75,25 +81,38 @@ ul {
 /* nav */
 .nav {
   background-color: #fff;
-  border-radius: 3 px;
+  border-radius: 3px;
   display: inline-block;
 }
 
 .nav__icon {
-  color: #000;
-  font-size: 2rem;
-  padding: 5px 20px;
+  color: var(--med-grey);
+  font-size: 1.75rem;
+  padding: 5px 35px;
+  position: relative;
+}
+
+.nav__icon:hover {
+  color: var(--dark-grey);
 }
 
 .nav__icon:nth-of-type(1) {
   border-right: 1px solid var(--med-grey);
 }
 
+.nav__external {
+  position: absolute;
+  right: 5px;
+  color: var(--light-grey);
+}
+
 /* simulator */
 .simulator {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
-  height: 250px;
+  height: 300px;
+  /* max-width: 653.367px; */
+  max-width: 960px;
 }
 
 .simulator__div {
@@ -109,6 +128,8 @@ ul {
 /* code */
 .code {
   padding: 7.5px 0px 7.5px 10px;
+  height: 175px;
+  text-align: left;
 }
 
 .code__display,
@@ -125,6 +146,12 @@ ul {
 }
 
 /* user-interface */
+.user-interface {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  /* max-width: 500px; */
+  max-width: 960px;
+}
+
 .controls {
   display: flex;
   flex-wrap: wrap;
@@ -140,6 +167,7 @@ ul {
   font-family: "PT Sans Regular";
   font-size: 0.85rem;
   list-style: none;
+  max-width: 110px;
   padding: 10px 5px;
   width: 33%;
 }
@@ -161,25 +189,37 @@ ul {
 
 /* media queries */
 @media (min-width: 800px) {
+  .header {
+    /* padding: 165px; */
+    padding: 58px 0px 78px 165px;
+  }
+
   .main {
     display: grid;
     grid-template-areas:
-      "sim sim sim code"
-      "sim sim sim code"
-      "sim sim sim code"
-      "ui  ui  ui  ui"
-      "ui  ui  ui  ui";
+      "sim sim sim code code"
+      "sim sim sim code code"
+      "sim sim sim code code"
+      "ui  ui  ui  code code"
+      "ui  ui  ui  code code";
+    margin-left: 165px;
   }
 
   .simulator {
+    /* border-right: 1px solid rgba(0, 0, 0, 0.1); */
     grid-area: sim;
   }
 
   .code {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
     grid-area: code;
+    height: 100%;
+    width: 266px;
   }
 
   .user-interface {
+    /* border-right: 1px solid rgba(0, 0, 0, 0.1); */
+    border-top: none;
     grid-area: ui;
   }
 }
