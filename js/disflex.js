@@ -354,27 +354,10 @@ function loadItemEventController(option, eventName, optionIndex)
   }
 }
 
-// function postInitialCode()
-// {
-//   document.querySelector(".code__element").innerHTML = ".container {";
-//   document.querySelector(".code__display").innerHTML = "display: flex;";
-//   document.querySelector(".code__close").innerHTML = "}";
-//   if (window.screen.availWidth >= 800)
-//   { 
-//    code.style.borderLeft = "1px solid rgba(0, 0, 0, 0.1)"; 
-//   }
-//   else 
-//   {
-//    code.style.borderBottom = "1px solid rgba(0, 0, 0, 0.1)";
-//   }
-// }
-
-
 function postCode(element, eventName, propertyIndex)
 {
   let property = document.querySelector(`.code__property--${propertyIndex}`);
   let value = document.querySelector(`.code__value--${propertyIndex}`);
-  // postInitialCode();
   switch(eventName)
   {
     case "mouseenter":
@@ -435,11 +418,6 @@ function postCode(element, eventName, propertyIndex)
   }
 }
 
-// function loadPropertyEnter()
-// {
-
-// }
-
 function getValuesIndex(element)
 {
  for (let propertyIndex = 0; propertyIndex < values.length; propertyIndex++)
@@ -468,11 +446,11 @@ function updateItem(option)
       break;
     case "randomize":
       simulator.innerHTML = "";
-      loadSimulatorDivs(simulator, SIMULATOR__COUNT);
+      loadSimulatorDivs(simulator, numberOfDivs);
       break;
     case "equalize":
       simulator.innerHTML = "";
-      loadSimulatorDivs(simulator, SIMULATOR__COUNT, SIMULATOR__HEIGHT);
+      loadSimulatorDivs(simulator, numberOfDivs, SIMULATOR__HEIGHT);
       break;
   }
 }
@@ -492,26 +470,6 @@ function removeClass(element, className)
   element.classList.remove(className);
 }
 
-// function getItemsIndex(element)
-// {
-//   for (let itemIndex = 0; itemIndex < items.length; itemsIndex++)
-//   {
-//     if (element.innerHTML === items[itemIndex].title)
-//     {
-//       return itemIndex;
-//     }
-//   }
-// }
-
-// function loadPropertyExit()
-// {
-// }
-
-
-// function loadPropertyClick()
-// {
-
-// }
 // event listeners
 window.addEventListener("DOMContentLoaded", function()
 {
