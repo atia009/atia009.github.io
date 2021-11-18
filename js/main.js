@@ -3,9 +3,16 @@ const projectsArray =
 [
  {
   title: "Disflex",
-  src: "images/project-01.png",
+  src: "images/disflex.png",
   link: "../projects/disflex.html",
+  target: "",
  },
+ {
+  title: "Essential Aesthetics",
+  src: "images/essential-aesthetics.png",
+  link: "../projects/essential-aesthetics/index.html",
+  target: `target="_blank"`,
+ }
 ]
 const artsArray =
 [
@@ -145,9 +152,7 @@ function loadHome()
   <section class="home">
     <img src="images/profile.jpg" alt="profile picture" class="home__img">
     <div class="info">
-      <p class="info__education">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-      <p class="info__education">Quos, tempora debitis laudantium commodi minus pariatur sint eius libero accusantium tenetur error</p>
-      <p class="info__about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, tempora debitis laudantium commodi minus pariatur sint eius libero accusantium tenetur error repellat tempore ipsa atque incidunt provident aspernatur excepturi illo vitae? Accusamus qui vero adipisci iste velit et earum temporibus exercitationem deleniti at ullam error quas dolore ipsum soluta excepturi odio architecto maiores officia debitis laboriosam laborum, provident necessitatibus. Error!</p>
+      <p class="info__about">Web developer committed to delivering exceptional digital experiences focused on simplicity and purpose.</p>
     </div>
   </section>`;
  main.innerHTML = content;
@@ -161,8 +166,8 @@ function loadProjects()
  const projects = projectsArray.map(function(project)
  {
   return `<div class="project">
-   <a href="${project.link}" class="project__link"><img src="${project.src}" alt="thumbnail of ${project.title}" class="project__img"></a>
-   <a href="${project.link}" class="project__link"><h2 class="project__title">${project.title}</h2></a>
+   <a ${project.target} href="${project.link}" class="project__link"><img src="${project.src}" alt="thumbnail of ${project.title}" class="project__img"></a>
+   <a ${project.target} href="${project.link}" class="project__link"><h2 class="project__title">${project.title}</h2></a>
   </div>`
  })
  
