@@ -1,27 +1,19 @@
-// arrays
-
-// variables
-const nav = document.querySelector(".nav");
-const logo = document.querySelector(".logo");
-const pageList = document.querySelector(".pages");
-const pages = document.querySelectorAll(".page");
-
 // functions
 function loadHeader()
 {
  document.querySelector(".header").innerHTML = ` <div class="logo">
-   <h1 class="logo__title">Essential Aesthetics</h1>
-   <p class="logo__subtitle">By Essential Care Medical</p>
+   <a href="index.html" class="logo__link"><h1 class="logo__title">Essential Aesthetics</h1></a>
+   <a href="index.html" class="logo__link"><p class="logo__subtitle">By Essential Care Medical</p></a>
   </div>
   <nav class="nav">
    <button class="nav__btn"><i class="fas fa-bars nav__enter"></i></button>
    <ul class="pages hidden">
-    <li class="page"><a href="#" class="page__link active">Home</a></li>
-    <li class="page"><a href="#" class="page__link">About</a></li>
-    <li class="page"><a href="#" class="page__link">Services</a></li>
-    <li class="page"><a href="#" class="page__link">Products</a></li>
-    <li class="page"><a href="#" class="page__link">Specials</a></li>
-    <li class="page"><a href="#" class="page__link">Patient Resources</a></li>
+    <li class="page"><a href="index.html" class="page__link">Home</a></li>
+    <li class="page"><a href="about.html" class="page__link">About</a></li>
+    <li class="page"><a href="services.html" class="page__link">Services</a></li>
+    <li class="page"><a href="products.html" class="page__link">Products</a></li>
+    <li class="page"><a href="specials.html" class="page__link">Specials</a></li>
+    <li class="page"><a href="patient-resources.html" class="page__link">Patient Resources</a></li>
    </ul>
   </nav>`
 }
@@ -70,58 +62,37 @@ function toggleNav()
 {
  const navBtn = document.querySelector(".nav__btn");
  const nav = document.querySelector(".nav");
+ const logo = document.querySelector(".logo");
+ const pageList = document.querySelector(".pages");
  navBtn.addEventListener("click", function() 
  {
   if (nav.classList.contains("toggleNav")) 
   {
    navBtn.innerHTML = `<i class="fas fa-bars nav__enter"></i>`;
-   hideNav();
+   hideNav(nav, logo, pageList);
   }
   else 
   {
    navBtn.innerHTML = `<i class="fas fa-times nav__exit" style="color: var(--lt)"></i>`;
-   showNav();
+   showNav(nav, logo, pageList);
   }
  })
 }
 
-function hideNav() 
+function hideNav(nav, logo, pageList) 
 {
- const nav = document.querySelector(".nav");
- const logo = document.querySelector(".logo");
- const pageList = document.querySelector(".pages");
  nav.classList.remove("toggleNav");
  nav.classList.remove("nav-invert");
  pageList.classList.add("hidden");
  logo.classList.remove("hidden");
 }
 
-function showNav()
+function showNav(nav, logo, pageList)
 {
-  const nav = document.querySelector(".nav");
-  const logo = document.querySelector(".logo");
-  const pageList = document.querySelector(".pages");
   nav.classList.add("toggleNav");
   nav.classList.add("nav-invert");
   pageList.classList.remove("hidden");
   logo.classList.add("hidden");
-}
-
-function activeNav() 
-{
- const pages = document.querySelectorAll(".page");
- pages.forEach(function(page) 
- {
-  page.addEventListener("click", function(e)
-  {
-   pages.forEach(function(page)
-   {
-    page.classList.remove("active");
-   })
-   page.classList.add("active");
-   hideNav();
-  })
- })
 }
 
 // event listeners
@@ -130,5 +101,5 @@ window.addEventListener("DOMContentLoaded", function()
  loadHeader();
  loadFooter();
  toggleNav();
- activeNav();
+
 })
