@@ -10,7 +10,7 @@ const projectsArray =
  {
   title: "Essential Aesthetics",
   src: "images/essential-aesthetics.png",
-  link: "../projects/essential-aesthetics/index.html",
+  link: "../projects/essential-aesthetics/pages/index.html",
   target: `target="_blank"`,
  }
 ]
