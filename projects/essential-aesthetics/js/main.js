@@ -13,7 +13,7 @@ function loadHeader()
     <li class="page"><a href="services.html" class="page__link">Services</a></li>
     <li class="page"><a href="products.html" class="page__link">Products</a></li>
     <li class="page"><a href="specials.html" class="page__link">Specials</a></li>
-    <li class="page"><a href="patient-resources.html" class="page__link">Patient Resources</a></li>
+    <li class="page"><a href="patient.html" class="page__link">Patient Resources</a></li>
    </ul>
   </nav>`
 }
