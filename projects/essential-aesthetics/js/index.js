@@ -32,7 +32,7 @@ showcaseObject =
 {
  title: "Welcome In",
  src: "../images/home-showcase.png",
-}
+};
 
 // variables
 const main = document.querySelector(".main");
