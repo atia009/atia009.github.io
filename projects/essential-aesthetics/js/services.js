@@ -1,12 +1,12 @@
 // objects
-showcaseObject =
+const showcaseObject =
 {
  icon: "fas fa-angle-down",
  src: "../images/services-showcase.jpg",
  title: "Services",
 };
 
-servicesList =
+const servicesList =
 [
  {
   title: "Laser Hair Removal",
@@ -69,7 +69,7 @@ function loadHtml()
 
 function loadShowcase()
 {
-  showcase.innerHTML = `<h1 class="showcase__title">${showcaseObject.title}</h1>
+  showcase.innerHTML = `<h2 class="showcase__title">${showcaseObject.title}</h2>
                        <button class="showcase__btn">
                         <i class="showcase__icon ${showcaseObject.icon}"></i>
                        </button>`
@@ -78,7 +78,7 @@ function loadShowcase()
 
 function loadServices()
 {
- serviceItems = servicesList.map(function(service)
+ let serviceItems = servicesList.map(function(service)
  {
   return `<li class="service">
          <div class="service__inner">
