@@ -1,5 +1,5 @@
 // objects
-missionObject =
+const missionObject =
 {
  title: "Our Mission",
  location: "Established 2020, Garden Grove, CA",
@@ -7,7 +7,7 @@ missionObject =
  statement: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus perferendis vel deserunt? Consequuntur quisquam reiciendis doloremque vero nihil inventore vel necessitatibus, omnis possimus asperiores harum placeat quis. Cum, sequi quas.",
 }
 
-members = [
+const members = [
  {
   education: "M.D.",
   email: "nalanguyen@essentialaesthetics.com",
@@ -54,7 +54,7 @@ function loadHtml()
 function loadMission()
 {
  mission.innerHTML = `<img src="${missionObject.src}" class="mission__img"/>
- <h1 class="mission__title">${missionObject.title}</h1>
+ <h2 class="mission__title">${missionObject.title}</h2>
  <p class="mission__subtitle">${missionObject.location}</p>
  <p class="mission__body">${missionObject.statement}</p>`
 }
