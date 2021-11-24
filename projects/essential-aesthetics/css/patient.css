@@ -1,0 +1,52 @@
+@import url("main.css");
+
+/* resources */
+.resources {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 10px;
+}
+
+.resources__title {
+  color: var(--lt);
+  text-transform: uppercase;
+  margin: 35px 0px;
+}
+
+/* pdfs */
+.pdfs {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf {
+  background-color: var(--lt);
+  border-radius: 10px;
+  box-shadow: 2px 4px 2px -2px gray;
+  margin-bottom: 35px;
+  padding: 7.5px 0px;
+  width: 300px;
+}
+
+.pdf__link {
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+/* faqs */
+.faq {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.faq__inner {
+  display: none;
+}
+
+.faq__icon {
+  margin-left: auto;
+}
