@@ -1,5 +1,5 @@
 // objects
-cards = [
+const cards = [
  {
   title: "Services",
   body: " Lorem ipsum dolor sit amet consectetur adipisicing elit.Reprehenderit, repellendus aperiam quas totam alias velit voluptate est sed ratione architecto.",
@@ -20,7 +20,7 @@ cards = [
  },
 ]
 
-bannerObject = 
+const bannerObject = 
 {
  title: "Now Taking Appointments",
  body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur laboriosam amet labore impedit quis, consequatur numquam id, sapiente laborum officia expedita voluptatum repudiandae enim! Voluptates?", 
@@ -28,7 +28,7 @@ bannerObject =
  btnLink: "services.html",
 };
 
-showcaseObject =
+const showcaseObject =
 {
  title: "Welcome In",
  src: "../images/home-showcase.png",
