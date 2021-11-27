@@ -1,0 +1,43 @@
+@import url("main.css");
+
+/* banner */
+.banner {
+  background-color: var(--primary);
+  padding: 5px 0px;
+  text-align: center;
+}
+
+/* brands */
+.brands {
+  text-align: center;
+}
+
+.brand {
+  position: relative;
+}
+
+.brand__title {
+  text-transform: uppercase;
+}
+
+.brand__link {
+  color: var(--dark);
+}
+
+.brand__img {
+  width: 100%;
+}
+
+.brand__desc {
+  position: absolute;
+  bottom: 25%;
+}
+
+/* toggles */
+.transparent {
+  opacity: 0.2;
+}
+
+.hide {
+  display: none;
+}
