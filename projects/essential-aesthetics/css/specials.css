@@ -1,0 +1,59 @@
+@import url("main.css");
+
+/* banner */
+.banner {
+  background-color: var(--primary);
+  padding: 5px 0px;
+  text-align: center;
+}
+
+.banner__title {
+  color: var(--lt);
+  text-transform: uppercase;
+}
+
+/* specials */
+.special {
+  background: linear-gradient(
+    90deg,
+    rgba(148, 207, 196, 0.33),
+    rgba(156, 184, 186, 1)
+  );
+  border-radius: 15px;
+  color: var(--lt);
+  display: grid;
+  grid-template-columns: 0.5fr repeat(7, 1fr) 0.5fr;
+  grid-template-rows: repeat(5, 50px);
+  grid-template-areas:
+    ". col .   .   .   .   .   sti ."
+    ". col .  ti  ti  ti   .   .   ."
+    ". col .  ti  ti  ti   .   .   ."
+    ". col bdy bdy bdy bdy bdy .   ."
+    ". col bdy bdy bdy bdy bdy .   .";
+  margin: 40px auto;
+  width: 95%;
+}
+
+.special__title {
+  align-self: flex-end;
+  grid-area: ti;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.special__subtitle {
+  align-self: center;
+  grid-area: sti;
+}
+
+.special__body {
+  align-self: center;
+  font-size: 0.8rem;
+  margin-left: 30px;
+  grid-area: bdy;
+}
+
+.special__column {
+  background-color: var(--secondary);
+  grid-area: col;
+}
