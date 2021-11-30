@@ -1,0 +1,10 @@
+@import url("main.css");
+
+/* filters */
+.breadCrumbs {
+  display: flex;
+}
+
+.breadCrumb__link {
+  color: var(--dark);
+}
