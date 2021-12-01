@@ -81,7 +81,7 @@ function updateBrand()
  for (let count = 0; count < brandList.length; count++)
  {
   brandList[count].addEventListener("click", function(brand){
-   storeBrand(brandsObject[count].title);
+   storeBrand(brandsObject[count].title, count);
   })
   brandList[count].addEventListener("mouseenter", function(brand){
    imageList[count].classList.add("transparent");
@@ -94,9 +94,10 @@ function updateBrand()
  }
 }
 
-function storeBrand(brandName)
+function storeBrand(brandName, brandIndex)
 {
  sessionStorage.setItem("brandName", brandName);
+ sessionStorage.setItem("brandIndex", brandIndex);
 }
 
 // function updateBrandDisplay(image, desc)
