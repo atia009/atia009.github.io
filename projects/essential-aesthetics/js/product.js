@@ -89,11 +89,6 @@ const productsList = [
  ],
 ]
 
-// trying to learn how to split block of text into an array for later, make sure to get rid of the .
-// let test = products[0][0].benefits;
-// console.log(test.split("."));
-loadBenefits(productsList[1][0].benefits);
-
 // variables
 const BRAND = sessionStorage.getItem("brandName");
 const BRAND_INDEX = sessionStorage.getItem("brandIndex");
