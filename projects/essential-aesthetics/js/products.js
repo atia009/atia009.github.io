@@ -100,18 +100,6 @@ function storeBrand(brandName, brandIndex)
  sessionStorage.setItem("brandIndex", brandIndex);
 }
 
-// function updateBrandDisplay(image, desc)
-// {
-//   if (image.classList.contains(".transparent"))
-//   {
-//    image.classList.remove("tranparent");
-//   }
-//   else 
-//   {
-//    image.classList.add("transparent");
-//   }
-// }
-
 function updateStyle(element, property, value)
 {
  element.style.property = value; 
