@@ -17,7 +17,7 @@ const productsList = [
    name: "Dual Action Scrub",
    price: 37,
    size: "1.7 oz",
-   src: "../images/brand-01-01.jpg",
+   src: "../images/brand-01-02.jpg",
   },
   {
    benefits: `UVA/UVB sun protection. Calms and protects acne-prone skin. Leaves no residue`,
@@ -46,7 +46,7 @@ const productsList = [
    name: "Purifying Toner",
    price: 30,
    size: "4 fl oz",
-   src: "../images/brand-02-01.jpg",
+   src: "../images/brand-02-02.jpg",
   },
   {
    benefits: `Removes stubborn dirt, oil and makeup. Clarifies and removes traces of impurities. Ideal as body spray for blemishes`,
@@ -75,7 +75,7 @@ const productsList = [
    name: "Dual Action Scrub",
    price: 80,
    size: "4 oz",
-   src: "../images/brand-03-01.jpg",
+   src: "../images/brand-03-02.jpg",
   },
   {
    benefits: `Provides both physical and chemical exfoliation benefits. Reduces surface oil. Ideal for use on face + body`,
