@@ -156,9 +156,15 @@ function loadBenefits(benefitsObject)
  return benefitsItems.join("");
 }
 
-function loadSelectedProduct()
-{
-
+function loadSelectedProduct(productIndex)
+{ 
+  products.innerHTML = `<li class="product">
+        <img src="${productsList[BRAND_INDEX][productIndex].src}" class="product__img"/>
+        <h3 class="product__title">${productsList[BRAND_INDEX][productIndex].brand} ${productsList[BRAND_INDEX][productIndex].name}, ${productsList[BRAND_INDEX][productIndex].size}</h3>
+        <p class="product__price">$${productsList[BRAND_INDEX][productIndex].price}</p>
+        <p class="product__desc hide">${productsList[BRAND_INDEX][productIndex].desc}</p>
+        <ul class="benefits hide">${loadBenefits(productsList[BRAND_INDEX][productIndex].benefits)}</ul>
+      </li> `
 }
 
 function loadProductsFunctionality()
@@ -168,7 +174,7 @@ function loadProductsFunctionality()
  {
   selectedProducts[count].addEventListener("click", function(product)
   {
-   console.log(product);
+   loadSelectedProduct(count);
   })
  }
 }
