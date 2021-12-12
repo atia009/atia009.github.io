@@ -179,6 +179,11 @@ function loadProductsFunctionality()
  }
 }
 
+function saveLastSelectedProduct(productIndex)
+{
+  
+}
+
 // event listener
 window.addEventListener("DOMContentLoaded", function() 
 {
