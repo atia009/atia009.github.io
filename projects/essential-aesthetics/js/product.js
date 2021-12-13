@@ -181,7 +181,8 @@ function loadProductsFunctionality()
 
 function saveLastSelectedProduct(productIndex)
 {
-  
+ sessionStorage.setItem("lastBrandIndex", BRAND_INDEX);
+ sessionStorage.setItem("lastProductIndex", productIndex);
 }
 
 // event listener
