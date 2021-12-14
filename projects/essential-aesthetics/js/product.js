@@ -164,7 +164,12 @@ function loadSelectedProduct(productIndex)
         <p class="product__price">$${productsList[BRAND_INDEX][productIndex].price}</p>
         <p class="product__desc hide">${productsList[BRAND_INDEX][productIndex].desc}</p>
         <ul class="benefits hide">${loadBenefits(productsList[BRAND_INDEX][productIndex].benefits)}</ul>
-      </li> `
+      </li>`
+  // if (typeof(sessionStorage['lastProductIndex'] != 'undefined'))
+  // {
+  //   console.log("hello");
+  //   loadLastSelectedProduct();
+  // }
 }
 
 function loadProductsFunctionality()
@@ -174,9 +179,18 @@ function loadProductsFunctionality()
  {
   selectedProducts[count].addEventListener("click", function(product)
   {
-   loadSelectedProduct(count);
+    console.log(sessionStorage.getItem("lastBrandIndex"));
+    loadSelectedProduct(count);
+    saveLastSelectedProduct(count);
   })
  }
+}
+
+function loadLastSelectedProduct()
+{
+  let brandIndex = sessionStorage.getItem(lastBrandIndex);
+  let productIndex = sessionStorage.getItem(lastProductIndex);
+  console.log(productsList[brandIndex][productIndex]);
 }
 
 function saveLastSelectedProduct(productIndex)
