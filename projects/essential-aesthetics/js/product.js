@@ -179,8 +179,11 @@ function loadProductsFunctionality()
  {
   selectedProducts[count].addEventListener("click", function(product)
   {
-    console.log(sessionStorage.getItem("lastBrandIndex"));
     loadSelectedProduct(count);
+    if (sessionStorage.getItem("lastBrandIndex") != null)
+    {
+      loadLastSelectedProduct();
+    }
     saveLastSelectedProduct(count);
   })
  }
@@ -188,9 +191,17 @@ function loadProductsFunctionality()
 
 function loadLastSelectedProduct()
 {
-  let brandIndex = sessionStorage.getItem(lastBrandIndex);
-  let productIndex = sessionStorage.getItem(lastProductIndex);
-  console.log(productsList[brandIndex][productIndex]);
+  let brandIndex = sessionStorage.getItem("lastBrandIndex");
+  let productIndex = sessionStorage.getItem("lastProductIndex");
+  let product = productsList[brandIndex][productIndex];
+  products.insertAdjacentHTML(`beforeend`, `<li class="recent">
+      <h2 class= "recent__title">Recently Viewed</h2>
+      <div class="product">
+        <img src="${product.src}" class="product__img"/>
+        <h3 class="product__title">${product.brand} ${product.name}, ${product.size}</h3>
+        <p class="product__price">$${product.price}</p>
+      </li>
+    </section>`);
 }
 
 function saveLastSelectedProduct(productIndex)
