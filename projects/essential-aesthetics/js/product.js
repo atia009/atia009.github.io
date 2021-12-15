@@ -121,16 +121,16 @@ function updateTitle()
 function loadHtml()
 {
  loadBreadCrumb();
- loadProducts(BRAND_INDEX);
+ loadProducts();
 } 
 
-function loadBreadCrumb()
+function loadBreadCrumb(brandName = BRAND)
 {
  breadCrumbs.innerHTML = `<li class="breadCrumb"><a href="products.html" class="breadCrumb__link">Products</a></li>
- <li class="breadCrumb"><a href="product.html" class="breadCrumb__link">${BRAND}</a></li>`
+ <li class="breadCrumb"><a href="product.html" class="breadCrumb__link">${brandName}</a></li>`
 }
 
-function loadProducts(brand)
+function loadProducts(brand = BRAND_INDEX)
 {
  let brandItems = productsList[brand].map(function(product)
  {
@@ -156,20 +156,15 @@ function loadBenefits(benefitsObject)
  return benefitsItems.join("");
 }
 
-function loadSelectedProduct(productIndex)
+function loadSelectedProduct(productIndex, brandIndex = BRAND_INDEX)
 { 
   products.innerHTML = `<li class="product">
-        <img src="${productsList[BRAND_INDEX][productIndex].src}" class="product__img"/>
-        <h3 class="product__title">${productsList[BRAND_INDEX][productIndex].brand} ${productsList[BRAND_INDEX][productIndex].name}, ${productsList[BRAND_INDEX][productIndex].size}</h3>
-        <p class="product__price">$${productsList[BRAND_INDEX][productIndex].price}</p>
-        <p class="product__desc hide">${productsList[BRAND_INDEX][productIndex].desc}</p>
-        <ul class="benefits hide">${loadBenefits(productsList[BRAND_INDEX][productIndex].benefits)}</ul>
+        <img src="${productsList[brandIndex][productIndex].src}" class="product__img"/>
+        <h3 class="product__title">${productsList[brandIndex][productIndex].brand} ${productsList[brandIndex][productIndex].name}, ${productsList[brandIndex][productIndex].size}</h3>
+        <p class="product__price">$${productsList[brandIndex][productIndex].price}</p>
+        <p class="product__desc hide">${productsList[brandIndex][productIndex].desc}</p>
+        <ul class="benefits hide">${loadBenefits(productsList[brandIndex][productIndex].benefits)}</ul>
       </li>`
-  // if (typeof(sessionStorage['lastProductIndex'] != 'undefined'))
-  // {
-  //   console.log("hello");
-  //   loadLastSelectedProduct();
-  // }
 }
 
 function loadProductsFunctionality()
@@ -202,12 +197,28 @@ function loadLastSelectedProduct()
         <p class="product__price">$${product.price}</p>
       </li>
     </section>`);
+ let recent = document.querySelector(".recent");
+ recent.addEventListener("click", function()
+ {
+   let brandName = productsList[brandIndex][productIndex].brand;
+   loadBreadCrumb(brandName);
+   storeBrand(brandName, brandIndex);
+   loadSelectedProduct(productIndex, brandIndex);
+   loadLastSelectedProduct();
+   saveLastSelectedProduct(productIndex, brandIndex);
+ })
 }
 
-function saveLastSelectedProduct(productIndex)
+function saveLastSelectedProduct(productIndex, brandIndex = BRAND_INDEX)
 {
- sessionStorage.setItem("lastBrandIndex", BRAND_INDEX);
+ sessionStorage.setItem("lastBrandIndex", brandIndex);
  sessionStorage.setItem("lastProductIndex", productIndex);
+}
+
+function storeBrand(brandName, brandIndex)
+{
+ sessionStorage.setItem("brandName", brandName);
+ sessionStorage.setItem("brandIndex", brandIndex);
 }
 
 // event listener
