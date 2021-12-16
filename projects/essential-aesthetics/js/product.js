@@ -136,10 +136,8 @@ function loadProducts(brand = BRAND_INDEX)
  {
   return `<li class="product">
         <img src="${product.src}" class="product__img"/>
-        <h3 class="product__title">${product.brand} ${product.name}, ${product.size}</h3>
+        <h4 class="product__title">${product.brand} ${product.name}, ${product.size}</h4>
         <p class="product__price">$${product.price}</p>
-        <p class="product__desc hide">${product.desc}</p>
-        <ul class="benefits hide">${loadBenefits(product.benefits)}</ul>
       </li>` 
  })
  products.insertAdjacentHTML(`beforeend`, brandItems.join(""));
@@ -151,7 +149,7 @@ function loadBenefits(benefitsObject)
  let benefitsList = benefitsObject.split(".");
  let benefitsItems = benefitsList.map(function(benefit)
  {
-  return `<li class="benefits__item">${benefit}</li>`
+  return `<li class="benefits-list__item">${benefit}</li>`
  })
  return benefitsItems.join("");
 }
@@ -160,10 +158,17 @@ function loadSelectedProduct(productIndex, brandIndex = BRAND_INDEX)
 { 
   products.innerHTML = `<li class="product">
         <img src="${productsList[brandIndex][productIndex].src}" class="product__img"/>
-        <h3 class="product__title">${productsList[brandIndex][productIndex].brand} ${productsList[brandIndex][productIndex].name}, ${productsList[brandIndex][productIndex].size}</h3>
+        <h3 class="product__brand">${productsList[brandIndex][productIndex].brand}</h3>
+        <h3 class="product__title">${productsList[brandIndex][productIndex].name}, ${productsList[brandIndex][productIndex].size}</h3>
         <p class="product__price">$${productsList[brandIndex][productIndex].price}</p>
-        <p class="product__desc hide">${productsList[brandIndex][productIndex].desc}</p>
-        <ul class="benefits hide">${loadBenefits(productsList[brandIndex][productIndex].benefits)}</ul>
+        <section class="desc">
+          <h4 class="desc__title">Description</h4>
+          <p class="desc__body">${productsList[brandIndex][productIndex].desc}</p>
+        </section>
+        <section class="benefits">
+          <h4 class="benefits__title">Benefits</h4>
+          <ul class="benefits-list">${loadBenefits(productsList[brandIndex][productIndex].benefits)}</ul>
+        </section>
       </li>`
 }
 
@@ -190,10 +195,10 @@ function loadLastSelectedProduct()
   let productIndex = sessionStorage.getItem("lastProductIndex");
   let product = productsList[brandIndex][productIndex];
   products.insertAdjacentHTML(`beforeend`, `<li class="recent">
-      <h2 class= "recent__title">Recently Viewed</h2>
+      <h3 class= "recent__title">Recently Viewed</h3>
       <div class="product">
         <img src="${product.src}" class="product__img"/>
-        <h3 class="product__title">${product.brand} ${product.name}, ${product.size}</h3>
+        <h4 class="product__title">${product.brand} ${product.name}, ${product.size}</h4>
         <p class="product__price">$${product.price}</p>
       </li>
     </section>`);
