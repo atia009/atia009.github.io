@@ -1,8 +1,10 @@
 @import url("main.css");
 
-/* filters */
+/* breadCrumbs */
 .breadCrumbs {
   display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0px;
 }
 
 .breadCrumb:nth-of-type(1) {
@@ -14,9 +16,17 @@
   margin: 0px 10px;
 }
 
+/* filters */
+.filter {
+  background-color: transparent;
+  border: 0px;
+}
+
 /* products */
 .products {
+  margin: 0 auto;
   text-align: center;
+  width: 85%;
 }
 
 /* product */
@@ -24,16 +34,49 @@
   width: 90%;
 }
 
+.product__brand,
 .product__title {
   text-transform: uppercase;
+  margin-bottom: 0px;
+}
+
+.product__price {
+  margin-top: 0px;
+}
+
+/* desc */
+.desc {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.desc__title {
+  margin: 20px 0px;
+  text-transform: uppercase;
+}
+
+.desc__body {
+  margin: 0px;
 }
 
 /* benefits */
 .benefits {
-  list-style-type: disc;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: left;
 }
 
-/* toggles */
-.hide {
-  display: none;
+.benefits__title {
+  margin: 20px 0px;
+  text-transform: uppercase;
+}
+
+.benefits-list {
+  list-style-type: disc;
+  margin: 0px 0px 20px 0px;
+  padding-left: 17px;
+}
+
+/* recent */
+.recent__title {
+  text-transform: uppercase;
 }
