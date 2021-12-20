@@ -7,26 +7,26 @@ const productsList = [
    desc: "Oil-free EltaMD UV Clear helps calm and protect sensitive skin types prone to discoloration and breakouts associated to acne and rosacea. It contains niacinamide (vitamin B3), hyaluronic acid and lactic acid, ingredients that promote the appearance of healthy-looking skin. Very lightweight and silky, it may be worn with makeup or alone. Choose from tinted and untinted formulas for use every day.",
    name: "Dual Action Scrub",
    price: 37,
-   size: "1.7 oz",
+   size: "1.7 oz.",
    src: "../images/brand-01-01.jpg",
   },
   {
-   benefits: `UVA/UVB sun protection. Calms and protects acne-prone skin. Leaves no residue`,
+   benefits: `Helps repair skin barrier damage, calm redness, and improve hydration.Contains malachite extract, which helps to detox and hydrate. Delivers essential nutrients while improving skin's ability to absorb and maintain hydration. pH-balanced`,
    brand: "Elta MD",
-   desc: "Oil-free EltaMD UV Clear helps calm and protect sensitive skin types prone to discoloration and breakouts associated to acne and rosacea. It contains niacinamide (vitamin B3), hyaluronic acid and lactic acid, ingredients that promote the appearance of healthy-looking skin. Very lightweight and silky, it may be worn with makeup or alone. Choose from tinted and untinted formulas for use every day.",
-   name: "Dual Action Scrub",
-   price: 37,
-   size: "1.7 oz",
+   desc: "A gentle essence toner that soothes, hydrates and detoxifies skin while maintaining a healthy pH balance, and the first step in our breakthrough Skin Recovery System.",
+   name: "Recovery Essence Toner",
+   price: 31,
+   size: "7.3 oz.",
    src: "../images/brand-01-02.jpg",
   },
   {
-   benefits: `UVA/UVB sun protection. Calms and protects acne-prone skin. Leaves no residue`,
+   benefits: `Safe for all skin types. Enzymes help reduce inflammation. pH-balanced.Gentle enough for daily use, morning and night`,
    brand: "Elta MD",
-   desc: "Oil-free EltaMD UV Clear helps calm and protect sensitive skin types prone to discoloration and breakouts associated to acne and rosacea. It contains niacinamide (vitamin B3), hyaluronic acid and lactic acid, ingredients that promote the appearance of healthy-looking skin. Very lightweight and silky, it may be worn with makeup or alone. Choose from tinted and untinted formulas for use every day.",
-   name: "Dual Action Scrub",
-   price: 37,
-   size: "1.7 oz",
-   src: "../images/brand-01-01.jpg",
+   desc: "Give your skin a fresh start with EltaMD Foaming Facial Cleanser. A gentle enzyme and amino acid blend loosens makeup, oil and other impurities on the skin and in the pores. The thick, rich foam gently cleanses leaving your skin feeling clean and balanced.",
+   name: "Foaming Facial Cleanser",
+   price: 11.50,
+   size: "2.7 oz.",
+   src: "../images/brand-01-03.jpg",
   },
  ],
  [
@@ -36,26 +36,26 @@ const productsList = [
    desc: "Purifying Toner helps remove traces of dirt, oil and makeup. Botanical ingredients reduce surface shine while helping control factors that can lead to the visible appearance of problem or irritated skin. Set at optimal pH.",
    name: "Purifying Toner",
    price: 30,
-   size: "4 fl oz",
+   size: "4 fl. oz.",
    src: "../images/brand-02-01.jpg",
   },
   {
-   benefits: `Removes stubborn dirt, oil and makeup. Clarifies and removes traces of impurities. Ideal as body spray for blemishes`,
+   benefits: `Helps smooth and refine texture. Gently cleanses without irritation. Leaves skin feeling hydrated`,
    brand: "Epionce",
-   desc: "Purifying Toner helps remove traces of dirt, oil and makeup. Botanical ingredients reduce surface shine while helping control factors that can lead to the visible appearance of problem or irritated skin. Set at optimal pH.",
-   name: "Purifying Toner",
-   price: 30,
-   size: "4 fl oz",
+   desc: "A must-have cleanser for normal to combination skin, Gentle Foaming Cleanser effectively removes dirt, oil and other surface impurities including makeup without leaving the skin feeling tight, dry or stripped of its natural protective oils. Set at optimal pH, making it an ideal daily cleanser for most skin types.",
+   name: "Gentle Foaming Cleanser",
+   price: 34,
+   size: "6 fl. oz.",
    src: "../images/brand-02-02.jpg",
   },
   {
-   benefits: `Removes stubborn dirt, oil and makeup. Clarifies and removes traces of impurities. Ideal as body spray for blemishes`,
+   benefits: `Renewal technology encourages healthier skin. Hydrates rough areas for softer, smoother skin. Visibly improves appearance of dry, cracked skin`,
    brand: "Epionce",
-   desc: "Purifying Toner helps remove traces of dirt, oil and makeup. Botanical ingredients reduce surface shine while helping control factors that can lead to the visible appearance of problem or irritated skin. Set at optimal pH.",
-   name: "Purifying Toner",
-   price: 30,
-   size: "4 fl oz",
-   src: "../images/brand-02-01.jpg",
+   desc: "Luxuriously rich all-over body cream provides instant, long-lasting hydration to soften and smooth the skin. Provides maximum hydration for dry skin on the hands, feet and elbows; body butter consistency ideal for daily use.",
+   name: "Enriched Body Cream",
+   price: 41,
+   size: "8 oz.",
+   src: "../images/brand-02-03.png",
   },
  ],
  [
@@ -65,28 +65,58 @@ const productsList = [
    desc: "Dual chemical and physical exfoliation gently clears breakouts while leaving skin exceptionally smooth and radiant.",
    name: "Dual Action Scrub",
    price: 80,
-   size: "4 oz",
+   size: "4 oz.",
    src: "../images/brand-03-01.jpg",
   },
   {
-   benefits: `Provides both physical and chemical exfoliation benefits. Reduces surface oil. Ideal for use on face + body`,
+   benefits: `Physically exfoliates off dead skin cells and other debris to improve skin radiance. Magnesium oxide crystals wash away clean, leaving skin instantly soft and smooth`,
    brand: "Zo Skin Health",
    desc: "Dual chemical and physical exfoliation gently clears breakouts while leaving skin exceptionally smooth and radiant.",
-   name: "Dual Action Scrub",
-   price: 80,
-   size: "4 oz",
+   name: "Exfoliating Polish",
+   price: 67,
+   size: "2.3 oz.",
    src: "../images/brand-03-02.jpg",
   },
   {
-   benefits: `Provides both physical and chemical exfoliation benefits. Reduces surface oil. Ideal for use on face + body`,
+   benefits: `Sulfate-free. Effectively cleans, hydrates and soothes skin. Rich, creamy formula rinses clean without leaving any residue`,
    brand: "Zo Skin Health",
-   desc: "Dual chemical and physical exfoliation gently clears breakouts while leaving skin exceptionally smooth and radiant.",
-   name: "Dual Action Scrub",
-   price: 80,
-   size: "4 oz",
-   src: "../images/brand-03-01.jpg",
+   desc: "Cleanses away impurities while minimizing dryness and irritation.",
+   name: "Hydrating Cleanser",
+   price: 45,
+   size: "6.7 fl. oz.",
+   src: "../images/brand-03-03.jpg",
   },
  ],
+]
+
+const filtersList = [
+  [
+    {
+      className: `selected hidden`,
+      data: ``,
+      title: `Sort`,
+    },
+    {
+      className: `class="filter__option"`,
+      data: `data-class="low"`,
+      title: `Price (Low to High)`,
+    },
+    {
+      className: `class="filter__option"`,
+      data: `data-class="high"`,
+      title: `Price (High to Low)`,
+    },
+    {
+      className: `class="filter__option"`,
+      data: `data-class="a"`,
+      title: `Name (A to Z)`,
+    },
+    {
+      className: `class="filter__option"`,
+      data: `data-class="z"`,
+      title: `Name (Z to A)`,
+    },
+  ],
 ]
 
 // variables
@@ -94,6 +124,7 @@ const BRAND = sessionStorage.getItem("brandName");
 const BRAND_INDEX = sessionStorage.getItem("brandIndex");
 const breadCrumbs = document.querySelector(".breadCrumbs");
 const products = document.querySelector(".products");
+const filters = document.querySelector(".filters");
 
 // functions
 function updateActive()
@@ -130,6 +161,71 @@ function loadBreadCrumb(brandName = BRAND)
  <li class="breadCrumb"><a href="product.html" class="breadCrumb__link">${brandName}</a></li>`
 }
 
+function loadSortBy()
+{
+  for (let filterCount = 0; filterCount < filtersList.length; filterCount++)
+  {
+    filters.insertAdjacentHTML(`beforeend`, `<select class="filter"></>`);
+  }
+  loadFilters();
+}
+
+function loadFilters()
+{
+  let filterCategories = document.querySelectorAll(`.filter`);
+  for (let filterCount = 0; filterCount < filtersList.length; filterCount++)
+  {
+    let sortList = filtersList[filterCount].map(function(option)
+    {
+      return `<option ${option.className} value="${option.title}" ${option.data}>${option.title}</option>`
+    })
+    filterCategories[filterCount].innerHTML = sortList.join("");
+  }
+  addFilterFunctionality();
+}
+
+function updateSortBy()
+{
+  filters.innerHTML = ``;
+}
+
+function addFilterFunctionality()
+{
+  let filterCategories = document.querySelectorAll(`.filter__option`);
+  filterCategories.forEach(function(filter){
+    filter.addEventListener("click", function(option){
+      updateProductsByFilter(option.currentTarget.dataset.class);
+    })
+  })
+}
+
+function updateProductsByFilter(filterName)
+{
+  switch(filterName)
+  {
+    case "low":
+      productsList[BRAND_INDEX].sort(function(product1, product2) {
+        return product1.price - product2.price;
+      })
+      break;
+    case "high":
+      console.log("this high");
+      break;
+    case "a":
+      console.log("this a");
+      break;
+    case "z":
+      console.log("this z");
+      break;
+
+  } 
+}
+
+// function loadSearch()
+// {
+  
+// }
+
 function loadProducts(brand = BRAND_INDEX)
 {
  let brandItems = productsList[brand].map(function(product)
@@ -142,6 +238,7 @@ function loadProducts(brand = BRAND_INDEX)
  })
  products.insertAdjacentHTML(`beforeend`, brandItems.join(""));
  loadProductsFunctionality();
+ loadSortBy();
 }
 
 function loadBenefits(benefitsObject)
@@ -170,6 +267,7 @@ function loadSelectedProduct(productIndex, brandIndex = BRAND_INDEX)
           <ul class="benefits-list">${loadBenefits(productsList[brandIndex][productIndex].benefits)}</ul>
         </section>
       </li>`
+  updateSortBy();
 }
 
 function loadProductsFunctionality()
