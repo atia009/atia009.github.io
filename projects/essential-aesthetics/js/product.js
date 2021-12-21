@@ -152,6 +152,7 @@ function updateTitle()
 function loadHtml()
 {
  loadBreadCrumb();
+ loadSortBy();
  loadProducts();
 } 
 
@@ -195,6 +196,7 @@ function addFilterFunctionality()
   filterCategories.forEach(function(filter){
     filter.addEventListener("click", function(option){
       updateProductsByFilter(option.currentTarget.dataset.class);
+      loadProducts();
     })
   })
 }
@@ -217,8 +219,7 @@ function updateProductsByFilter(filterName)
     case "z":
       console.log("this z");
       break;
-
-  } 
+  }
 }
 
 // function loadSearch()
@@ -228,6 +229,7 @@ function updateProductsByFilter(filterName)
 
 function loadProducts(brand = BRAND_INDEX)
 {
+  console.log("new load");
  let brandItems = productsList[brand].map(function(product)
  {
   return `<li class="product">
@@ -236,9 +238,8 @@ function loadProducts(brand = BRAND_INDEX)
         <p class="product__price">$${product.price}</p>
       </li>` 
  })
- products.insertAdjacentHTML(`beforeend`, brandItems.join(""));
+ products.innerHTML = brandItems.join("");
  loadProductsFunctionality();
- loadSortBy();
 }
 
 function loadBenefits(benefitsObject)
