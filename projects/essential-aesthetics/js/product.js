@@ -211,13 +211,19 @@ function updateProductsByFilter(filterName)
       })
       break;
     case "high":
-      console.log("this high");
+      productsList[BRAND_INDEX].sort(function(product1, product2) {
+        return product2.price - product1.price;
+      })
       break;
     case "a":
-      console.log("this a");
+      productsList[BRAND_INDEX].sort(function(product1, product2) {
+        product1.name.localeCompare(product2.name);
+      })
       break;
     case "z":
-      console.log("this z");
+      productsList[BRAND_INDEX].sort(function(product1, product2) {
+        return product2.name - product1.name;
+      })
       break;
   }
 }
