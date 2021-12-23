@@ -217,20 +217,30 @@ function updateProductsByFilter(filterName)
       break;
     case "a":
       productsList[BRAND_INDEX].sort(function(product1, product2) {
+        let result = 0;
         if (product1.name < product2.name)
         {
-          return -1;
+          result = -1;
         }
         if (product1.name > product2.name)
         {
-          return 1;
+          result = 1;
         }
-        return 0;
+        return result;
       })
       break;
     case "z":
       productsList[BRAND_INDEX].sort(function(product1, product2) {
-        return product2.name - product1.name;
+        let result = 0;
+        if (product1.name < product2.name)
+        {
+          result = 1;
+        }
+        if (product1.name > product2.name)
+        {
+          result = -1;
+        }
+        return result;
       })
       break;
   }
