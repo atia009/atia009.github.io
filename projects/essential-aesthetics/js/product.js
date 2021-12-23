@@ -217,7 +217,15 @@ function updateProductsByFilter(filterName)
       break;
     case "a":
       productsList[BRAND_INDEX].sort(function(product1, product2) {
-        product1.name.localeCompare(product2.name);
+        if (product1.name < product2.name)
+        {
+          return -1;
+        }
+        if (product1.name > product2.name)
+        {
+          return 1;
+        }
+        return 0;
       })
       break;
     case "z":
@@ -235,7 +243,6 @@ function updateProductsByFilter(filterName)
 
 function loadProducts(brand = BRAND_INDEX)
 {
-  console.log("new load");
  let brandItems = productsList[brand].map(function(product)
  {
   return `<li class="product">
