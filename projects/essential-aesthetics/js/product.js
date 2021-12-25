@@ -125,6 +125,7 @@ const BRAND_INDEX = sessionStorage.getItem("brandIndex");
 const breadCrumbs = document.querySelector(".breadCrumbs");
 const products = document.querySelector(".products");
 const filters = document.querySelector(".filters");
+const searchContainer = document.querySelector(".search-container");
 
 // functions
 function updateActive()
@@ -152,6 +153,7 @@ function updateTitle()
 function loadHtml()
 {
  loadBreadCrumb();
+ loadSearch();
  loadSortBy();
  loadProducts();
 } 
@@ -246,10 +248,15 @@ function updateProductsByFilter(filterName)
   }
 }
 
-// function loadSearch()
-// {
-  
-// }
+function loadSearch()
+{
+  searchContainer.innerHTML = `<form class="search">
+     <input type="text" class="search__input" placeholder="Search...">
+     <button type="submit" class="search__btn"><i class="fas fa-search"></i></button>   
+     <button class="search__clear">Clear Search</button>
+     <ul class="results"></ul>
+    </form>`
+}
 
 function loadProducts(brand = BRAND_INDEX)
 {
