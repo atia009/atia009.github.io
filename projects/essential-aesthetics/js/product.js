@@ -3,27 +3,27 @@ const productsList = [
  [
   {
    benefits: `UVA/UVB sun protection. Calms and protects acne-prone skin. Leaves no residue`,
-   brand: "Elta MD",
-   desc: "Oil-free EltaMD UV Clear helps calm and protect sensitive skin types prone to discoloration and breakouts associated to acne and rosacea. It contains niacinamide (vitamin B3), hyaluronic acid and lactic acid, ingredients that promote the appearance of healthy-looking skin. Very lightweight and silky, it may be worn with makeup or alone. Choose from tinted and untinted formulas for use every day.",
-   name: "Dual Action Scrub",
+   brand: "elta md",
+   desc: "Oil-free Elta MD UV Clear helps calm and protect sensitive skin types prone to discoloration and breakouts associated to acne and rosacea. It contains niacinamide (vitamin B3), hyaluronic acid and lactic acid, ingredients that promote the appearance of healthy-looking skin. Very lightweight and silky, it may be worn with makeup or alone. Choose from tinted and untinted formulas for use every day.",
+   name: "dual action scrub",
    price: 37,
    size: "1.7 oz.",
    src: "../images/brand-01-01.jpg",
   },
   {
    benefits: `Helps repair skin barrier damage, calm redness, and improve hydration.Contains malachite extract, which helps to detox and hydrate. Delivers essential nutrients while improving skin's ability to absorb and maintain hydration. pH-balanced`,
-   brand: "Elta MD",
+   brand: "elta md",
    desc: "A gentle essence toner that soothes, hydrates and detoxifies skin while maintaining a healthy pH balance, and the first step in our breakthrough Skin Recovery System.",
-   name: "Recovery Essence Toner",
+   name: "recovery essence toner",
    price: 31,
    size: "7.3 oz.",
    src: "../images/brand-01-02.jpg",
   },
   {
    benefits: `Safe for all skin types. Enzymes help reduce inflammation. pH-balanced.Gentle enough for daily use, morning and night`,
-   brand: "Elta MD",
+   brand: "elta md",
    desc: "Give your skin a fresh start with EltaMD Foaming Facial Cleanser. A gentle enzyme and amino acid blend loosens makeup, oil and other impurities on the skin and in the pores. The thick, rich foam gently cleanses leaving your skin feeling clean and balanced.",
-   name: "Foaming Facial Cleanser",
+   name: "foaming facial cleanser",
    price: 11.50,
    size: "2.7 oz.",
    src: "../images/brand-01-03.jpg",
@@ -32,27 +32,27 @@ const productsList = [
  [
   {
    benefits: `Removes stubborn dirt, oil and makeup. Clarifies and removes traces of impurities. Ideal as body spray for blemishes`,
-   brand: "Epionce",
+   brand: "epionce",
    desc: "Purifying Toner helps remove traces of dirt, oil and makeup. Botanical ingredients reduce surface shine while helping control factors that can lead to the visible appearance of problem or irritated skin. Set at optimal pH.",
-   name: "Purifying Toner",
+   name: "purifying toner",
    price: 30,
    size: "4 fl. oz.",
    src: "../images/brand-02-01.jpg",
   },
   {
    benefits: `Helps smooth and refine texture. Gently cleanses without irritation. Leaves skin feeling hydrated`,
-   brand: "Epionce",
+   brand: "epionce",
    desc: "A must-have cleanser for normal to combination skin, Gentle Foaming Cleanser effectively removes dirt, oil and other surface impurities including makeup without leaving the skin feeling tight, dry or stripped of its natural protective oils. Set at optimal pH, making it an ideal daily cleanser for most skin types.",
-   name: "Gentle Foaming Cleanser",
+   name: "gentle foaming cleanser",
    price: 34,
    size: "6 fl. oz.",
    src: "../images/brand-02-02.jpg",
   },
   {
    benefits: `Renewal technology encourages healthier skin. Hydrates rough areas for softer, smoother skin. Visibly improves appearance of dry, cracked skin`,
-   brand: "Epionce",
+   brand: "epionce",
    desc: "Luxuriously rich all-over body cream provides instant, long-lasting hydration to soften and smooth the skin. Provides maximum hydration for dry skin on the hands, feet and elbows; body butter consistency ideal for daily use.",
-   name: "Enriched Body Cream",
+   name: "enriched body cream",
    price: 41,
    size: "8 oz.",
    src: "../images/brand-02-03.png",
@@ -61,27 +61,27 @@ const productsList = [
  [
   {
    benefits: `Provides both physical and chemical exfoliation benefits. Reduces surface oil. Ideal for use on face + body`,
-   brand: "Zo Skin Health",
+   brand: "zo skin health",
    desc: "Dual chemical and physical exfoliation gently clears breakouts while leaving skin exceptionally smooth and radiant.",
-   name: "Dual Action Scrub",
+   name: "dual action scrub",
    price: 80,
    size: "4 oz.",
    src: "../images/brand-03-01.jpg",
   },
   {
    benefits: `Physically exfoliates off dead skin cells and other debris to improve skin radiance. Magnesium oxide crystals wash away clean, leaving skin instantly soft and smooth`,
-   brand: "Zo Skin Health",
+   brand: "zo skin health",
    desc: "Dual chemical and physical exfoliation gently clears breakouts while leaving skin exceptionally smooth and radiant.",
-   name: "Exfoliating Polish",
+   name: "exfoliating polish",
    price: 67,
    size: "2.3 oz.",
    src: "../images/brand-03-02.jpg",
   },
   {
    benefits: `Sulfate-free. Effectively cleans, hydrates and soothes skin. Rich, creamy formula rinses clean without leaving any residue`,
-   brand: "Zo Skin Health",
+   brand: "zo skin health",
    desc: "Cleanses away impurities while minimizing dryness and irritation.",
-   name: "Hydrating Cleanser",
+   name: "hydrating cleanser",
    price: 45,
    size: "6.7 fl. oz.",
    src: "../images/brand-03-03.jpg",
@@ -251,11 +251,32 @@ function updateProductsByFilter(filterName)
 function loadSearch()
 {
   searchContainer.innerHTML = `<form class="search">
-     <input type="text" class="search__input" placeholder="Search...">
-     <button type="submit" class="search__btn"><i class="fas fa-search"></i></button>   
+     <input type="text" class="search__input" placeholder="Search...">  
      <button class="search__clear">Clear Search</button>
      <ul class="results"></ul>
-    </form>`
+    </form>`;
+ addSearchFunctionality();
+}
+
+function addSearchFunctionality()
+{
+  let search = document.querySelector(".search__input");
+  search.addEventListener("input", function(input){
+    let userInput = input.target.value;
+    if (userInput && userInput.trim().length > 0)
+    {
+      userInput = userInput.trim().toLowerCase();
+    }
+    else 
+    {
+      console.log("empty");  
+    }
+  })
+}
+
+function addClearFunctionality()
+{
+
 }
 
 function loadProducts(brand = BRAND_INDEX)
