@@ -255,17 +255,19 @@ function loadSearch()
      <button class="search__clear">Clear Search</button>
      <ul class="results"></ul>
     </form>`;
+ addClearFunctionality();
  addSearchFunctionality();
 }
 
 function addSearchFunctionality()
 {
-  let search = document.querySelector(".search__input");
+  const search = document.querySelector(".search__input");
   search.addEventListener("input", function(input){
     let userInput = input.target.value;
     if (userInput && userInput.trim().length > 0)
     {
       userInput = userInput.trim().toLowerCase();
+      loadResults(updateFilteredArray(productsList, "name", userInput));
     }
     else 
     {
@@ -274,9 +276,41 @@ function addSearchFunctionality()
   })
 }
 
+function updateFilteredArray(array, property, value)
+{
+ let filtered = [];
+   for (let index = 0; index < array.length; index++) 
+   {
+      let object = array[index];
+      for (let key in object) 
+      {
+         if (typeof(object[key] == "object")) 
+         {
+            let product = object[key];
+            if (product[property].includes(value)) 
+            {
+               filtered.push(product);
+            }
+         }
+      }
+   }
+   return filtered;
+}
+
 function addClearFunctionality()
 {
+  const clear = document.querySelector(".search__clear");
+  clear.addEventListener("click", function(){
+    console.log("clearing");
+  })
+}
 
+function loadResults(results)
+{
+  results.forEach(function(result)
+  {
+    console.log(result.name);
+  })
 }
 
 function loadProducts(brand = BRAND_INDEX)
