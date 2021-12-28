@@ -255,11 +255,12 @@ function loadSearch()
      <button class="search__clear">Clear Search</button>
      <ul class="results"></ul>
     </form>`;
+ const results = document.querySelector(".results");
  addClearFunctionality();
- addSearchFunctionality();
+ addSearchFunctionality(results);
 }
 
-function addSearchFunctionality()
+function addSearchFunctionality(results)
 {
   const search = document.querySelector(".search__input");
   search.addEventListener("input", function(input){
@@ -267,11 +268,11 @@ function addSearchFunctionality()
     if (userInput && userInput.trim().length > 0)
     {
       userInput = userInput.trim().toLowerCase();
-      loadResults(updateFilteredArray(productsList, "name", userInput));
+      loadResults(updateFilteredArray(productsList, "name", userInput), results);
     }
     else 
     {
-      console.log("empty");  
+      unloadResults(results);
     }
   })
 }
@@ -305,12 +306,24 @@ function addClearFunctionality()
   })
 }
 
-function loadResults(results)
+function loadResults(filteredResults, results)
 {
-  results.forEach(function(result)
+  unloadResults(results);
+  for (let product of filteredResults)
   {
-    console.log(result.name);
-  })
+   const productItem = document.createElement("li");
+   productItem.classList.add("results__item");
+   productItem.innerHTML = `${product.brand} ${product.name}`;
+   results.appendChild(productItem);
+  }
+}
+
+function unloadResults(results)
+{
+  while (results.firstChild)
+  {
+    results.removeChild(results.firstChild);
+  }
 }
 
 function loadProducts(brand = BRAND_INDEX)
