@@ -256,7 +256,7 @@ function loadSearch()
      <ul class="results"></ul>
     </form>`;
  const results = document.querySelector(".results");
- addClearFunctionality();
+ addClearFunctionality(results);
  addSearchFunctionality(results);
 }
 
@@ -298,23 +298,43 @@ function updateFilteredArray(array, property, value)
    return filtered;
 }
 
-function addClearFunctionality()
+function addClearFunctionality(results)
 {
   const clear = document.querySelector(".search__clear");
   clear.addEventListener("click", function(){
-    console.log("clearing");
+    unloadResults(results);
   })
 }
 
 function loadResults(filteredResults, results)
 {
   unloadResults(results);
-  for (let product of filteredResults)
+  if (filteredResults.length == 0)
   {
-   const productItem = document.createElement("li");
-   productItem.classList.add("results__item");
-   productItem.innerHTML = `${product.brand} ${product.name}`;
-   results.appendChild(productItem);
+    loadNoResult(results);
+  }
+  else
+  {
+    for (let product of filteredResults)
+    {
+     const productItem = document.createElement("li");
+     productItem.classList.add("results__item");
+     productItem.innerHTML = `${product.brand} ${product.name}`;
+     results.appendChild(productItem);
+    }
+    addResultsFunctionality();
+  }
+}
+
+function addResultsFunctionality()
+{
+  const resultsList = document.querySelectorAll(".results__item");
+  for (let index = 0; index < resultsList.length; index++)
+  {
+    resultsList[index].addEventListener("click", function(currentProduct)
+    {
+      console.log(currentProduct);
+    })
   }
 }
 
@@ -324,6 +344,14 @@ function unloadResults(results)
   {
     results.removeChild(results.firstChild);
   }
+}
+
+function loadNoResult(results)
+{
+  const noProductItem = document.createElement("li");
+  noProductItem.classList.add("results__item--no");
+  noProductItem.innerHTML = `sorry, no results found.`;
+  results.appendChild(noProductItem);
 }
 
 function loadProducts(brand = BRAND_INDEX)
