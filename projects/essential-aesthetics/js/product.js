@@ -4,7 +4,9 @@ const productsList = [
   {
    benefits: `UVA/UVB sun protection. Calms and protects acne-prone skin. Leaves no residue`,
    brand: "elta md",
+   brandId: 0,
    desc: "Oil-free Elta MD UV Clear helps calm and protect sensitive skin types prone to discoloration and breakouts associated to acne and rosacea. It contains niacinamide (vitamin B3), hyaluronic acid and lactic acid, ingredients that promote the appearance of healthy-looking skin. Very lightweight and silky, it may be worn with makeup or alone. Choose from tinted and untinted formulas for use every day.",
+   id: 0,
    name: "dual action scrub",
    price: 37,
    size: "1.7 oz.",
@@ -13,7 +15,9 @@ const productsList = [
   {
    benefits: `Helps repair skin barrier damage, calm redness, and improve hydration.Contains malachite extract, which helps to detox and hydrate. Delivers essential nutrients while improving skin's ability to absorb and maintain hydration. pH-balanced`,
    brand: "elta md",
+   brandId: 0,
    desc: "A gentle essence toner that soothes, hydrates and detoxifies skin while maintaining a healthy pH balance, and the first step in our breakthrough Skin Recovery System.",
+   id: 1,
    name: "recovery essence toner",
    price: 31,
    size: "7.3 oz.",
@@ -22,8 +26,10 @@ const productsList = [
   {
    benefits: `Safe for all skin types. Enzymes help reduce inflammation. pH-balanced.Gentle enough for daily use, morning and night`,
    brand: "elta md",
+   brandId: 0,
    desc: "Give your skin a fresh start with EltaMD Foaming Facial Cleanser. A gentle enzyme and amino acid blend loosens makeup, oil and other impurities on the skin and in the pores. The thick, rich foam gently cleanses leaving your skin feeling clean and balanced.",
    name: "foaming facial cleanser",
+   id: 2,
    price: 11.50,
    size: "2.7 oz.",
    src: "../images/brand-01-03.jpg",
@@ -33,7 +39,9 @@ const productsList = [
   {
    benefits: `Removes stubborn dirt, oil and makeup. Clarifies and removes traces of impurities. Ideal as body spray for blemishes`,
    brand: "epionce",
+   brandId: 1,
    desc: "Purifying Toner helps remove traces of dirt, oil and makeup. Botanical ingredients reduce surface shine while helping control factors that can lead to the visible appearance of problem or irritated skin. Set at optimal pH.",
+   id: 0,
    name: "purifying toner",
    price: 30,
    size: "4 fl. oz.",
@@ -42,7 +50,9 @@ const productsList = [
   {
    benefits: `Helps smooth and refine texture. Gently cleanses without irritation. Leaves skin feeling hydrated`,
    brand: "epionce",
+   brandId: 1,
    desc: "A must-have cleanser for normal to combination skin, Gentle Foaming Cleanser effectively removes dirt, oil and other surface impurities including makeup without leaving the skin feeling tight, dry or stripped of its natural protective oils. Set at optimal pH, making it an ideal daily cleanser for most skin types.",
+   id: 1,
    name: "gentle foaming cleanser",
    price: 34,
    size: "6 fl. oz.",
@@ -51,7 +61,9 @@ const productsList = [
   {
    benefits: `Renewal technology encourages healthier skin. Hydrates rough areas for softer, smoother skin. Visibly improves appearance of dry, cracked skin`,
    brand: "epionce",
+   brandId: 1,
    desc: "Luxuriously rich all-over body cream provides instant, long-lasting hydration to soften and smooth the skin. Provides maximum hydration for dry skin on the hands, feet and elbows; body butter consistency ideal for daily use.",
+   id: 2,
    name: "enriched body cream",
    price: 41,
    size: "8 oz.",
@@ -62,7 +74,9 @@ const productsList = [
   {
    benefits: `Provides both physical and chemical exfoliation benefits. Reduces surface oil. Ideal for use on face + body`,
    brand: "zo skin health",
+   brandId: 2,
    desc: "Dual chemical and physical exfoliation gently clears breakouts while leaving skin exceptionally smooth and radiant.",
+   id: 0,
    name: "dual action scrub",
    price: 80,
    size: "4 oz.",
@@ -71,7 +85,9 @@ const productsList = [
   {
    benefits: `Physically exfoliates off dead skin cells and other debris to improve skin radiance. Magnesium oxide crystals wash away clean, leaving skin instantly soft and smooth`,
    brand: "zo skin health",
+   brandId: 2,
    desc: "Dual chemical and physical exfoliation gently clears breakouts while leaving skin exceptionally smooth and radiant.",
+   id: 1,
    name: "exfoliating polish",
    price: 67,
    size: "2.3 oz.",
@@ -80,7 +96,9 @@ const productsList = [
   {
    benefits: `Sulfate-free. Effectively cleans, hydrates and soothes skin. Rich, creamy formula rinses clean without leaving any residue`,
    brand: "zo skin health",
+   brandId: 2,
    desc: "Cleanses away impurities while minimizing dryness and irritation.",
+   id: 2,
    name: "hydrating cleanser",
    price: 45,
    size: "6.7 fl. oz.",
@@ -319,6 +337,8 @@ function loadResults(filteredResults, results)
     {
      const productItem = document.createElement("li");
      productItem.classList.add("results__item");
+     productItem.setAttribute("data-class", product.id);
+     productItem.setAttribute("data-brand", product.brandId);
      productItem.innerHTML = `${product.brand} ${product.name}`;
      results.appendChild(productItem);
     }
@@ -331,9 +351,18 @@ function addResultsFunctionality()
   const resultsList = document.querySelectorAll(".results__item");
   for (let index = 0; index < resultsList.length; index++)
   {
-    resultsList[index].addEventListener("click", function(currentProduct)
+    resultsList[index].addEventListener("click", function(product)
     {
-      console.log(currentProduct);
+     const searchForm = document.querySelector(".search");
+     const results = document.querySelector(".results");
+     searchForm.reset();
+     unloadResults(results);
+     loadSelectedProduct(product.currentTarget.dataset.class, product.currentTarget.dataset.brand);
+     if (sessionStorage.getItem("lastBrandIndex") != null)
+     {
+      loadLastSelectedProduct();
+     }
+     saveLastSelectedProduct(product.currentTarget.dataset.class, product.currentTarget.dataset.brand);
     })
   }
 }
