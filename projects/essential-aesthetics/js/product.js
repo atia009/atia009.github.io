@@ -268,14 +268,41 @@ function updateProductsByFilter(filterName)
 
 function loadSearch()
 {
-  searchContainer.innerHTML = `<form class="search">
-     <input type="text" class="search__input" placeholder="Search...">  
-     <button class="search__clear">Clear Search</button>
-     <ul class="results"></ul>
+  searchContainer.innerHTML = `<div class="search-ui">
+      <h2 class="search-ui__title">What are you looking for?</h2>
+      <button class="search-ui__btn"><i class="fas fa-times search-ui__icon"></i></button>
+    </div>
+    <form class="search">  
+      <input type="text" class="search__input" placeholder="Search">
+      <button class="search__clear hidden">clear</button>
+      <ul class="results"></ul>
     </form>`;
+ searchContainer.insertAdjacentHTML(`beforebegin`, `<button class="ui__btn"><i class="fas fa-search"></i></>`);
  const results = document.querySelector(".results");
+ addSearchBtnFunctionality();
  addClearFunctionality(results);
  addSearchFunctionality(results);
+}
+
+function addSearchBtnFunctionality()
+{
+  const searchBtn = document.querySelector(".ui__btn");
+  searchBtn.addEventListener("click", function()
+  {
+    toggleClass(searchContainer, "hidden");
+  })
+}
+
+function toggleClass(element, className)
+{
+  if (element.classList.contains(className))
+    {
+      element.classList.remove(className);
+    }
+    else 
+    {
+      element.classList.add(className);
+    }
 }
 
 function addSearchFunctionality(results)
