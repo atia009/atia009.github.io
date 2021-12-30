@@ -1,10 +1,17 @@
 @import url("main.css");
 
+/* ui */
+.ui {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /* breadCrumbs */
 .breadCrumbs {
   display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin: 0px;
+  width: 90%;
 }
 
 .breadCrumb:nth-of-type(1) {
@@ -79,4 +86,47 @@
 /* recent */
 .recent__title {
   text-transform: uppercase;
+}
+
+/* search */
+.search-container {
+  background-color: #fff;
+  border: 1px solid #000;
+  left: 0;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.search-ui {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search {
+  position: relative;
+}
+
+.search__input {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+.search__clear {
+  position: absolute;
+  right: 0;
+}
+
+.search__icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* toggles */
+.hidden {
+  display: none;
 }
