@@ -137,13 +137,14 @@ const filtersList = [
   ],
 ]
 
-// variables
+// global variables
 const BRAND = sessionStorage.getItem("brandName");
 const BRAND_INDEX = sessionStorage.getItem("brandIndex");
 const breadCrumbs = document.querySelector(".breadCrumbs");
 const products = document.querySelector(".products");
 const filters = document.querySelector(".filters");
 const searchContainer = document.querySelector(".search-container");
+const searchBG = document.querySelector(".search-bg");
 
 // functions
 function updateActive()
@@ -270,11 +271,11 @@ function loadSearch()
 {
   searchContainer.innerHTML = `<div class="search-ui">
       <h2 class="search-ui__title">What are you looking for?</h2>
-      <button class="search-ui__btn"><i class="fas fa-times search-ui__icon"></i></button>
+      <button class="search-ui__close"><i class="fas fa-times search-ui__icon"></i></button>
     </div>
     <form class="search">  
       <input type="text" class="search__input" placeholder="Search">
-      <button class="search__clear hidden">clear</button>
+      <button type="button" class="search__clear hidden">clear</button>
       <ul class="results"></ul>
     </form>`;
  searchContainer.insertAdjacentHTML(`beforebegin`, `<button class="ui__btn"><i class="fas fa-search"></i></>`);
@@ -282,6 +283,7 @@ function loadSearch()
  addSearchBtnFunctionality();
  addClearFunctionality(results);
  addSearchFunctionality(results);
+ addSearchCloseFunctionality();
 }
 
 function addSearchBtnFunctionality()
@@ -289,34 +291,54 @@ function addSearchBtnFunctionality()
   const searchBtn = document.querySelector(".ui__btn");
   searchBtn.addEventListener("click", function()
   {
-    toggleClass(searchContainer, "hidden");
+    updateSearchVisibility();
   })
 }
 
-function toggleClass(element, className)
+function updateElementContainsClass(elementName, className, status = false)
 {
-  if (element.classList.contains(className))
-    {
-      element.classList.remove(className);
-    }
-    else 
-    {
-      element.classList.add(className);
-    }
+  const element = document.querySelector(`.${elementName}`);
+  if (status)
+  {
+    element.classList.add(className);
+  }
+  else 
+  {
+    element.classList.remove(className);
+  }
+}
+
+function updateSearchVisibility(visibility = false)
+{
+    updateElementContainsClass("search-container", "hidden", visibility);
+    updateElementContainsClass("search-bg", "hidden", visibility);
+    updateElementContainsClass("body", "disable-scrolling", !visibility);
+}
+
+function addSearchCloseFunctionality()
+{
+  const closeBtn = document.querySelector(".search-ui__close");
+  closeBtn.addEventListener("click", function()
+  {
+    updateSearchVisibility(true);
+  })
 }
 
 function addSearchFunctionality(results)
 {
   const search = document.querySelector(".search__input");
   search.addEventListener("input", function(input){
+    const clear = document.querySelector(".search__clear");
     let userInput = input.target.value;
     if (userInput && userInput.trim().length > 0)
     {
+      updateElementContainsClass("search__clear", "hidden");
       userInput = userInput.trim().toLowerCase();
       loadResults(updateFilteredArray(productsList, "name", userInput), results);
     }
     else 
     {
+      updateElementContainsClass("search__clear", "hidden", true);
       unloadResults(results);
     }
   })
@@ -347,7 +369,9 @@ function addClearFunctionality(results)
 {
   const clear = document.querySelector(".search__clear");
   clear.addEventListener("click", function(){
+    clearSearchForm();
     unloadResults(results);
+    updateElementContainsClass("search__clear", "hidden", true);
   })
 }
 
@@ -380,9 +404,8 @@ function addResultsFunctionality()
   {
     resultsList[index].addEventListener("click", function(product)
     {
-     const searchForm = document.querySelector(".search");
      const results = document.querySelector(".results");
-     searchForm.reset();
+     clearSearchForm();
      unloadResults(results);
      loadSelectedProduct(product.currentTarget.dataset.class, product.currentTarget.dataset.brand);
      if (sessionStorage.getItem("lastBrandIndex") != null)
@@ -390,8 +413,16 @@ function addResultsFunctionality()
       loadLastSelectedProduct();
      }
      saveLastSelectedProduct(product.currentTarget.dataset.class, product.currentTarget.dataset.brand);
+     updateSearchVisibility(true);
+     updateElementContainsClass("search__clear", "hidden", true);
     })
   }
+}
+
+function clearSearchForm()
+{
+  const searchForm = document.querySelector(".search");
+  searchForm.reset();
 }
 
 function unloadResults(results)
