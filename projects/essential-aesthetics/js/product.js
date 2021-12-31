@@ -402,6 +402,7 @@ function addResultsFunctionality()
   const resultsList = document.querySelectorAll(".results__item");
   for (let index = 0; index < resultsList.length; index++)
   {
+    addResultHover(resultsList[index]);
     resultsList[index].addEventListener("click", function(product)
     {
      const results = document.querySelector(".results");
@@ -417,6 +418,20 @@ function addResultsFunctionality()
      updateElementContainsClass("search__clear", "hidden", true);
     })
   }
+}
+
+function addResultHover(item)
+{
+  item.addEventListener("mouseenter", function(e)
+  {
+    e.currentTarget.classList.add("hover--underline");
+    e.currentTarget.classList.add("hover--cursor");
+  })
+  item.addEventListener("mouseleave", function(e)
+  {
+    e.currentTarget.classList.remove("hover--underline");
+    e.currentTarget.classList.remove("hover--cursor");
+  })
 }
 
 function clearSearchForm()
