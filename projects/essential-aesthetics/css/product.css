@@ -146,3 +146,11 @@
   height: 100%;
   overflow: hidden;
 }
+
+.hover--underline {
+  text-decoration: underline;
+}
+
+.hover--cursor {
+  cursor: pointer;
+}
