@@ -39,18 +39,18 @@ function loadFooter()
   <div class="foot-tab">
    <h4 class="foot-tab__title">Quick Links</h4>
    <ul class="foot-tab__list">
-    <li class="foot-tab__item"><a href="#" class="foot-tab__link">Home</a></li> 
-    <li class="foot-tab__item"><a href="#" class="foot-tab__link">About</a></li> 
-    <li class="foot-tab__item"><a href="#" class="foot-tab__link">Services</a></li> 
-    <li class="foot-tab__item"><a href="#" class="foot-tab__link">Products</a></li> 
-    <li class="foot-tab__item"><a href="#" class="foot-tab__link">Specials</a></li> 
-    <li class="foot-tab__item"><a href="#" class="foot-tab__link">Patient Resources</a></li> 
+    <li class="foot-tab__item"><a href="index.html" class="foot-tab__link">Home</a></li> 
+    <li class="foot-tab__item"><a href="about.html" class="foot-tab__link">About</a></li> 
+    <li class="foot-tab__item"><a href="services.html" class="foot-tab__link">Services</a></li> 
+    <li class="foot-tab__item"><a href="products.html" class="foot-tab__link">Products</a></li> 
+    <li class="foot-tab__item"><a href="specials.html" class="foot-tab__link">Specials</a></li> 
+    <li class="foot-tab__item"><a href="patient.html" class="foot-tab__link">Patient Resources</a></li> 
    </ul>
   </div>
   <ul class="social">
-   <a href="#" class="social__link"><i class="fab fa-facebook-f social__icon"></i></a>
-   <a href="#" class="social__link"><i class="fab fa-yelp social__icon"></i></a>
-   <a href="#" class="social__link"><i class="fab fa-instagram social__icons"></i></a>
+   <a href="https://www.facebook.com/" target="_blank" class="social__link"><i class="fab fa-facebook-f social__icon"></i></a>
+   <a href="https://www.yelp.com/" target="_blank" class="social__link"><i class="fab fa-yelp social__icon"></i></a>
+   <a href="https://www.instagram.com/" target=_blank" class="social__link"><i class="fab fa-instagram social__icons"></i></a>
   </ul>
   <div class="copyright">
    <p class="copyright__company">Essential Aesthetics</p>
