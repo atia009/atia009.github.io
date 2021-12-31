@@ -126,7 +126,23 @@
   top: 0;
 }
 
+.search-bg {
+  background-color: #000;
+  height: 100vh;
+  left: 0;
+  opacity: 0.6;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 2;
+}
+
 /* toggles */
 .hidden {
   display: none;
+}
+
+.disable-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
