@@ -84,7 +84,7 @@ function loadPdfs()
  let pdfsList = pdfsObject.map(function(pdf)
  {
   return `<li class="pdf">
-          <a href="${pdf.link}" class="pdf__link">${pdf.title}</a>
+          <a href="${pdf.link}" target="_blank" class="pdf__link">${pdf.title}</a>
         </li>`
  })
  pdfs.insertAdjacentHTML(`beforeend`, pdfsList.join(""));
