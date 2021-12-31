@@ -53,3 +53,7 @@
 .faq__icon {
   margin-left: auto;
 }
+
+.faq__icon:hover {
+  cursor: pointer;
+}
