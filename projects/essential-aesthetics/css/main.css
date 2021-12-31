@@ -7,10 +7,41 @@
   --secondary: #f8fbfa;
 }
 
+/* fonts */
+@font-face {
+  font-family: "Josefin Sans Regular";
+  src: url(../fonts/JosefinSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Josefin Sans Bold";
+  src: url(../fonts/JosefinSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Josefin Sans Light";
+  src: url(../fonts/JosefinSans-Light.ttf);
+}
+
+@font-face {
+  font-family: "Playfair Display Regular";
+  src: url(../fonts/PlayfairDisplay-Regular.ttf);
+}
+@font-face {
+  font-family: "Playfair Display Semi-bold";
+  src: url(../fonts/PlayfairDisplay-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Playfair Display Bold";
+  src: url(../fonts/PlayfairDisplay-Bold.ttf);
+}
+
 /* global styles */
 html {
   box-sizing: border-box;
   font-size: 16px;
+  font-family: "Playfair Display Regular";
 }
 
 *,
@@ -31,9 +62,18 @@ a {
 }
 
 button {
-  background: none;
+  background: var(--lt);
   border: none;
   padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Josefin Sans Bold";
+  text-transform: uppercase;
 }
 
 ul {
