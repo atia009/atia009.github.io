@@ -8,17 +8,17 @@ const brandsObject = [
  {
   src: "../images/products-01.jpg",
   title: "Elta MD Skincare",
-  desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quidem ex suscipit amet nobis quis, laudantium inventore, veritatis iusto fuga tempore accusantium ducimus placeat, magni enim nihil ullam illo quam eum? Voluptas commodi blanditiis ad recusandae repellat laborum enim minus?",
+  desc: "EltaMD offers a line of superior sun protection formulas, designed with maximum efficacy in mind. Their broad-spectrum formulas are designed for a variety of skin types. Specially formulated with zinc oxide, EltaMD provides long-lasting UVA and UVB protection with SPF ratings from 30 to 50. EltaMD believes that proper sun protection is essential for every individual, which is why they make their products incredibly easy to use, with light, creamy, non-comedogenic, moisturizing lotions and creams. EltaMD protects, nourishes and beautifies the skin with each application, allowing it to glow with youthful vibrancy.",
  },
  {
   src: "../images/products-02.jpg",
   title: "Epionce",
-  desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quidem ex suscipit amet nobis quis, laudantium inventore, veritatis iusto fuga tempore accusantium ducimus placeat, magni enim nihil ullam illo quam eum? Voluptas commodi blanditiis ad recusandae repellat laborum enim minus?",
+  desc: "Founded on 20 years of knowledge and experience, Epionce provides cosmeceutical, non-prescription, dermatological-based products. With over 12 independent clinical studies conducted on their products, results show the products may help prevent signs of aging as well as treat common skin conditions. Backed by scientific research, Epionce products feature unique therapeutic and patent-pending formulations. Powerful ingredients work to strengthen the skin's natural defenses while repairing and restoring damaged areas. Their results-driven line specifically works to help delay and reverse aging and targets conditions such as acne, dermatitis, eczema and psoriasis.",
  },
  {
     src: "../images/products-03.jpg",
   title: "Zo Skin Health",
-  desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quidem ex suscipit amet nobis quis, laudantium inventore, veritatis iusto fuga tempore accusantium ducimus placeat, magni enim nihil ullam illo quam eum? Voluptas commodi blanditiis ad recusandae repellat laborum enim minus?",
+  desc: "ZO® provides comprehensive solutions for creating and maintaining healthy skin for anyone regardless of age, ethnicity, unique skin condition or skin type. From correcting sun damage + pigmentation to preventing + protecting against future damage, ZO® has your skin health covered.",
  }
 ]
 
