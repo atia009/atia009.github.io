@@ -32,9 +32,9 @@
 
 .showcase__title {
   color: var(--lt);
+  font-family: "Josefin Sans Regular";
   font-size: 2rem;
   margin: 0 auto;
-  text-transform: uppercase;
 }
 
 /* main */
