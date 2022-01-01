@@ -4,35 +4,37 @@
 .banner {
   background-color: var(--primary);
   color: var(--lt);
+  padding: 30px 10px;
   text-align: center;
-}
-
-.banner__title {
-  text-transform: uppercase;
 }
 
 .banner__btn {
   background-color: var(--lt);
+  border-radius: 5px;
+  padding: 10px 0px;
+  width: 100%;
+}
+
+.banner__btn:hover {
+  cursor: pointer;
 }
 
 .banner__link {
-  color: var(--dark);
-  text-transform: uppercase;
+  color: var(--primary);
 }
 
 /* showcase */
 .showcase {
+  align-items: center;
   display: flex;
-  background-color: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-position: center;
   background-size: cover;
   height: 875px;
-  align-items: center;
 }
 
 .showcase__title {
   color: var(--lt);
-  font-family: "Josefin Sans Regular";
+  font-family: "Josefin Sans Light";
   font-size: 2rem;
   margin: 0 auto;
 }
