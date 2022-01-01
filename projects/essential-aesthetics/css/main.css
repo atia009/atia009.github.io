@@ -28,7 +28,7 @@
   src: url(../fonts/PlayfairDisplay-Regular.ttf);
 }
 @font-face {
-  font-family: "Playfair Display Semi-bold";
+  font-family: "Playfair Display SemiBold";
   src: url(../fonts/PlayfairDisplay-SemiBold.ttf);
 }
 
@@ -58,13 +58,15 @@ body {
 
 a {
   color: var(--lt);
+  font-family: "Josefin Sans Bold";
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 button {
-  background: var(--lt);
+  background-color: transparent;
   border: none;
-  padding: 0;
+  padding: 0px;
 }
 
 h1,
