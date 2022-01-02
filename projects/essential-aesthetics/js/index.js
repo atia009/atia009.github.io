@@ -23,7 +23,7 @@ const cards = [
 const bannerObject = 
 {
  title: "Now Taking Appointments",
- body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur laboriosam amet labore impedit quis, consequatur numquam id, sapiente laborum officia expedita voluptatum repudiandae enim! Voluptates?", 
+ body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur laboriosam amet labore impedit quis.", 
  btnText: "Book Appointment",
  btnLink: "services.html",
 };
