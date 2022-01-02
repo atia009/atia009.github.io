@@ -43,10 +43,21 @@
 .card {
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 30px 10px;
+}
+
+.card__title {
+  margin: 0px;
+}
+
+.card__body {
+  margin: 15px 0px;
 }
 
 .card-btn {
   background-color: var(--dark);
+  border-radius: 5px;
+  padding: 10px 40px;
 }
 
 .card-btn__link {
