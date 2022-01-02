@@ -78,6 +78,12 @@ h5 {
   text-transform: uppercase;
 }
 
+
+
+i {
+  color: var(--dark);
+}
+
 ul {
   list-style: none;
   padding-left: 0;
@@ -91,15 +97,17 @@ ul {
 
 .logo__title {
   color: var(--dark);
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   margin: 15px 0px 0px 10px;
   text-transform: uppercase;
 }
 
 .logo__subtitle {
   color: var(--dark);
-  font-size: 1rem;
+  font-family: "Playfair Display Regular";
+  font-size: .7rem;
   margin: 0px 0px 15px 10px;
+  text-transform: initial;
 }
 
 /* nav */
@@ -129,16 +137,49 @@ ul {
   flex-direction: column;
 }
 
+.foot-tab__item, .foot-tab__link {
+  font-family: "Josefin Sans Light";
+  text-transform: initial;
+}
+
+.foot-tab__link:hover {
+  text-decoration: underline;
+}
+
 .foot-tab {
+  margin: 20px 0px 0px 0px;
   text-align: center;
 }
 
 .foot-tab__title {
+  margin: 0px 0px 5px 0px;
   text-transform: uppercase;
 }
 
+.foot-tab__list {
+  margin: 0px;
+}
+
+/* social */
+.social {
+  margin: 20px 0px;
+}
+
+.social__icon {
+  color: var(--lt);
+  font-size: 1.8rem;
+  margin: 0px 7.5px;
+}
+
+/* copyright */
 .copyright {
+  font-size: .7rem;
+  margin-bottom: 20px;
   text-align: center;
+}
+
+.copyright__company, .copyright__info {
+  margin: 0px;
 }
 
 /* toggles */
