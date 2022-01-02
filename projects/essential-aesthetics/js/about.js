@@ -72,6 +72,7 @@ function loadTeam()
 `
  })
  team.insertAdjacentHTML(`beforeend`, membersList.join(""));
+ team.insertAdjacentHTML(`afterbegin`, `<div class="team__divider"></div>`);
 }
 
 // event listeners
