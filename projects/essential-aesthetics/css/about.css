@@ -14,24 +14,38 @@
 }
 
 .mission__title {
+  margin: 15px 0px 0px 0px;
   text-transform: uppercase;
 }
 
 .mission__subtitle {
-  font-size: 0.8rem;
-  font-style: italic;
+  font-size: 0.7rem;
+  margin: 0px;
+}
+
+.mission__body {
+  margin: 15px 10px;
 }
 
 /* team */
 .team {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding-bottom: 40px;
+}
+
+.team__divider {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 1px;
+  max-width: 320px;
+  width: 100%;
+
 }
 
 .member {
   background-color: var(--secondary);
-  margin-bottom: 20px;
+  margin-top: 40px;
   max-width: 320px;
   text-align: center;
 }
@@ -40,6 +54,7 @@
   border-bottom: 1px solid var(--primary);
   margin: 0px;
   padding: 10px 0px;
+  text-transform: initial;
 }
 
 .member__img {
@@ -48,6 +63,14 @@
   width: 100%;
 }
 
+.member__body {
+  margin: 20px auto;
+  width: 90%;
+}
+
 .member__contact {
   color: var(--med);
+  font-family: "Josefin Sans Light";
+  margin: 0px auto 20px auto;
+  width: 90%;
 }
