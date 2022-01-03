@@ -91,6 +91,32 @@ function loadServices()
       </li>`
  })
   services.insertAdjacentHTML(`beforeend`, serviceItems.join(""));
+  loadServiceBtnFunctionality();
+}
+
+function loadServiceBtnFunctionality()
+{
+    const btnList = document.querySelectorAll(`.service__btn`);
+    const linkList = document.querySelectorAll(`.service__link`); 
+    for (let index = 0; index < btnList.length; index++)
+    {
+        addHoverFunctionality(btnList[index], linkList[index]);
+    }
+}
+
+
+function addHoverFunctionality(bgElement, textElement)
+{
+ bgElement.addEventListener("mouseenter", () => swapColors(bgElement, textElement));
+ bgElement.addEventListener("mouseleave", () => swapColors(bgElement, textElement));
+}
+
+function swapColors(bgElement, textElement)
+{
+ const bgColor = window.getComputedStyle(bgElement).backgroundColor;
+ const textColor = window.getComputedStyle(textElement).color;
+ bgElement.style.backgroundColor = textColor;
+ textElement.style.color = bgColor;
 }
 
 // event listeners
