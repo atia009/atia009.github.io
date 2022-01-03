@@ -4,13 +4,13 @@
 .resources {
   background-color: var(--primary);
   text-align: center;
-  padding: 10px;
+  padding: 45px 0px 10px 0px;
 }
 
 .resources__title {
   color: var(--lt);
   text-transform: uppercase;
-  margin: 35px 0px;
+  margin: 0px 0px 25px 0px;
 }
 
 /* pdfs */
@@ -18,12 +18,13 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin: 0px;
 }
 
 .pdf {
   background-color: var(--lt);
   border-radius: 10px;
-  box-shadow: 2px 4px 2px -2px gray;
+  box-shadow: 0px 4px 8px -4px var(--dark);
   margin-bottom: 35px;
   padding: 7.5px 0px;
   width: 300px;
@@ -31,29 +32,47 @@
 
 .pdf__link {
   color: var(--primary);
+  font-size: 1rem;
   text-transform: uppercase;
 }
 
 /* faqs */
+.faq-title {
+  font-size: 1.1rem;
+  margin: 45px auto 0px auto;
+  text-align: center;
+}
+
 .faq {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 10px;
+}
+
+.faq:nth-of-type(1)
+{
+  padding-top: 0px;
 }
 
 .faq:not(:last-of-type) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+.faq__question {
+  font-size: .95rem;
+  margin: 0px;
+  text-transform: initial;
+}
+
 .faq__inner {
   display: none;
+  font-size: .85rem;
+  margin: 0px;
 }
 
 .faq__icon {
+  font-size: 0.9rem;
   margin-left: auto;
-}
-
-.faq__icon:hover {
-  cursor: pointer;
 }
