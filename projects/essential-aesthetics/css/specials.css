@@ -23,14 +23,16 @@
   color: var(--lt);
   display: grid;
   grid-template-columns: 0.5fr repeat(7, 1fr) 0.5fr;
-  grid-template-rows: repeat(5, 50px);
+  grid-template-rows: repeat(5, 50px) 20px;
   grid-template-areas:
     ". col .   .   .   .   .   sti ."
     ". col .  ti  ti  ti   .   .   ."
     ". col .  ti  ti  ti   .   .   ."
     ". col bdy bdy bdy bdy bdy .   ."
-    ". col bdy bdy bdy bdy bdy .   .";
+    ". col bdy bdy bdy bdy bdy .   ."
+    ". col   .   .   .   .   .   .   .";
   margin: 40px auto;
+  max-width: 430px;
   width: 95%;
 }
 
@@ -43,11 +45,13 @@
 
 .special__subtitle {
   align-self: center;
+  font-family: "Josefin Sans Bold";
   grid-area: sti;
 }
 
 .special__body {
   align-self: center;
+  font-family: "Playfair Display SemiBold";
   font-size: 0.8rem;
   margin-left: 30px;
   grid-area: bdy;
