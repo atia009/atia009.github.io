@@ -88,7 +88,34 @@ function loadPdfs()
         </li>`
  })
  pdfs.insertAdjacentHTML(`beforeend`, pdfsList.join(""));
+ loadPdfFunctionality();
 }
+
+function loadPdfFunctionality()
+{
+    const tabList = document.querySelectorAll(`.pdf`);
+    const linkList = document.querySelectorAll(`.pdf__link`); 
+    for (let index = 0; index < tabList.length; index++)
+    {
+        addHoverFunctionality(tabList[index], linkList[index]);
+    }
+}
+
+
+function addHoverFunctionality(bgElement, textElement)
+{
+ bgElement.addEventListener("mouseenter", () => swapColors(bgElement, textElement));
+ bgElement.addEventListener("mouseleave", () => swapColors(bgElement, textElement));
+}
+
+function swapColors(bgElement, textElement)
+{
+ const bgColor = window.getComputedStyle(bgElement).backgroundColor;
+ const textColor = window.getComputedStyle(textElement).color;
+ bgElement.style.backgroundColor = textColor;
+ textElement.style.color = bgColor;
+}
+
 
 function loadFaqs()
 {
@@ -101,6 +128,7 @@ function loadFaqs()
         </li>`
  })
  faqs.insertAdjacentHTML(`beforeend`, faqsList.join(""));
+ faqs.insertAdjacentHTML(`beforebegin`, `<h3 class="faq-title">Frequently Asked Questions</h3>`);
  updateFaq();
 }
 
