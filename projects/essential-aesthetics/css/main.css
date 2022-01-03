@@ -84,6 +84,10 @@ i {
   color: var(--dark);
 }
 
+i:hover {
+  cursor: pointer;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
