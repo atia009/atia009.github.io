@@ -9,6 +9,7 @@
 
 /* brands */
 .brands {
+  margin: 0px;
   text-align: center;
 }
 
@@ -17,6 +18,7 @@
 }
 
 .brand__title {
+  margin: 90px 0px 0px 0px;
   text-transform: uppercase;
 }
 
@@ -29,8 +31,13 @@
 }
 
 .brand__desc {
-  position: absolute;
+  font-family: "Playfair Display SemiBold";
+  font-size: .85rem;
   bottom: 25%;
+  padding: 0px 20px;
+  position: absolute;
+  text-align: left;
+  text-transform: initial;
 }
 
 /* toggles */
