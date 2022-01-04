@@ -110,9 +110,9 @@ const productsList = [
 const filtersList = [
   [
     {
-      className: `selected hidden`,
+      className: `class="filter__option" selected hidden`,
       data: ``,
-      title: `Sort`,
+      title: `Sort by`,
     },
     {
       className: `class="filter__option"`,
