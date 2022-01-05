@@ -47,14 +47,16 @@ function loadFooter()
     <li class="foot-tab__item"><a href="patient.html" class="foot-tab__link">Patient Resources</a></li> 
    </ul>
   </div>
-  <ul class="social">
-   <a href="https://www.facebook.com/" target="_blank" class="social__link"><i class="fab fa-facebook-f social__icon"></i></a>
-   <a href="https://www.yelp.com/" target="_blank" class="social__link"><i class="fab fa-yelp social__icon"></i></a>
-   <a href="https://www.instagram.com/" target=_blank" class="social__link"><i class="fab fa-instagram social__icon"></i></a>
-  </ul>
-  <div class="copyright">
-   <p class="copyright__company">Essential Aesthetics</p>
-   <p class="copyright__info">&copy; 2021 Essential Care Medical</p>
+  <div class="foot-bottom">
+    <ul class="social">
+      <a href="https://www.facebook.com/" target="_blank" class="social__link"><i class="fab fa-facebook-f social__icon"></i></a>
+      <a href="https://www.yelp.com/" target="_blank" class="social__link"><i class="fab fa-yelp social__icon"></i></a>
+      <a href="https://www.instagram.com/" target=_blank" class="social__link"><i class="fab fa-instagram social__icon"></i></a>
+    </ul>
+    <div class="copyright">
+      <p class="copyright__company">Essential Aesthetics</p>
+      <p class="copyright__info">&copy; 2021 Essential Care Medical</p>
+    </div>
   </div>`
 }
 
