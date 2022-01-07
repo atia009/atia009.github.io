@@ -26,7 +26,8 @@
 }
 
 .mission__body {
-  margin: 15px 0px 0px 0px;
+  margin: 15px auto 0px auto;
+  max-width: 600px;
 }
 
 /* team */
@@ -39,15 +40,16 @@
 .team__divider {
   background-color: rgba(0, 0, 0, 0.1);
   height: 1px;
-  max-width: 320px;
-  width: 100%;
+  max-width: 600px;
+  width: 85%;
 
 }
 
 .member {
   background-color: var(--secondary);
   margin-top: 40px;
-  max-width: 320px;
+  max-width: 600px;
+  width: 85%;
   text-align: center;
 }
 
@@ -60,12 +62,14 @@
 
 .member__img {
   object-fit: cover;
+  object-position: top;
   height: 400px;
   width: 100%;
 }
 
 .member__body {
   margin: 20px auto;
+  max-width: 400px; 
   width: 90%;
 }
 
@@ -74,4 +78,40 @@
   font-family: "Josefin Sans Light";
   margin: 0px auto 20px auto;
   width: 90%;
+}
+
+@media (min-width: 900px)
+{
+  .mission {
+    padding-bottom: 60px;
+  }
+
+  .mission__img {
+    height: 400px;
+    margin: -45px -35px;
+  }
+
+  .mission__title {
+    margin-top: 60px;
+  }
+
+  .member {
+    margin-top: 60px;
+  }
+
+  .member__body {
+    margin: 40px auto;
+  }
+}
+
+@media (min-width: 1250px) 
+{
+  .mission__img {
+    height: 500px;
+    margin: -75px -65px;
+  }
+
+  .mission__title {
+    margin-top: 90px;
+  }
 }
