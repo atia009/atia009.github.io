@@ -63,10 +63,12 @@ function loadBrands()
  {
   return `<li class="brand">
          <h3 class="brand__title">${brand.title}</h3>
-         <a href="product.html" class="brand__link">
-         <img src="${brand.src}" class="brand__img"/>
-         <p class="brand__desc hide">${brand.desc}</p>
-        </a>
+         <div class="brand__content" style="background-image: url(${brand.src})">
+          <a href="product.html" class="brand__link">
+            <span class="brand__overlay"> </span>
+            <p class="brand__desc hide">${brand.desc}</p>
+          </a>
+        </div>
       </li>`
  })
  brands.insertAdjacentHTML(`beforeend`, brandsItems.join(""));
@@ -76,7 +78,7 @@ function loadBrands()
 function updateBrand()
 {
  const brandList = document.querySelectorAll(".brand");
- const imageList = document.querySelectorAll(".brand__img");
+ const overlayList = document.querySelectorAll(".brand__overlay");
  const descList = document.querySelectorAll(".brand__desc");
  for (let count = 0; count < brandList.length; count++)
  {
@@ -84,11 +86,11 @@ function updateBrand()
    storeBrand(brandsObject[count].title, count);
   })
   brandList[count].addEventListener("mouseenter", function(brand){
-   imageList[count].classList.add("transparent");
+   overlayList[count].classList.add("transparent");
    descList[count].classList.remove("hide");
   })
   brandList[count].addEventListener("mouseleave", function(brand){
-   imageList[count].classList.remove("transparent");
+   overlayList[count].classList.remove("transparent");
    descList[count].classList.add("hide");
   })
  }
