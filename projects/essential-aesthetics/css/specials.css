@@ -3,16 +3,21 @@
 /* banner */
 .banner {
   background-color: var(--primary);
-  padding: 5px 0px;
+  margin: -15px -10px;
+  padding: 30px 0px;
   text-align: center;
 }
 
 .banner__title {
   color: var(--lt);
-  text-transform: uppercase;
+  margin: 0px;
 }
 
 /* specials */
+.specials {
+  margin: 80px 0px 50px 0px;
+}
+
 .special {
   background: linear-gradient(
     90deg,
@@ -23,7 +28,7 @@
   color: var(--lt);
   display: grid;
   grid-template-columns: 0.5fr repeat(7, 1fr) 0.5fr;
-  grid-template-rows: repeat(5, 50px) 20px;
+  grid-template-rows: repeat(5, 1fr) 0.25fr;
   grid-template-areas:
     ". col .   .   .   .   .   sti ."
     ". col .  ti  ti  ti   .   .   ."
@@ -31,9 +36,14 @@
     ". col bdy bdy bdy bdy bdy .   ."
     ". col bdy bdy bdy bdy bdy .   ."
     ". col   .   .   .   .   .   .   .";
-  margin: 40px auto;
-  max-width: 430px;
+  height: 250px;
+  margin: 40px auto 0px auto;
+  max-width: 415px;
   width: 95%;
+}
+
+.special:nth-of-type(1) {
+  margin-top: 0px;
 }
 
 .special__title {
@@ -60,4 +70,37 @@
 .special__column {
   background-color: var(--secondary);
   grid-area: col;
+}
+
+/* media queries */
+
+@media (min-width: 900px)
+{
+  .banner {
+    margin: -45px -35px;
+  }
+
+  .special {
+    height: 350px;
+    max-width: 515px;
+  }
+
+  .specials {
+    margin: 140px 0px 50px 0px;
+  }
+}
+
+@media (min-width: 1250px)
+{
+  .banner {
+    margin: -75px -65px;
+  }
+
+  .specials {
+    margin: 200px 0px 50px 0px;
+  }
+
+  .special:not(:nth-of-type(1)) {
+    margin-top: 70px;
+  }
 }
