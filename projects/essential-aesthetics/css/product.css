@@ -169,10 +169,6 @@
 }
 
 /* toggles */
-.hidden {
-  display: none;
-}
-
 .disable-scrolling {
   height: 100%;
   overflow: hidden;
