@@ -1,9 +1,15 @@
 @import url("main.css");
 
+/* layout */
+.wrap-vertical {
+  padding-bottom: 0px;
+}
+
 /* ui */
 .ui {
   display: flex;
   flex-wrap: wrap;
+  margin: -15px 0px 0px 0px;
 }
 
 /* breadCrumbs */
@@ -14,16 +20,17 @@
   width: 90%;
 }
 
-.breadCrumb:nth-of-type(1) {
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
+.breadCrumb:not(:nth-of-type(1)) {
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  margin-left: 10px;
+  padding-left: 10px;
 }
 
 .breadCrumb__link {
   color: var(--dark);
   font-family: "Playfair Display SemiBold";
   font-size: .9rem;
-  margin: 0px 10px;
-  text-transform: initial;
+  text-transform: capitalize;
 }
 
 /* filters */
@@ -34,15 +41,20 @@
 
 /* products */
 .products {
-  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
+  margin: auto;
+  max-width: 1450px;
+  padding: 40px 0px;
   text-align: center;
-  width: 85%;
 }
 
 /* product */
 .product {
-  margin: 0px auto 15px auto;
-  max-width: 350px;
+  margin: 0px;
+  width: 100%;
 }
 
 .product__img:hover, .product__brand:hover, .product__title:hover, .product__price:hover {
@@ -54,7 +66,7 @@
   margin-bottom: 15px;
   object-fit: contain;
   object-position: bottom;
-  width: 95%;
+  width: 100%;
 }
 
 .product__brand,
@@ -111,13 +123,15 @@
 
 /* recent */
 .recent__title {
-  margin: 0px;
+  margin: 0px 0px 15px;
   text-transform: uppercase;
 }
 
 /* search */
 .ui__btn {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  width: 10%;
+  text-align: right;
 }
 
 .search-container {
@@ -134,6 +148,14 @@
 .search-ui {
   display: flex;
   justify-content: space-between;
+}
+
+.search-ui__title {
+  font-size: 1.25rem;
+}
+
+.search-ui__icon {
+  font-size: 1.25rem;
 }
 
 .search {
@@ -180,4 +202,20 @@
 
 .hover--cursor {
   cursor: pointer;
+}
+
+@media (min-width: 900px) {
+  .wrap-vertical {
+    padding-bottom: 0px;
+  }
+
+  .ui {
+    margin: -45px 0px 0px 0px; 
+  }
+}
+
+@media (min-width: 1250px) {
+  .ui {
+    margin: -75px 0px 0px 0px;
+  }
 }
