@@ -91,7 +91,7 @@ const productsList = [
    name: "exfoliating polish",
    price: 67,
    size: "2.3 oz.",
-   src: "../images/brand-03-02.jpg",
+   src: "../images/brand-03-02.webp",
   },
   {
    benefits: `Sulfate-free. Effectively cleans, hydrates and soothes skin. Rich, creamy formula rinses clean without leaving any residue`,
@@ -497,6 +497,7 @@ function loadSelectedProduct(productIndex, brandIndex = BRAND_INDEX)
         </section>
       </li>`
   updateSortBy();
+  products.style.width = "600px";
 }
 
 function loadProductsFunctionality()
