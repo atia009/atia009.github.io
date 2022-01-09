@@ -53,8 +53,16 @@ html {
 
 body {
   color: var(--dark);
+  display: flex;
+  flex-direction: column;
   font-size: 1.1rem;
   margin: 0 auto;
+  min-height: 100vh;
+}
+
+main {
+  display: block;
+  flex: 1 0 auto;
 }
 
 a {
