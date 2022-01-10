@@ -91,10 +91,6 @@ i {
   color: var(--dark);
 }
 
-i:hover {
-  cursor: pointer;
-}
-
 select {
   color: var(--dark);
 }
@@ -164,10 +160,6 @@ ul {
   text-transform: uppercase;
 }
 
-.page__link:hover {
-  text-decoration: underline;
-}
-
 /* footer */
 .footer {
   align-items: center;
@@ -182,10 +174,6 @@ ul {
 .foot-tab__item, .foot-tab__link {
   font-family: "Josefin Sans Light";
   text-transform: initial;
-}
-
-.foot-tab__link:hover {
-  text-decoration: underline;
 }
 
 .foot-tab {
@@ -251,6 +239,18 @@ ul {
 /* media queries */
 @media (min-width: 900px) {
 
+  i:hover {
+    cursor: pointer;
+  }
+
+  .page__link:hover {
+    text-decoration: underline;
+  }
+
+  .foot-tab__link:hover {
+    text-decoration: underline;
+  }
+
   .wrap-horizontal {
     padding-left: 35px;
     padding-right: 35px;
@@ -282,29 +282,6 @@ ul {
     color: var(--dark);
     font-size: 1rem;
   }
-
-  /* .footer { */
-    /* align-items: flex-start;
-    flex-direction: row;
-    justify-content: center; */
-    /* padding-bottom: 30px;
-    padding-top: 30px;
-  }
-
-  .foot-tab {
-    margin: 0px;
-    max-width: 230px;
-    width: 100%;
-  }
-
-  .foot-tab:not(:nth-of-type(1))
-  {
-    margin-left: 10px;
-  }
-
-  .foot-tab__item {
-    margin-top: 5px;
-  } */
 
   .foot-tab {
     margin-top: 35px;
