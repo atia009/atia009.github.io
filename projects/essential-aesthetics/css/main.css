@@ -283,12 +283,11 @@ ul {
     font-size: 1rem;
   }
 
-  .footer {
-    align-items: flex-start;
+  /* .footer { */
+    /* align-items: flex-start;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 30px;
+    justify-content: center; */
+    /* padding-bottom: 30px;
     padding-top: 30px;
   }
 
@@ -305,12 +304,16 @@ ul {
 
   .foot-tab__item {
     margin-top: 5px;
+  } */
+
+  .foot-tab {
+    margin-top: 35px;
   }
 
   .foot-bottom {
     display: flex;
     justify-content: space-between;
-    margin-top: 80px;
+    margin-top: 70px;
     width: 100%;
   }
 
