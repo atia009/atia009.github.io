@@ -13,6 +13,7 @@
   background-color: var(--lt);
   border-radius: 5px;
   padding: 10px 0px;
+  max-width: 325px;
   width: 100%;
 }
 
