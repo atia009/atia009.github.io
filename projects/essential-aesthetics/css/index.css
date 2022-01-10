@@ -17,10 +17,6 @@
   width: 100%;
 }
 
-.banner__btn:hover {
-  cursor: pointer;
-}
-
 .banner__link {
   color: var(--primary);
 }
