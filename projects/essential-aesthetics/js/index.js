@@ -67,26 +67,9 @@ function loadBanner()
 {
  banner.innerHTML = `<h3 class="banner__title">${bannerObject.title}</h3>
  <p class="banner__body">${bannerObject.body}</p>
- <button class="banner__btn">
+ <button class="banner__btn bg--hover">
   <a href="${bannerObject.btnLink}" class="banner__link">${bannerObject.btnText}</a>
  </button>`
- const bannerLink = document.querySelector(".banner__link");
- const bannerBtn = document.querySelector(".banner__btn");
- addHoverFunctionality(bannerBtn, bannerLink);
-}
-
-function addHoverFunctionality(bgElement, textElement)
-{
- bgElement.addEventListener("mouseenter", () => swapColors(bgElement, textElement));
- bgElement.addEventListener("mouseleave", () => swapColors(bgElement, textElement));
-}
-
-function swapColors(bgElement, textElement)
-{
- const bgColor = window.getComputedStyle(bgElement).backgroundColor;
- const textColor = window.getComputedStyle(textElement).color;
- bgElement.style.backgroundColor = textColor;
- textElement.style.color = bgColor;
 }
 
 function loadShowcase()
@@ -102,25 +85,13 @@ function loadCards()
   return `<div class="card">
   <h3 class="card__title">${card.title}</h3>
   <p class="card__body">${card.body}</p>
-  <button class="card-btn">
+  <button class="card-btn bg--hover">
    <a href="${card.btnLink}" class="card-btn__link">${card.btnText}</a>
   </button>
  </div>`
  })
  main.insertAdjacentHTML(`beforeend`, cardsList.join(""));
- loadCardBtnFunctionality();
 }
-
-function loadCardBtnFunctionality()
-{
-    const btnList = document.querySelectorAll(`.card-btn`);
-    const linkList = document.querySelectorAll(`.card-btn__link`); 
-    for (let index = 0; index < btnList.length; index++)
-    {
-        addHoverFunctionality(btnList[index], linkList[index]);
-    }
-}
-
 
 // event listeners
 window.addEventListener("DOMContentLoaded", function() 
