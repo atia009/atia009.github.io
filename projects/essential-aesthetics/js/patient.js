@@ -83,39 +83,12 @@ function loadPdfs()
 {
  let pdfsList = pdfsObject.map(function(pdf)
  {
-  return `<li class="pdf">
+  return `<li class="pdf bg--hover">
           <a href="${pdf.link}" target="_blank" class="pdf__link">${pdf.title}</a>
         </li>`
  })
  pdfs.insertAdjacentHTML(`beforeend`, pdfsList.join(""));
- loadPdfFunctionality();
 }
-
-function loadPdfFunctionality()
-{
-    const tabList = document.querySelectorAll(`.pdf`);
-    const linkList = document.querySelectorAll(`.pdf__link`); 
-    for (let index = 0; index < tabList.length; index++)
-    {
-        addHoverFunctionality(tabList[index], linkList[index]);
-    }
-}
-
-
-function addHoverFunctionality(bgElement, textElement)
-{
- bgElement.addEventListener("mouseenter", () => swapColors(bgElement, textElement));
- bgElement.addEventListener("mouseleave", () => swapColors(bgElement, textElement));
-}
-
-function swapColors(bgElement, textElement)
-{
- const bgColor = window.getComputedStyle(bgElement).backgroundColor;
- const textColor = window.getComputedStyle(textElement).color;
- bgElement.style.backgroundColor = textColor;
- textElement.style.color = bgColor;
-}
-
 
 function loadFaqs()
 {
