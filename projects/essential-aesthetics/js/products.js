@@ -64,36 +64,61 @@ function loadBrands()
   return `<li class="brand">
          <h3 class="brand__title">${brand.title}</h3>
          <div class="brand__content" style="background-image: url(${brand.src})">
-          <a href="product.html" class="brand__link">
+         <button class="brand__btn"><i class="fas fa-info-circle brand__icon"></i></button>
+          <a href="product.html" class="brand__link hidden">
             <span class="brand__overlay"> </span>
-            <p class="brand__desc hide">${brand.desc}</p>
+            <p class="brand__desc">${brand.desc}</p>
           </a>
         </div>
       </li>`
  })
  brands.insertAdjacentHTML(`beforeend`, brandsItems.join(""));
+ toggleDesc();
  updateBrand();
 }
 
 function updateBrand()
 {
- const brandList = document.querySelectorAll(".brand");
- const overlayList = document.querySelectorAll(".brand__overlay");
- const descList = document.querySelectorAll(".brand__desc");
- for (let count = 0; count < brandList.length; count++)
+ const contentList = document.querySelectorAll(".brand__content");
+ const linksList = document.querySelectorAll(".brand__link");
+ const descBtns = document.querySelectorAll(".brand__btn");
+ for (let count = 0; count < contentList.length; count++)
  {
-  brandList[count].addEventListener("click", function(brand){
+  contentList[count].addEventListener("click", function(brand){
    storeBrand(brandsObject[count].title, count);
   })
-  brandList[count].addEventListener("mouseenter", function(brand){
-   overlayList[count].classList.add("transparent");
-   descList[count].classList.remove("hide");
-  })
-  brandList[count].addEventListener("mouseleave", function(brand){
-   overlayList[count].classList.remove("transparent");
-   descList[count].classList.add("hide");
-  })
+  if (window.getComputedStyle(descBtns[count]).display === "none")
+  {    
+    contentList[count].addEventListener("mouseenter", function(brand){
+     linksList[count].classList.remove("hidden");
+    })
+    contentList[count].addEventListener("mouseleave", function(brand){
+     linksList[count].classList.add("hidden");
+    })
+  }
  }
+}
+
+function toggleDesc()
+{
+  const descBtns = document.querySelectorAll(`.brand__btn`)
+  const brandLinks = document.querySelectorAll(`.brand__link`);
+  for (let index = 0; index < descBtns.length; index++)
+  {
+    descBtns[index].addEventListener("click", function()
+    {
+      if (brandLinks[index].classList.contains(`hidden`))
+      {
+        brandLinks[index].classList.remove(`hidden`);
+        descBtns[index].innerHTML = `<i class="fas fa-times-circle brand__icon"></i>`
+      }
+      else 
+      {
+        brandLinks[index].classList.add(`hidden`);
+        descBtns[index].innerHTML = `<i class="fas fa-info-circle brand__icon"></i>`
+      }
+    })
+  }
 }
 
 function storeBrand(brandName, brandIndex)
