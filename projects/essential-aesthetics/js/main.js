@@ -97,11 +97,43 @@ function showNav(nav, logo, pageList)
   logo.classList.add("hidden");
 }
 
+function addBtnFunctionality()
+{;
+  const buttonOuterList = [...document.querySelectorAll(`.bg--hover`)].map(function(button) 
+  {
+    return button;
+  })
+  const buttonInnerList = buttonOuterList.map(function(button)
+  {
+    return button.firstElementChild;
+  })
+
+  for (let index = 0; index < buttonOuterList.length; index++)
+  {
+      addHoverFunctionality(buttonOuterList[index], buttonInnerList[index]);
+  }
+}
+
+function addHoverFunctionality(parentElement, childElement)
+{
+ parentElement.addEventListener("mouseenter", () => swapColors(parentElement, childElement));
+ parentElement.addEventListener("mouseleave", () => swapColors(parentElement, childElement));
+}
+
+function swapColors(parentElement, childElement)
+{
+ const parentColor = window.getComputedStyle(parentElement).backgroundColor;
+ const childColor = window.getComputedStyle(childElement).color;
+ parentElement.style.backgroundColor = childColor;
+ childElement.style.color = parentColor;      
+}
+
+
 // event listeners
 window.addEventListener("DOMContentLoaded", function() 
 {
  loadHeader();
  loadFooter();
  toggleNav();
-
+ addBtnFunctionality();
 })
