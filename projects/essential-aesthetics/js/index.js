@@ -22,10 +22,10 @@ const cards = [
 
 const bannerObject = 
 {
- title: "Now Taking Appointments",
+ title: "Call for Consultation",
  body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur laboriosam amet labore impedit quis.", 
- btnText: "Book Appointment",
- btnLink: "services.html",
+ btnText: "Contact Us",
+ btnLink: "#contact",
 };
 
 const showcaseObject =
