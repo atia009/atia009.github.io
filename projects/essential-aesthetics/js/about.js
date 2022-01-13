@@ -2,7 +2,7 @@
 const missionObject =
 {
  title: "Our Mission",
- location: "Established 2020, Garden Grove, CA",
+ location: "Established 2020, Sed Libero, CA",
  src: "../images/about-mission.jpg",
  statement: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus perferendis vel deserunt? Consequuntur quisquam reiciendis doloremque vero nihil inventore vel necessitatibus, omnis possimus asperiores harum placeat quis. Cum, sequi quas.",
 }
@@ -10,15 +10,15 @@ const missionObject =
 const members = [
  {
   education: "M.D.",
-  email: "nalanguyen@essentialaesthetics.com",
-  name: "Nala Nguyen",
+  email: "leo vel orci porta non@gmail.com",
+  name: "Tellus Orci",
   src: "../images/about-member-01.jpg",
   summary: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel veritatis perferendis architecto repudiandae! Necessitatibus ad maxime asperiores accusantium minus unde dicta ut reiciendis, voluptate quidem.",
  },
  {
   education: "M.D.",
-  email: "simbanguyen@essentialaesthetics.com",
-  name: "Simba Nguyen",
+  email: "mus mauris vitae ultricies leo@gmail.com",
+  name: "Maecenas Volutpat",
   src: "../images/about-member-02.jpg",
   summary: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos enim non error ab, tempora esse doloribus quam ullam itaque ipsum earum sapiente fugiat iusto nostrum numquam qui.",
  },
