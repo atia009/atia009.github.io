@@ -23,9 +23,8 @@ const brandsObject = [
 ]
 
 
-
-
 // variables
+const mediaDesktop = window.matchMedia(`(min-width:900px)`);
 const banner = document.querySelector(".banner");
 const brands = document.querySelector(".brands");
 
@@ -73,51 +72,77 @@ function loadBrands()
       </li>`
  })
  brands.insertAdjacentHTML(`beforeend`, brandsItems.join(""));
- toggleDesc();
  updateBrand();
 }
 
 function updateBrand()
 {
  const contentList = document.querySelectorAll(".brand__content");
- const linksList = document.querySelectorAll(".brand__link");
- const descBtns = document.querySelectorAll(".brand__btn");
  for (let count = 0; count < contentList.length; count++)
  {
   contentList[count].addEventListener("click", function(brand){
    storeBrand(brandsObject[count].title, count);
-  })
-  if (window.getComputedStyle(descBtns[count]).display === "none")
-  {    
-    contentList[count].addEventListener("mouseenter", function(brand){
-     linksList[count].classList.remove("hidden");
-    })
-    contentList[count].addEventListener("mouseleave", function(brand){
-     linksList[count].classList.add("hidden");
-    })
-  }
+  })  
  }
 }
 
-function toggleDesc()
+function toggleDescDesktop()
+{
+  const contentList = document.querySelectorAll(`.brand__content`);
+  for (let index = 0; index < contentList.length; index++)
+  {
+    let content = contentList[index];
+    content.addEventListener("mouseenter", addBrandDescVisibility);
+    content.addEventListener("mouseleave", removeBrandDescVisibility);
+  }
+}
+
+function addBrandDescVisibility()
+{ 
+  console.log("showing");
+  this.children[1].classList.remove("hidden");
+}
+
+function removeBrandDescVisibility()
+{
+  console.log("hiding");
+  this.children[1].classList.add("hidden");
+
+}
+
+function toggleMobileBrandDescVisibility()
+{ 
+  let link = this.nextElementSibling;
+  if (link.classList.contains(`hidden`))
+  {
+    link.classList.remove(`hidden`);
+    this.innerHTML = `<i class="fas fa-times-circle brand__icon"></i>`;
+  }
+  else 
+  {
+    link.classList.add(`hidden`);
+    this.innerHTML = `<i class="fas fa-info-circle brand__icon"></i>`;
+  }
+}
+
+function toggleDescMobile()
 {
   const descBtns = document.querySelectorAll(`.brand__btn`)
-  const brandLinks = document.querySelectorAll(`.brand__link`);
   for (let index = 0; index < descBtns.length; index++)
   {
-    descBtns[index].addEventListener("click", function()
-    {
-      if (brandLinks[index].classList.contains(`hidden`))
-      {
-        brandLinks[index].classList.remove(`hidden`);
-        descBtns[index].innerHTML = `<i class="fas fa-times-circle brand__icon"></i>`
-      }
-      else 
-      {
-        brandLinks[index].classList.add(`hidden`);
-        descBtns[index].innerHTML = `<i class="fas fa-info-circle brand__icon"></i>`
-      }
-    })
+    let button = descBtns[index];
+    button.addEventListener("click", toggleMobileBrandDescVisibility);
+  }
+}
+
+function removeLinkListener()
+{
+  const contentList = document.querySelectorAll(`.brand__content`);
+  for (let index = 0; index < contentList.length; index++)
+  {
+    let content = contentList[index];
+    content.removeEventListener("mouseenter", addBrandDescVisibility);
+    content.removeEventListener("mouseleave", removeBrandDescVisibility);
   }
 }
 
@@ -132,11 +157,28 @@ function updateStyle(element, property, value)
  element.style.property = value; 
 }
 
+function updateDescInterface(screenSize)
+{
+  if (screenSize.matches)
+  {
+    toggleDescDesktop();
+  }
+  else 
+  {
+    removeLinkListener();
+    toggleDescMobile();
+  }
+}
+
 // event listeners
 window.addEventListener("DOMContentLoaded", function() 
 {
  updateActive();
  loadHtml();
- 
+ updateDescInterface(mediaDesktop);
 })
 
+mediaDesktop.addEventListener("change", function(screenSize)
+{
+  updateDescInterface(screenSize.target);
+});
