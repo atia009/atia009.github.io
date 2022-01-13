@@ -29,7 +29,7 @@ function loadFooter()
     <li class="foot-tab__item">Sat: 10am - 3pm</li> 
    </ul>
   </div>
-  <div class="foot-tab">
+  <div class="foot-tab" id="contact">
    <h4 class="foot-tab__title">Contact</h4>
    <ul class="foot-tab__list">
     <li class="foot-tab__item">213-569-1293</li>
