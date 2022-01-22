@@ -534,6 +534,9 @@ function loadLastSelectedProduct()
   let brandIndex = sessionStorage.getItem("lastBrandIndex");
   let productIndex = sessionStorage.getItem("lastProductIndex");
   let product = productsList[brandIndex][productIndex];
+
+  console.log (`Brand index is ${brandIndex}`);
+  console.log (`Product index is ${productIndex}`);
   products.insertAdjacentHTML(`beforeend`, `<li class="recent">
       <h3 class= "recent__title">Recently Viewed</h3>
       <div class="product">
@@ -556,6 +559,12 @@ function loadLastSelectedProduct()
 
 function saveLastSelectedProduct(productIndex, brandIndex = BRAND_INDEX)
 {
+ let brandIndexList = sessionStorage.getItem("lastBrandIndex");
+ let productIndexList = sessionStorage.getItem("lastProductIndex");
+ brandIndexList += brandIndex;
+ productIndexList += productIndex;
+ console.log(brandIndexList);
+ console.log(productIndexList);
  sessionStorage.setItem("lastBrandIndex", brandIndex);
  sessionStorage.setItem("lastProductIndex", productIndex);
 }
