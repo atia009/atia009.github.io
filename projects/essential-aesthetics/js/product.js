@@ -34,6 +34,18 @@ const productsList = [
    size: "2.7 oz.",
    src: "../images/brand-01-03.jpg",
   },
+  {
+    benefits: `Zinc oxide and titanium dioxide provide gentle, chemical-free sun protection. Hyaluronic acid quenches dry skin and visibly minimizes the appearance of fine lines. Antioxidant protection combats skin-aging free radicals. Noncomedogenic and water-resistant for up to 40 minutes
+`,
+    brand: "elta md",
+    brandId: 0,
+    desc: "EltaMD UV Elements Broad-Spectrum SPF 44 protects your skin from damaging UVA and UVB rays to prevent your skin from premature signs of aging and burning. The tinted formula masks imperfections while shielding your skin from harmful environmental aggressors. Designed for daily use, the mineral sunscreen features a hydrating base to maintain moisture balance and comfort all skin types, even the most sensitive.",
+    name: "uv elements tinted broad spectrum spf 44",
+    id: 3,
+    price: 36.50,
+    size: "2 oz.",
+    src: "../images/brand-01-04.jpg",
+   },
  ],
  [
   {
