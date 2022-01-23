@@ -531,12 +531,15 @@ function loadProductsFunctionality()
 
 function loadLastSelectedProduct()
 {
-  let brandIndex = sessionStorage.getItem("lastBrandIndex");
-  let productIndex = sessionStorage.getItem("lastProductIndex");
-  let product = productsList[brandIndex][productIndex];
 
-  console.log (`Brand index is ${brandIndex}`);
-  console.log (`Product index is ${productIndex}`);
+  const brandIndexString = sessionStorage.getItem("lastBrandIndex");
+  const productIndexString = sessionStorage.getItem("lastProductIndex");
+  const brandIndexList = [...brandIndexString];
+  const productIndexList = [...productIndexString];
+  const brandIndex = brandIndexList[brandIndexList.length - 1];
+  const productIndex = productIndexList[productIndexList.length - 1]
+  let product = productsList[brandIndex][productIndex];
+  
   products.insertAdjacentHTML(`beforeend`, `<li class="recent">
       <h3 class= "recent__title">Recently Viewed</h3>
       <div class="product">
@@ -563,10 +566,8 @@ function saveLastSelectedProduct(productIndex, brandIndex = BRAND_INDEX)
  let productIndexList = sessionStorage.getItem("lastProductIndex");
  brandIndexList += brandIndex;
  productIndexList += productIndex;
- console.log(brandIndexList);
- console.log(productIndexList);
- sessionStorage.setItem("lastBrandIndex", brandIndex);
- sessionStorage.setItem("lastProductIndex", productIndex);
+ sessionStorage.setItem("lastBrandIndex", brandIndexList);
+ sessionStorage.setItem("lastProductIndex", productIndexList);
 }
 
 function storeBrand(brandName, brandIndex)
