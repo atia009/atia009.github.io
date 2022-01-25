@@ -245,7 +245,6 @@ main {
 }
 
 .details__btn {
-  color: var(--light-grey);
   cursor: pointer;
   font-size: 2rem;
 }
@@ -273,12 +272,15 @@ main {
 }
 
 .img-box__btn {
-  color: var(--light-grey);
   cursor: pointer;
   font-size: 3.5rem;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.img-box__icon, .details__icon {
+  color: var(--light-grey);
 }
 
 .img-box__prev {
