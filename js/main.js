@@ -207,8 +207,8 @@ function loadArt()
  <button class="details__btn"><i class="fas fa-times details__icon"></i></button>
  </div>
  <div class="img-box">
- <button class="img-box__btn img-box__prev"><i class="fas fa-angle-left"></i></button>
- <button class="img-box__btn img-box__next"><i class="fas fa-angle-right"></i></button>
+ <button class="img-box__btn img-box__prev"><i class="fas fa-angle-left img-box__icon"></i></button>
+ <button class="img-box__btn img-box__next"><i class="fas fa-angle-right img-box__icon"></i></button>
  <img class="img-box__img">
  </div>
  <p class="lt-box__info"></p>
