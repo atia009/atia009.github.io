@@ -99,13 +99,11 @@ function toggleDescDesktop()
 
 function addBrandDescVisibility()
 { 
-  console.log("showing");
   this.children[1].classList.remove("hidden");
 }
 
 function removeBrandDescVisibility()
 {
-  console.log("hiding");
   this.children[1].classList.add("hidden");
 
 }
