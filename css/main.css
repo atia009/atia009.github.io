@@ -46,6 +46,7 @@ html {
 }
 
 body {
+  background-color: #fff;
   font-size: 1.1rem;
   margin: 0 auto;
 }
@@ -343,6 +344,11 @@ main {
   position: sticky;
   top: 0;
   z-index: 2;
+}
+
+.disable-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
 
 /* media queries */
