@@ -274,6 +274,7 @@ function doLightBox()
     {
       ltBoxBg.classList.remove("hide");
       ltBox.classList.remove("hide");
+      document.querySelector("body").classList.add("disable-scrolling");
       let current = e.currentTarget.dataset.class;
       console.log(current);
       changeLtBoxImg(img, artsArray[current].src, current);
@@ -285,6 +286,7 @@ function doLightBox()
    {
      ltBoxBg.classList.add("hide");
      ltBox.classList.add("hide");
+     document.querySelector("body").classList.remove("disable-scrolling");
    })
 
    // event listener for previous image
