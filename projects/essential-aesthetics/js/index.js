@@ -23,7 +23,7 @@ const cards = [
 const bannerObject = 
 {
  title: "Call for Consultation",
- body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur laboriosam amet labore impedit quis.", 
+ body: "To make an appointment with one of our dermatology specialists, please call us during business hours. Click the button below for more details.", 
  btnText: "Contact Us",
  btnLink: "#contact",
 };
