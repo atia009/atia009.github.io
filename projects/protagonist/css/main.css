@@ -1,0 +1,32 @@
+/* variables */
+:root {
+    --main-font: "Lato Regular";
+    --secondary-font: "Lato Light";
+    --secondary-font-italic: "Lato Light Italic";
+}
+
+/* fonts */
+@font-face {
+    font-family: "Lato Light";
+    src: url(../fonts/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: "Lato Light Italic";
+    src: url(../fonts/Lato-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: "Lato Regular";
+    src: url(../fonts/Lato-Regular.ttf);
+}
+
+/* global */
+html {
+    box-sizing: border-box;
+    font-family: var(--main-font);
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
