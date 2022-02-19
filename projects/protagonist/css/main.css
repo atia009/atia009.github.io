@@ -3,8 +3,9 @@
     --main-font: "Lato Regular";
     --secondary-font: "Lato Light";
     --secondary-font-italic: "Lato Light Italic";
-    --primary-color: #404040;
-    --secondary-color: #bca474;
+    --primary-color: #bca474;
+    --primary-dark-color: #3D3526;
+    --primary-light-color: #C9B07D;
 
 }
 
@@ -25,8 +26,22 @@
 }
 
 /* global */
-.text-dark {
-    color: var(--primary-color)!important;
+h1 {
+    font-family: var(--secondary-font);
+}
+
+p {
+    font-family: var(--main-font);
+}
+
+.btn-main {
+    background-color: var(--primary-color);
+    color: var(--primary-dark-color);
+    font-family: var(--main-font);
+}
+
+.btn-main:hover {
+    background-color: var(--primary-light-color);
 }
 
 /* navbar */
@@ -43,5 +58,11 @@
 }
 
 .nav-link:hover {
-    color: var(--secondary-color)!important;
+    color: var(--primary-color)!important;
+}
+
+/* hero */
+.carousel-caption {
+    /* bottom: auto; */
+    top: 0;
 }
