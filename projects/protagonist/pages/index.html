@@ -4,46 +4,114 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome -->
     <link rel="stylesheet" href="../font-awesome/css/all.css">
+    <!-- bootstrap css -->
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- custom css -->
     <link rel="stylesheet" href="../css/main.css">
+    <!-- jquery -->
     <script src="../js/jquery-3.6.0.js" defer></script> 
+    <!-- bootstrap.js -->
     <script src="../bootstrap/js/bootstrap.min.js" defer></script>
+    <!-- custom js -->
     <script src="../js/main.js" defer></script>
     <title>Protagonist</title>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-4">
-            <div class="container d-flex flex-row-reverse">
-                <a href="index.html" class="navbar-brand"><i class="fa-solid fa-chess-pawn"></i><span class="navbar__span text-uppercase text-dark ms-1">rotagonist</span></a>
-
-                <button type="button" class="navbar-toggler border-0 p-0" data-bs-toggle="collapse" data-bs-target="#nav-list">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                <div id="nav-list" class="navbar-collapse collapse">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="#header" class="nav-link text-uppercase text-dark me-2 my-2">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#collection" class="nav-link text-uppercase text-dark me-2 my-2">Collection</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#about" class="nav-link text-uppercase text-dark me-2 my-2">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#outfit" class="nav-link text-uppercase text-dark me-2 my-2">Outfit</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#journal" class="nav-link text-uppercase text-dark me-2 my-2">Journal</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#trending" class="nav-link text-uppercase text-dark me-2 my-2">Trending</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
 </head>
 <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-4">
+        <div class="container d-flex flex-row-reverse">
+            <a href="index.html" class="navbar-brand"><i class="fa-solid fa-chess-pawn"></i><span class="navbar__span text-uppercase text-dark ms-1">rotagonist</span></a>
+
+            <button type="button" class="navbar-toggler border-0 p-0" data-bs-toggle="collapse" data-bs-target="#nav-list">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="nav-list" class="navbar-collapse collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#header" class="nav-link text-uppercase text-dark me-2 my-2">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#collection" class="nav-link text-uppercase text-dark me-2 my-2">Collection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link text-uppercase text-dark me-2 my-2">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#outfit" class="nav-link text-uppercase text-dark me-2 my-2">Outfit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#journal" class="nav-link text-uppercase text-dark me-2 my-2">Journal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#trending" class="nav-link text-uppercase text-dark me-2 my-2">Trending</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <section id="hero" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#hero" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#hero" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#hero" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="../images/carousel-01.jpg" class="d-block w-100" alt="image of model walking">
+            <div class="carousel-caption d-md-block">
+                <div class="container">
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-lg-8">
+                            <h1 class="text-uppercase">"Make things as simple as possible but no simpler."</h1>
+                            <p>- Albert Einstein</p>
+                            <a href="#collection" class="btn btn-main text-uppercase">Explore Wardrobe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="carousel-item">
+            <img src="../images/carousel-02.jpg" class="d-block w-100" alt="side profile of model with head inside jacket">
+            <div class="carousel-caption d-md-block">
+                <div class="container">
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-lg-8">
+                            <h1 class="text-uppercase">"Make things as simple as possible but no simpler."</h1>
+                            <p>- Albert Einstein</p>
+                            <a href="#collection" class="btn btn-main text-uppercase">Explore Wardrobe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="carousel-item">
+            <img src="../images/carousel-03.jpg" class="d-block w-100" alt="image of two models sitting with heads turned forward">
+            <div class="carousel-caption d-md-block">
+                <div class="container">
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-lg-8">
+                            <h1 class="text-uppercase">"Make things as simple as possible but no simpler."</h1>
+                            <p>- Albert Einstein</p>
+                            <a href="#collection" class="btn btn-main text-uppercase">Explore Wardrobe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </section>
 </body>
 </html>
