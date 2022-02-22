@@ -124,13 +124,11 @@ function startHtmlLoad() {
 
 function startCollectionLoad() {
     let collectionItems = $.map(collectionList, function(item){
-        return `<div class="col-lg-3">
-        <div class="card my-2">
-            <img src="${item.src}" class="card_img img-fluid rounded"/>
-            <p class="card__brand my-1 text-uppercase ">${item.brand}</p>
-            <p class="card__name my-0 text-uppercase">${item.name}</p>
-            <p class="card__price my-1 text-uppercase">${item.price} USD</p>
-        </div>
+        return `<div class="col-md-6 col-lg-4 col-xl-3 p-2 ${item.category}">
+            <img src="${item.src}" class="w-100 rounded"/>
+            <p class="secondary-font mt-3 text-uppercase ">${item.brand}</p>
+            <p class="secondary-font text-uppercase">${item.name}</p>
+            <p class="text-uppercase">${item.price} USD</p>
       </div>` 
     })
     $(`.collection-list`).html(collectionItems.join(``));
