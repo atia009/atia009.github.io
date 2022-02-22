@@ -118,5 +118,22 @@ const collectionList = [
 ]
 
 // functions
+function startHtmlLoad() {
+    startCollectionLoad();
+}
+
+function startCollectionLoad() {
+    const collection = document.querySelector(`.collection-list`);
+    let collectionItems = collectionList.map(function(item){
+        return `<li class="item">
+        <img src="${item.src}" class="item__img"/>
+        <p class="item__brand">${item.brand}</p>
+        <p class="item__name">${item.name}</p>
+        <p class="item__price">${item.price} USD</p>
+      </li>` 
+    })
+    collection.innerHTML = collectionItems.join("");
+}
 
 // event listeners
+window.addEventListener(`DOMContentLoaded`, startHtmlLoad);
