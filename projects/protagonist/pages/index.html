@@ -54,11 +54,11 @@
     </nav>
 
     <!-- hero -->
-    <section id="hero" class="carousel slide" data-bs-ride="carousel">
+    <header id="hero" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#hero" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#hero" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#hero" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#hero" data-bs-slide-to="0" class="active" aria-current="true" aria-label="image 1"></button>
+            <button type="button" data-bs-target="#hero" data-bs-slide-to="1" aria-label="image 2"></button>
+            <button type="button" data-bs-target="#hero" data-bs-slide-to="2" aria-label="image 3"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -112,6 +112,22 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
+    </header>
+
+    <!-- collection -->
+    <section id="collection" class="my-5">
+        <div class="container">
+            <h2 class="title text-center">The Collection</h2>
+            <div class="row">
+                <div class="d-flex flex-wrap justify-content-center mt-3">
+                    <button type="button" class="btn btn-main m-2">All</button>
+                    <button type="button" class="btn btn-main m-2">Accessories</button>
+                    <button type="button" class="btn btn-main m-2">Clothing</button>
+                    <button type="button" class="btn btn-main m-2">Shoes</button>
+                </div>
+            </div>
+            <div class="collection-list"></div>
+        </div>
     </section>
 </body>
 </html>
