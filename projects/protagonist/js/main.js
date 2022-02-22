@@ -123,8 +123,7 @@ function startHtmlLoad() {
 }
 
 function startCollectionLoad() {
-    const collection = document.querySelector(`.collection-list`);
-    let collectionItems = collectionList.map(function(item){
+    let collectionItems = $.map(collectionList, function(item){
         return `<div class="col-lg-3">
         <div class="card my-2">
             <img src="${item.src}" class="card_img img-fluid rounded"/>
@@ -134,8 +133,7 @@ function startCollectionLoad() {
         </div>
       </div>` 
     })
-    collection.innerHTML = collectionItems.join("");
+    $(`.collection-list`).html(collectionItems.join(``));
 }
 
-// event listeners
-window.addEventListener(`DOMContentLoaded`, startHtmlLoad);
+$(document).ready(startHtmlLoad);
