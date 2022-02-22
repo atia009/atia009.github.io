@@ -12,7 +12,13 @@ const projectsArray =
   src: "images/essential-aesthetics.png",
   link: "../projects/essential-aesthetics/pages/index.html",
   target: `target="_blank"`,
- }
+ },
+ {
+  title: "Protagonist",
+  src: "images/protagonist.png",
+  link: "../projects/protagonist/pages/index.html",
+  target: `target="_blank"`,
+ },
 ]
 const artsArray =
 [
