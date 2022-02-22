@@ -125,12 +125,14 @@ function startHtmlLoad() {
 function startCollectionLoad() {
     const collection = document.querySelector(`.collection-list`);
     let collectionItems = collectionList.map(function(item){
-        return `<li class="item">
-        <img src="${item.src}" class="item__img"/>
-        <p class="item__brand">${item.brand}</p>
-        <p class="item__name">${item.name}</p>
-        <p class="item__price">${item.price} USD</p>
-      </li>` 
+        return `<div class="col-lg-3">
+        <div class="card my-2">
+            <img src="${item.src}" class="card_img img-fluid rounded"/>
+            <p class="card__brand my-1 text-uppercase ">${item.brand}</p>
+            <p class="card__name my-0 text-uppercase">${item.name}</p>
+            <p class="card__price my-1 text-uppercase">${item.price} USD</p>
+        </div>
+      </div>` 
     })
     collection.innerHTML = collectionItems.join("");
 }
