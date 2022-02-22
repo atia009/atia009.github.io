@@ -69,3 +69,12 @@ p {
 .carousel-caption {
     top: 0;
 }
+
+/* collection */
+.card {
+    border: none;
+}
+
+.card__brand, .card__name {
+    font-family: var(--secondary-font);
+}
