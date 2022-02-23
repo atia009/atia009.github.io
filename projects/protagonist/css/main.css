@@ -1,6 +1,7 @@
 /* variables */
 :root {
     --main-font: "Lato Regular";
+    --bold-font: "Lato Bold";
     --secondary-font: "Lato Light";
     --secondary-font-italic: "Lato Light Italic";
     --primary-color: #bca474;
@@ -25,6 +26,11 @@
     src: url(../fonts/Lato-Regular.ttf);
 }
 
+@font-face {
+    font-family: "Lato Bold";
+    src: url(../fonts/Lato-Bold.ttf);
+}
+
 /* global */
 h1 {
     font-family: var(--secondary-font);
@@ -35,7 +41,7 @@ p {
 }
 
 .btn:focus {
-    box-shadow: 0 0 0 .25rem var(--primary-light-color);
+    box-shadow: none;
 }
 
 .btn-main {
@@ -75,6 +81,20 @@ p {
     border: none;
 }
 
-.card__brand, .card__name {
+.secondary-font {
     font-family: var(--secondary-font);
+}
+
+.active--category{
+    background-color: var(--primary-dark-color);
+    color: var(--primary-color);
+}
+
+/* about */
+.lead {
+    font-family: var(--secondary-font-italic);
+}
+
+.bold {
+    font-family: var(--bold-font);
 }
