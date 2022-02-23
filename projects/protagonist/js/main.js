@@ -134,4 +134,24 @@ function startCollectionLoad() {
     $(`.collection-list`).html(collectionItems.join(``));
 }
 
-$(document).ready(startHtmlLoad);
+function updateCategoryCollection() {
+    let collection = $('.collection-list').isotope({});
+    let category = $(this).attr(`data-category`);
+    startCategoryBtnReset();
+    $(this).addClass(`active--category`);
+    collection.isotope({filter: category});
+}
+
+function startCategoryBtnReset() {
+    const categories = $(`.categories`).find(`button`);
+    categories.each(removeActiveClass);
+} 
+
+function removeActiveClass() {
+    $(this).removeClass(`active--category`);
+}
+
+$(document).ready(function(){
+    startHtmlLoad();
+    $(`.categories`).on(`click`, `button`, updateCategoryCollection);
+});
