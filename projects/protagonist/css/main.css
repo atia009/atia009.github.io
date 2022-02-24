@@ -40,6 +40,10 @@ p {
     font-family: var(--main-font);
 }
 
+.title {
+    font-family: var(--secondary-font);
+}
+
 .btn:focus {
     box-shadow: none;
 }
@@ -77,10 +81,6 @@ p {
 }
 
 /* collection */
-.card {
-    border: none;
-}
-
 .secondary-font {
     font-family: var(--secondary-font);
 }
@@ -97,4 +97,8 @@ p {
 
 .bold {
     font-family: var(--bold-font);
+}
+
+.about__text {
+    max-width: 1000px;
 }
