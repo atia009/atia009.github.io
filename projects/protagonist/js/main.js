@@ -59,14 +59,14 @@ const collectionList = [
     {
         brand: `A.P.C.`,
         category: `clothing`,
-        name: `Stephano Cotton-Corduroy Overshirt`,
+        name: `Stephano Corduroy Overshirt`,
         price: 220,
         src: `../images/collection-09.webp`,
     },
     {
         brand: `A.P.C.`,
         category: `clothing`,
-        name: `Gaspard Cotton-Twill Bomber Jacket`,
+        name: `Gaspard Twill Bomber Jacket`,
         price: 220,
         src: `../images/collection-10.webp`,
     },
@@ -117,21 +117,69 @@ const collectionList = [
     },
 ]
 
+const essentialsList = [
+    {
+        brand: `Norse Projects`,
+        location: `top`,
+        name: `Niels Standard SS`,
+        price: 75,
+        src: `../images/essentials-01.jpg`,
+    },
+    {
+        brand: `Norse Projects`,
+        location: `top`,
+        name: `Vagn Classic Crew`,
+        price: 175,
+        src: `../images/essentials-02.jpg`,
+    },
+    {
+        brand: `Norse Projects`,
+        location: `bottom`,
+        name: `Norse Slim Denim`,
+        price: 220,
+        src: `../images/essentials-03.jpg`,
+    },
+    {
+        brand: `Norse Projects`,
+        location: `top`,
+        name: `Osvald Oxford`,
+        price: 175,
+        src: `../images/essentials-04.jpg`,
+    },
+]
+
 // functions
 function startHtmlLoad() {
     startCollectionLoad();
+    startEssentialsLoad();
 }
 
 function startCollectionLoad() {
     let collectionItems = $.map(collectionList, function(item){
         return `<div class="col-md-6 col-lg-4 col-xl-3 p-2 ${item.category}">
-            <img src="${item.src}" class="w-100 rounded"/>
-            <p class="secondary-font mt-3 text-uppercase ">${item.brand}</p>
-            <p class="secondary-font text-uppercase">${item.name}</p>
-            <p class="text-uppercase">${item.price} USD</p>
-      </div>` 
+            <div class="overflow-hidden">
+                <img src="${item.src}" class="collection__img rounded w-100"/>
+            </div>
+            <p class="secondary-font mt-3 mb-0 text-uppercase ">${item.brand}</p>
+            <p class="secondary-font my-0 text-uppercase">${item.name}</p>
+            <p class="my-0 text-uppercase">${item.price} USD</p>
+        </div>` 
     })
     $(`.collection-list`).html(collectionItems.join(``));
+}
+
+function startEssentialsLoad() {
+    let essentialsItems = $.map(essentialsList, function(item){
+        return `<div class = "col-md-6 col-lg-4 col-xl-3 p-2 text-center">
+        <div class="overflow-hidden">
+            <img src = "${item.src}" class = "w-100 essentials__img essentials--${item.location}">
+        </div>
+        <p class="secondary-font mt-3 mb-0 text-uppercase ">${item.brand}</p>
+        <p class="secondary-font my-0 text-uppercase">${item.name}</p>
+        <p class="my-0 text-uppercase">${item.price} USD</p>
+        </div>`
+    })
+    $(`.essentials-list`).html(essentialsItems.join(``));
 }
 
 function updateCategoryCollection() {
