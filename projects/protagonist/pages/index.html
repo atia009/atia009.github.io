@@ -22,7 +22,7 @@
 </head>
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
         <div class="container d-flex flex-row-reverse">
             <a href="index.html" class="navbar-brand"><i class="fa-solid fa-chess-pawn"></i><span class="navbar__span text-uppercase text-dark ms-1">rotagonist</span></a>
 
@@ -48,7 +48,7 @@
                         <a href="#journal" class="nav-link text-uppercase text-dark me-2 my-2">Journal</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#trending" class="nav-link text-uppercase text-dark me-2 my-2">Outfits</a>
+                        <a href="#inspiration" class="nav-link text-uppercase text-dark me-2 my-2">Inspiration</a>
                     </li>
                 </ul>
             </div>
@@ -119,9 +119,9 @@
     <!-- collection -->
     <section id="collection" class="my-5">
         <div class="container">
-            <h2 class="title text-center text-uppercase">The Collection</h2>
+            <h2 class="title text-center text-uppercase my-3">The Collection</h2>
             <div class="row g-0">
-                <div class="categories d-flex flex-wrap justify-content-center mt-3">
+                <div class="categories d-flex flex-wrap justify-content-center">
                     <button type="button" class="category active--category btn btn-main m-2" data-category="*">All</button>
                     <button type="button" class="category btn btn-main m-2" data-category=".accessories">Accessories</button>
                     <button type="button" class="category btn btn-main m-2" data-category=".clothing">Clothing</button>
@@ -135,7 +135,7 @@
     <!-- about -->
     <section id="about" class="my-5">
         <div class="container my-5">
-            <h2 class="title text-center text-uppercase">About</h2>
+            <h2 class="title text-center text-uppercase my-3">The About</h2>
             <p class="about__text mx-auto my-3 text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur alias reprehenderit aliquam in obcaecati officia praesentium ex, ad assumenda, libero voluptate. Id voluptate perferendis adipisci ab est itaque corrupti minus quisquam repellat nisi eveniet provident totam non obcaecati, consectetur tenetur.</p>
         </div>
         <div class="container my-3">
@@ -161,6 +161,14 @@
                     <p class="px-3"><strong class="bold">Simplicity:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga blanditiis, modi exercitationem quae quam eveniet! Minus labore voluptatibus corporis recusandae accusantium velit, nemo, nobis, nulla ullam pariatur totam quos.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- essentials -->
+    <section id="essentials" class="my-5">
+        <div class="container">
+            <h2 class="title text-center text-uppercase my-3">The Essentials</h2>
+            <div class = "essentials-list row g-0"></div>
         </div>
     </section>
 
