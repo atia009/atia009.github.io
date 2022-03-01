@@ -92,7 +92,6 @@ const collectionList = [
         name: `Craftsman Leather Chelsea Boots`,
         price: 495,
         src: `../images/collection-13.webp`,
-
     },
     {
         brand: `Grand Seiko`,
@@ -146,6 +145,131 @@ const essentialsList = [
         price: 175,
         src: `../images/essentials-04.jpg`,
     },
+]
+
+const inspirationList = [
+    [
+        {
+            brand: `Norse Projects`,
+            name: `Osvald Oxford`,
+            price: 175,
+            season: `spring`,
+            src: `../images/collection-03.webp`, 
+        },
+        {
+            brand: `A.P.C.`,
+            name: `Silver-Tone Chain Bracelet`,
+            price: 155,
+            season: `spring`,
+            src: `../images/collection-15.webp`,
+        },
+        {
+            brand: `Norse Projects`,
+            name: `Aros Slim Light Stretch`,
+            price: 185,
+            season: `spring`,
+            src: `../images/collection-07.jpg`,
+        },
+        {
+            brand: `Common Projects`,
+            name: `Original Achilles Leather Sneakers`,
+            price: 440,
+            season: `spring`,
+            src: `../images/collection-12.webp`,
+    
+        },
+    ],
+    [
+        {
+            brand: `Norse Projects`,
+            name: `Niels Standard SS`,
+            price: 75,
+            season: `summer`,
+            src: `../images/collection-01.webp`,
+        },
+        {
+            brand: `Grand Seiko`,
+            name: `SBGV009`,
+            price: 3550,
+            season: `summer`,
+            src: `../images/collection-14.webp`,
+        },
+        {
+            brand: `Norse Projects`,
+            name: `Aros Slim Light Stretch`,
+            price: 185,
+            season: `summer`,
+            src: `../images/collection-08.webp`,
+        },
+        {
+            brand: `Common Projects`,
+            name: `Original Achilles Leather Sneakers`,
+            price: 440,
+            season: `summer`,
+            src: `../images/collection-11.webp`,
+    
+        },
+    ],
+    [
+        {
+            brand: `Norse Projects`,
+            name: `Sigfred Lambswool`,
+            price: 185,
+            season: `fall`,
+            src: `../images/collection-05.jpg`,
+        },
+        {
+            brand: `Miansai`,
+            name: `Thin Geo Sterling Silver Ring`,
+            price: 125,
+            season: `fall`,
+            src: `../images/collection-16.webp`,
+        },
+        {
+            brand: `Norse Projects`,
+            name: `Norse Slim Denim`,
+            price: 220,
+            season: `fall`,
+            src: `../images/collection-06.jpg`,
+        },
+        {
+            brand: `R.M. Williams`,
+            name: `Craftsman Leather Chelsea Boots`,
+            price: 495,
+            season: `fall`,
+            src: `../images/collection-13.webp`,
+        },
+    ],
+    [
+        {
+            brand: `Norse Projects`,
+            name: `Johannes Pocket LS`,
+            price: 150,
+            season: `winter`,
+            src: `../images/collection-02.jpg`,
+        },
+        {
+            brand: `A.P.C.`,
+            name: `Gaspard Twill Bomber Jacket`,
+            price: 220,
+            season: `winter`,
+            src: `../images/collection-10.webp`,
+        },
+        {
+            brand: `Norse Projects`,
+            name: `Norse Slim Denim`,
+            price: 220,
+            season: `winter`,
+            src: `../images/collection-06.jpg`,
+        },
+        {
+            brand: `R.M. Williams`,
+            name: `Craftsman Leather Chelsea Boots`,
+            price: 495,
+            season: `winter`,
+            src: `../images/collection-13.webp`,
+        },
+    ],
 ]
 
 // functions
