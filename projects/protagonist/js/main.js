@@ -276,6 +276,7 @@ const inspirationList = [
 function startHtmlLoad() {
     startCollectionLoad();
     startEssentialsLoad();
+    startInspirationLoad();
 }
 
 function startCollectionLoad() {
@@ -304,6 +305,21 @@ function startEssentialsLoad() {
         </div>`
     })
     $(`.essentials-list`).html(essentialsItems.join(``));
+}
+
+function startInspirationLoad() {
+    $(`.inspiration-list`).each(function(index){
+        let inspirationItems = $.map(inspirationList[index], function(item){
+            return `<div class="d-flex align-items-start justify-content-start">
+            <img src="${item.src}" alt="image of ${item.name}" class="img-fluid pe-3 w-50">
+            <div class="w-50">
+                <p class="mb-0 fs-6">${item.brand}</p>
+                <span class="secondary-font text-uppecase fs-6">${item.price} USD</span>
+            </div>
+        </div>`
+        }) 
+        $(this).html(inspirationItems.join(``));
+    })
 }
 
 function updateCategoryCollection() {
