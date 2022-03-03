@@ -143,3 +143,17 @@ p {
 .essentials--top {
     transform-origin: top;
 }
+
+/* banner */
+#banner{
+    background: url(../images/banner.jpeg) center/cover no-repeat;
+}
+.banner-container{
+    min-height: 30vh;
+}
+.banner__subtitle{
+    font-size: 28px;
+}
+.banner__title {
+    font-size: 60px;
+}
