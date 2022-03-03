@@ -44,6 +44,14 @@ p {
     font-family: var(--secondary-font);
 }
 
+.main-font {
+    font-family: var(--main-font);
+}
+
+.secondary-font {
+    font-family: var(--secondary-font) !important;
+}
+
 .btn:focus {
     box-shadow: none;
 }
@@ -77,7 +85,12 @@ p {
 
 /* hero */
 .carousel-caption {
-    top: 0;
+    top: 80px;
+}
+
+.hero__img {
+    min-height: 40vh;
+    object-fit: cover;
 }
 
 /* collection */
@@ -92,10 +105,6 @@ p {
     transform: scale(1.2);
 }
 
-
-.secondary-font {
-    font-family: var(--secondary-font);
-}
 
 .active--category{
     background-color: var(--primary-dark-color);
