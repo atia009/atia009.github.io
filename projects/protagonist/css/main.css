@@ -85,7 +85,7 @@ p {
 
 /* hero */
 .carousel-caption {
-    top: 80px;
+    top: 140px;
 }
 
 .hero__img {
@@ -156,4 +156,28 @@ p {
 }
 .banner__title {
     font-size: 60px;
+}
+
+/* newsletter */
+#newsletter {
+    background-color: var(--primary-color);
+}
+
+.form-control {
+    background-color: transparent;
+}
+
+.form-control::placeholder {
+    color: #000;
+    opacity: 1;
+    font-family: var(--main-font);
+}
+
+.form-control:focus {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.newsletter__btn:hover {
+    background-color: var(--primary-light-color);
 }
