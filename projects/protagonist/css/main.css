@@ -169,8 +169,8 @@ p {
 
 .form-control::placeholder {
     color: #000;
-    opacity: 1;
     font-family: var(--main-font);
+    opacity: 1;
 }
 
 .form-control:focus {
@@ -180,4 +180,19 @@ p {
 
 .newsletter__btn:hover {
     background-color: var(--primary-light-color);
+}
+
+/* footer */
+.footer {
+    background-color: #000;
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+.footer__link:hover {
+    --bs-text-opacity: 1;
+    color: inherit !important;
+    text-decoration: underline;
 }
