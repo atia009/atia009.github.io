@@ -4,7 +4,7 @@ const projectsArray =
  {
   title: "Disflex",
   src: "images/disflex.png",
-  link: "../projects/disflex.html",
+  link: "../projects/disflex/index.html",
   target: "",
  },
  {
