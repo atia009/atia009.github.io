@@ -1,0 +1,220 @@
+/* variables */
+:root {
+  --dark-grey: #495057;
+  --med-grey: #adb5bd;
+  --light-grey: #dee2e6;
+  --dark-icon: #282626;
+  --light-icon: #f0f4f8;
+}
+
+/* fonts */
+@font-face {
+  font-family: "PT Sans Regular";
+  src: url(../fonts/PTSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: "PT Sans Bold";
+  src: url(../fonts/PTSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Playfair Display Regular";
+  src: url(../fonts/PlayfairDisplay-Regular.ttf);
+}
+@font-face {
+  font-family: "Playfair Display Semi-bold";
+  src: url(../fonts/PlayfairDisplay-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Playfair Display Bold";
+  src: url(../fonts/PlayfairDisplay-Bold.ttf);
+}
+
+/* global styles */
+html {
+  box-sizing: border-box;
+  font-family: "Playfair Display Regular";
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.1rem;
+  margin: 0 auto;
+  min-width: 270px;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+.main {
+  max-width: 1226px;
+}
+
+/* header */
+.header {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 10px 40px 10px;
+}
+
+.header__title {
+  font-family: "PT Sans Bold";
+  font-size: 4rem;
+  margin: 0px;
+  text-transform: uppercase;
+}
+
+.header__description {
+  font-size: 0.85rem;
+}
+
+/* nav */
+.nav {
+  background-color: #fff;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.nav__icon {
+  color: var(--med-grey);
+  font-size: 1.75rem;
+  padding: 5px 35px;
+  position: relative;
+}
+
+.nav__icon:hover {
+  color: var(--dark-grey);
+}
+
+.nav__icon:nth-of-type(1) {
+  border-right: 1px solid var(--med-grey);
+}
+
+.nav__external {
+  position: absolute;
+  right: 5px;
+  color: var(--light-grey);
+}
+
+/* simulator */
+.simulator {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: 300px;
+
+  max-width: 960px;
+}
+
+.simulator__div {
+  background-color: var(--med-grey);
+  color: #fff;
+  margin-bottom: 1px;
+  margin-right: 1px;
+  padding-top: 10px;
+  text-align: center;
+  width: 70px;
+}
+
+/* code */
+.code {
+  padding: 7.5px 0px 7.5px 10px;
+  height: 175px;
+  text-align: left;
+}
+
+.code__display,
+.code__element,
+.code__statement,
+.code__close {
+  font-family: "PT Sans Regular";
+  font-size: 0.85rem;
+  margin: 2.5px 0px;
+}
+
+.code__container {
+  margin-left: 20px;
+}
+
+/* user-interface */
+.user-interface {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  max-width: 960px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px;
+}
+
+.c-properties__title,
+.i-options__title {
+  font-weight: 600;
+}
+
+.control-list {
+  font-family: "PT Sans Regular";
+  font-size: 0.85rem;
+  list-style: none;
+  max-width: 110px;
+  padding: 10px 5px;
+  width: 33%;
+}
+
+.c-properties__value,
+.i-options__value {
+  color: var(--med-grey);
+}
+
+/* toggles */
+.active {
+  background-color: var(--med-grey);
+  color: #fff;
+}
+
+.hover {
+  background-color: var(--light-grey);
+}
+
+/* media queries */
+@media (min-width: 800px) {
+  .header {
+    padding: 58px 0px 78px 165px;
+  }
+
+  .main {
+    display: grid;
+    grid-template-areas:
+      "sim sim sim code code"
+      "sim sim sim code code"
+      "sim sim sim code code"
+      "ui  ui  ui  code code"
+      "ui  ui  ui  code code";
+    margin-left: 165px;
+  }
+
+  .simulator {
+    grid-area: sim;
+  }
+
+  .code {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    grid-area: code;
+    height: 100%;
+    width: 266px;
+  }
+
+  .user-interface {
+    border-top: none;
+    grid-area: ui;
+  }
+}
