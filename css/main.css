@@ -129,6 +129,24 @@ main {
   font-family: "PT Sans Bold";
   font-size: 4rem;
   margin: 30px 0px 46px 0px;
+  line-height: 35px;
+}
+
+.main__btn {
+  background-color: #4b91f2;
+  border-radius: 2px;
+  margin: -45px 0 46px;
+  padding: 10px 30px;
+}
+
+.main__link {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.main__btn:hover {
+  background-color: #235aa6;
 }
 
 /* home */
@@ -280,7 +298,8 @@ main {
   transform: translateY(-50%);
 }
 
-.img-box__icon, .details__icon {
+.img-box__icon,
+.details__icon {
   color: var(--light-grey);
 }
 

@@ -155,6 +155,7 @@ function loadHome()
  // dynamically load home content
  const content = 
  `<h1 class="main__title">Aaron Tia</h1>
+ <button class="main__btn"><a href="https://aarontia.netlify.app/" class="main__link">Updated Portfolio</a><button>
   <section class="home">
     <img src="images/profile.jpg" alt="profile picture" class="home__img">
     <div class="info">
